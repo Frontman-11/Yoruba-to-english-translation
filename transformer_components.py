@@ -1,7 +1,6 @@
 import tensorflow as tf
 
 
-
 # ## Creating Positional Encoding
 
 class PositionalEncoding(tf.keras.layers.Layer):
@@ -24,7 +23,7 @@ class PositionalEncoding(tf.keras.layers.Layer):
 
 # ## Decoder (Multi-Attention Head)
 
-class EecoderTransformerBlock(tf.keras.layers.Layer):
+class EncoderTransformerBlock(tf.keras.layers.Layer):
     def __init__(self, embed_size, n_units=128, num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):
         super().__init__(dtype=dtype, **kwargs)
         self.N = N
