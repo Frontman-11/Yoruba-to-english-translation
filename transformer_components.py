@@ -3,18 +3,26 @@ import tensorflow as tf
 
 # ## Creating Positional Encoding
 
+import tensorflow as tf
+
 class PositionalEncoding(tf.keras.layers.Layer):
     def __init__(self, max_seq_length, embed_size, dtype=tf.float32, **kwargs):
         super().__init__(dtype=dtype, **kwargs)
         assert embed_size % 2 == 0, "embed_size must be even"
-        
-        p, i = np.meshgrid(np.arange(max_seq_length), 2 * np.arange(embed_size // 2))
-        pos_emb = np.empty((1, max_seq_length, embed_size))
-        pos_emb[0, :, ::2] = np.sin(p / 10_000 ** (i / embed_size)).T
-        pos_emb[0, :, 1::2] = np.cos(p / 10_000 ** (i / embed_size)).T
-        self.pos_encodings = tf.constant(pos_emb.astype(self.dtype))
+
+        p = tf.range(max_seq_length, dtype=dtype)
+        i = tf.range(embed_size // 2, dtype=dtype) * 2  
+
+        angle_rates = 1 / tf.pow(10_000.0, (tf.cast(i, dtype) / tf.cast(embed_size, dtype)))
+
+        pos_encodings = tf.concat([
+            tf.sin(tf.tensordot(p, angle_rates, axes=0)),  # Apply sin to even indices
+            tf.cos(tf.tensordot(p, angle_rates, axes=0))   # Apply cos to odd indices
+        ], axis=-1)  # Shape: [max_seq_length, embed_size]
+
+        self.pos_encodings = tf.expand_dims(pos_encodings, axis=0)  
         self.supports_masking = True
-        
+
     def call(self, inputs):
         batch_max_length = tf.shape(inputs)[1]
         return inputs + self.pos_encodings[:, :batch_max_length]
