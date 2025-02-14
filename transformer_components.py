@@ -1,1 +1,103 @@
-{"metadata":{"kernelspec":{"language":"python","display_name":"Python 3","name":"python3"},"language_info":{"name":"python","version":"3.10.12","mimetype":"text/x-python","codemirror_mode":{"name":"ipython","version":3},"pygments_lexer":"ipython3","nbconvert_exporter":"python","file_extension":".py"},"kaggle":{"accelerator":"none","dataSources":[],"dockerImageVersionId":30886,"isInternetEnabled":true,"language":"python","sourceType":"script","isGpuEnabled":false}},"nbformat_minor":4,"nbformat":4,"cells":[{"cell_type":"code","source":"import tensorflow as tf\n\n\n# ## Creating Positional Encoding\n\nclass PositionalEncoding(tf.keras.layers.Layer):\n    def __init__(self, max_seq_length, embed_size, dtype=tf.float32, **kwargs):\n        super().__init__(dtype=dtype, **kwargs)\n        assert embed_size % 2 == 0, \"embed_size must be even\"\n        \n        p, i = np.meshgrid(np.arange(max_seq_length), 2 * np.arange(embed_size // 2))\n        pos_emb = np.empty((1, max_seq_length, embed_size))\n        pos_emb[0, :, ::2] = np.sin(p / 10_000 ** (i / embed_size)).T\n        pos_emb[0, :, 1::2] = np.cos(p / 10_000 ** (i / embed_size)).T\n        self.pos_encodings = tf.constant(pos_emb.astype(self.dtype))\n        self.supports_masking = True\n        \n    def call(self, inputs):\n        batch_max_length = tf.shape(inputs)[1]\n        return inputs + self.pos_encodings[:, :batch_max_length]\n\n\n\n# ## Decoder (Multi-Attention Head)\n\nclass EncoderTransformerBlock(tf.keras.layers.Layer):\n    def __init__(self, embed_size, n_units=128, num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):\n        super().__init__(dtype=dtype, **kwargs)\n        self.N = N\n        self.n_units = n_units\n        self.num_heads = num_heads\n        self.embed_size = embed_size\n        self.dropout_rate = dropout_rate\n\n        self.self_attn_layer = [\n            tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads,\n                                               key_dim=self.embed_size,\n                                               dropout=self.dropout_rate) for _ in range(N)]\n        \n        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=\"relu\") for _ in range(N)]\n        self.dense2 =  [tf.keras.layers.Dense(self.embed_size) for _ in range(N)]\n        self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(N)]\n        self.layer_norm1 = [tf.keras.layers.LayerNormalization() for _ in range(N)]\n        self.layer_norm2 = [tf.keras.layers.LayerNormalization() for _ in range(N)]\n\n    def call(self, inputs, attention_mask):\n        Z = inputs\n        for i in range(self.N):\n            skip = Z\n            Z = self.self_attn_layer[i](query=Z, key=Z, value=Z, attention_mask=attention_mask)\n            Z = self.layer_norm1[i](Z + skip)\n            skip = Z\n            Z = self.dense1[i](Z)\n            Z = self.dense2[i](Z)\n            Z = self.dropout[i](Z)\n            Z = self.layer_norm2[i](Z + skip)\n            \n        return Z\n\n\n\n# ## Encoder (Multi-Attention Head)\n\nclass DecoderTransformerBlock(tf.keras.layers.Layer):\n    def __init__(self, embed_size, n_units=128, num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):\n        super().__init__(dtype=dtype, **kwargs)\n        self.N = N\n        self.n_units = n_units\n        self.num_heads = num_heads\n        self.embed_size= embed_size\n        self.dropout_rate = dropout_rate\n        \n        self.self_attn_layer = [\n            tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads,\n                                               key_dim=self.embed_size,\n                                               dropout=self.dropout_rate) for _ in range(N)]\n        self.cross_attn_layer = [\n            tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads,\n                                               key_dim=self.embed_size,\n                                               dropout=self.dropout_rate) for _ in range(N)]\n        \n        self.layer_norm1 = [tf.keras.layers.LayerNormalization() for _ in range(N)]\n        self.layer_norm2 = [tf.keras.layers.LayerNormalization() for _ in range(N)]\n        self.layer_norm3 = [tf.keras.layers.LayerNormalization() for _ in range(N)]\n        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=\"relu\") for _ in range(N)]\n        self.dense2 = [tf.keras.layers.Dense(self.embed_size) for _ in range(N)]\n\n\n    def call(self, inputs, encoder_output, attention_mask1, attention_mask2):\n        Z = inputs\n        for i in range(self.N):\n            skip = Z\n            Z = self.self_attn_layer[i](query=Z, key=Z, value=Z, attention_mask=attention_mask1)\n            Z = self.layer_norm1[i](Z + skip)\n            skip = Z\n            Z = self.cross_attn_layer[i](query=Z, key=encoder_output, value=encoder_output, attention_mask=attention_mask2)\n            Z = self.layer_norm2[i](Z + skip)\n            skip = Z\n            Z = self.dense1[i](Z)\n            Z = self.dense2[i](Z)\n            Z = self.layer_norm3[i](Z + skip)\n            \n        return Z","metadata":{"_uuid":"50f84184-09db-4ee7-9f2d-30620793261f","_cell_guid":"157b6f57-2a58-446c-8e3d-9e1888e41970","trusted":true,"collapsed":false,"jupyter":{"outputs_hidden":false}},"outputs":[],"execution_count":2}]}
+import tensorflow as tf
+
+
+# ## Creating Positional Encoding
+
+class PositionalEncoding(tf.keras.layers.Layer):
+    def __init__(self, max_seq_length, embed_size, dtype=tf.float32, **kwargs):
+        super().__init__(dtype=dtype, **kwargs)
+        assert embed_size % 2 == 0, "embed_size must be even"
+        
+        p, i = np.meshgrid(np.arange(max_seq_length), 2 * np.arange(embed_size // 2))
+        pos_emb = np.empty((1, max_seq_length, embed_size))
+        pos_emb[0, :, ::2] = np.sin(p / 10_000 ** (i / embed_size)).T
+        pos_emb[0, :, 1::2] = np.cos(p / 10_000 ** (i / embed_size)).T
+        self.pos_encodings = tf.constant(pos_emb.astype(self.dtype))
+        self.supports_masking = True
+        
+    def call(self, inputs):
+        batch_max_length = tf.shape(inputs)[1]
+        return inputs + self.pos_encodings[:, :batch_max_length]
+
+
+
+# ## Decoder (Multi-Attention Head)
+
+class EncoderTransformerBlock(tf.keras.layers.Layer):
+    def __init__(self, embed_size, n_units=128, num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):
+        super().__init__(dtype=dtype, **kwargs)
+        self.N = N
+        self.n_units = n_units
+        self.num_heads = num_heads
+        self.embed_size = embed_size
+        self.dropout_rate = dropout_rate
+
+        self.self_attn_layer = [
+            tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads,
+                                               key_dim=self.embed_size,
+                                               dropout=self.dropout_rate) for _ in range(N)]
+        
+        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation="relu") for _ in range(N)]
+        self.dense2 =  [tf.keras.layers.Dense(self.embed_size) for _ in range(N)]
+        self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(N)]
+        self.layer_norm1 = [tf.keras.layers.LayerNormalization() for _ in range(N)]
+        self.layer_norm2 = [tf.keras.layers.LayerNormalization() for _ in range(N)]
+
+    def call(self, inputs, attention_mask):
+        Z = inputs
+        for i in range(self.N):
+            skip = Z
+            Z = self.self_attn_layer[i](query=Z, key=Z, value=Z, attention_mask=attention_mask)
+            Z = self.layer_norm1[i](Z + skip)
+            skip = Z
+            Z = self.dense1[i](Z)
+            Z = self.dense2[i](Z)
+            Z = self.dropout[i](Z)
+            Z = self.layer_norm2[i](Z + skip)
+            
+        return Z
+
+
+
+# ## Encoder (Multi-Attention Head)
+
+class DecoderTransformerBlock(tf.keras.layers.Layer):
+    def __init__(self, embed_size, n_units=128, num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):
+        super().__init__(dtype=dtype, **kwargs)
+        self.N = N
+        self.n_units = n_units
+        self.num_heads = num_heads
+        self.embed_size= embed_size
+        self.dropout_rate = dropout_rate
+        
+        self.self_attn_layer = [
+            tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads,
+                                               key_dim=self.embed_size,
+                                               dropout=self.dropout_rate) for _ in range(N)]
+        self.cross_attn_layer = [
+            tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads,
+                                               key_dim=self.embed_size,
+                                               dropout=self.dropout_rate) for _ in range(N)]
+        
+        self.layer_norm1 = [tf.keras.layers.LayerNormalization() for _ in range(N)]
+        self.layer_norm2 = [tf.keras.layers.LayerNormalization() for _ in range(N)]
+        self.layer_norm3 = [tf.keras.layers.LayerNormalization() for _ in range(N)]
+        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation="relu") for _ in range(N)]
+        self.dense2 = [tf.keras.layers.Dense(self.embed_size) for _ in range(N)]
+
+
+    def call(self, inputs, encoder_output, attention_mask1, attention_mask2):
+        Z = inputs
+        for i in range(self.N):
+            skip = Z
+            Z = self.self_attn_layer[i](query=Z, key=Z, value=Z, attention_mask=attention_mask1)
+            Z = self.layer_norm1[i](Z + skip)
+            skip = Z
+            Z = self.cross_attn_layer[i](query=Z, key=encoder_output, value=encoder_output, attention_mask=attention_mask2)
+            Z = self.layer_norm2[i](Z + skip)
+            skip = Z
+            Z = self.dense1[i](Z)
+            Z = self.dense2[i](Z)
+            Z = self.layer_norm3[i](Z + skip)
+            
+        return Z
