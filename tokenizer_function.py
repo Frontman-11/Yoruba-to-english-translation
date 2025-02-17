@@ -2,8 +2,9 @@ import tensorflow as tf
 import sentencepiece as spm
 
 
-class FrontmanTokenizer():
-    def __init__(self, max_length=128, pad_token_id=0):
+class FrontmanTokenizer(spm.SentencePieceProcessor):
+    def __init__(self, max_length, pad_token_id=0, **kwargs):
+        super().__init__(**kwargs)
         self.max_length = max_length
         self.pad_token_id = pad_token_id
         path = '/kaggle/input/tokenizer/yo_en_bpe.model'
