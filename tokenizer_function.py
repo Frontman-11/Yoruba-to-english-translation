@@ -3,22 +3,35 @@ import sentencepiece as spm
 
 
 class FrontmanTokenizer(spm.SentencePieceProcessor):
-    def __init__(self, max_length, pad_token_id=0, **kwargs):
+    def __init__(self, model_path, max_length, pad_token_id=0, **kwargs):
         super().__init__(**kwargs)
         self.max_length = max_length
         self.pad_token_id = pad_token_id
-        path = '/kaggle/input/tokenizer/yo_en_bpe.model'
-        self.spm = spm.SentencePieceProcessor(model_file=path)
-        
+        self.spm = spm.SentencePieceProcessor(model_file=model_path)
 
-    def encode(self, text, out_type='tf', **kwargs):
+    
+    def encode(self, text, out_type='tf', exclude_token_ids=None, **kwargs):
         if out_type == 'tf':
-            input_ids = tf.ragged.constant(self.spm.encode(text, out_type=int, **kwargs), dtype=tf.int32)
-            input_ids = input_ids.to_tensor(default_value=self.pad_token_id, shape=[None, self.max_length])
+            input_ids = self.spm.encode(text, out_type=int, **kwargs)
+            input_ids = tf.ragged.constant(input_ids, dtype=tf.int32)            
+
+            if exclude_token_ids:
+                mask = ~tf.reduce_any(tf.equal(input_ids[..., None], exclude_token_ids), axis=-1)
+                input_ids = tf.ragged.boolean_mask(input_ids, mask)
+
+            if self.pad_token_id != None:
+                input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
+
         else:
-            input_ids = self.spm.encode(text, out_type=out_type)
-            
-        attention_mask = tf.cast(tf.math.not_equal(input_ids, self.pad_token_id), dtype=tf.int32)
+            input_ids = self.spm.encode(text, out_type=out_type, **kwargs)
+
+            if exclude_token_ids:
+                input_ids = [token for token in input_ids if token not in exclude_token_ids]
+
+            input_ids = input_ids[:self.max_length] + [self.pad_token_id] * max(0, self.max_length - len(input_ids))
+
+        # Create attention mask
+        attention_mask = [int(token != self.pad_token_id) for token in input_ids] if out_type != 'tf' else tf.cast(tf.math.not_equal(input_ids, self.pad_token_id), dtype=tf.int32)
 
         return {'input_ids': input_ids, 'attention_mask': attention_mask}
 
@@ -26,36 +39,4 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
     def decode(self, input_ids, out_type=str, **kwargs):
         if isinstance(input_ids, tf.Tensor):
             input_ids = input_ids.numpy().tolist()
-        if out_type == 'tf':
-            return tf.constant(self.spm.decode(input_ids, out_type=int, **kwargs), dtype=tf.int32)
-        else:
-            return self.spm.decode(input_ids, out_type=out_type, **kwargs)
-
-
-            
-# A = ['Ní òwúrọ̀ ọjọ́, Ẹtì, ọjọ́ Kẹrìnlá, ọdún 2024 ni Adebanjo.',
-#      'dágbére fáyé lẹ́ni ọdún mẹ́rìndínlọ́gọ́rùn-ún (96).',
-#     'Agbẹnusọ ẹgbẹ́ Afenifere, Jare Ajayi ló fìdí ìròyìn náà múlẹ̀ fún BBC News Yorùbá.',
-#     'Ilé rẹ̀ tó wà ní agbègbè Lekki, ìpínlẹ̀ Eko ni Adebanjo dákẹ́ sí']
-
-# sentences = ['This is the first test sentence.',
-#              'Here is the second sentence for testing.',
-#              'sentence Here is the second for testing.', 
-#              'Here is the nothing.', 
-#              'Finally, this is the many sentence.']
-
-# tokenizer = FrontmanTokenizer(max_length=20)
-# input_ids = tokenizer.encode(A)
-# input_ids
-
-# from transformers import T5Tokenizer
-
-# t5tokenizer = T5Tokenizer.from_pretrained('t5-small')
-
-# text = sentences
-
-# encoded_input = t5tokenizer(text, return_tensors='np', max_length=20, truncation=True, padding=True)  # Use 'tf' for TensorFlow
-
-# print(encoded_input)
-
-# print("Decoded Text:", decoded_text)
+        return self.spm.decode(input_ids, out_type=out_type, **kwargs)
