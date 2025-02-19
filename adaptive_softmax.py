@@ -40,10 +40,9 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         if self.proj_dims:
             assert len(self.proj_dims)==self.cluster_num
         else:
-            print(tf.math.maximum(hidden_dim/self.proj_factor**2, 1), tf.math.maximum(hidden_dim/self.proj_factor**2, 1).shape)
-            
-            self.proj_dims = [int(tf.math.maximum(hidden_dim/self.proj_factor**i, 1).numpy()) 
-                  for i in range(1, self.cluster_num+1)]
+            self.proj_dims = [tf.cast(tf.math.maximum(hidden_dim / self.proj_factor**i, 1), tf.int32) 
+                    for i in range(1, self.cluster_num + 1)
+                ]
 
 
         # initialize dense layers for head. reserve cluster_num spots for
