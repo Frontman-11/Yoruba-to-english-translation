@@ -40,7 +40,7 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         if self.proj_dims:
             assert len(self.proj_dims)==self.cluster_num
         else:
-            self.proj_dims = [tf.cast(tf.math.maximum(hidden_dim / self.proj_factor**i, 1), tf.int32) 
+            self.proj_dims = [tf.math.maximum(hidden_dim / self.proj_factor**i, 1) 
                     for i in range(1, self.cluster_num + 1)
                 ]
 
@@ -57,7 +57,7 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
             tail_dim = self.cutoffs[i+1]-self.cutoffs[i]
             self.tail_w.append(
                 tf.keras.models.Sequential([
-                    tf.keras.layers.Dense(int(self.proj_dims[i]), name=f"ada_softmax_tail{i+1}_proj", input_shape=(hidden_dim,)),
+                    tf.keras.layers.Dense(self.proj_dims[i], name=f"ada_softmax_tail{i+1}_proj", input_shape=(hidden_dim,)),
                     tf.keras.layers.Dense(tail_dim, name=f"ada_softmax_tail{i+1}_w")
                 ])
             )
