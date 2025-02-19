@@ -6,6 +6,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         super().__init__(**kwargs)
         self.max_length = max_length
         self.pad_token_id = pad_token_id
+        self.truncation = truncation
         self.spm = spm.SentencePieceProcessor(model_file=model_path)
 
     def encode(self, text, out_type='tf', exclude_token_ids=None, **kwargs):
@@ -22,7 +23,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
 
             # Apply truncation
-            if truncation:
+            if  self.truncation:
                 input_ids = input_ids[:, :self.max_length]  # Truncate if too long
                 pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[1])
 
