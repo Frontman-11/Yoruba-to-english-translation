@@ -53,7 +53,6 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         # initialize dense layers for each cluster.
         self.tail_w = []
         for i in range(self.cluster_num):
-            print(tf.cast(self.proj_dims[i], dtype=tf.int32), self.proj_dims[i])
             tail_dim = self.cutoffs[i+1]-self.cutoffs[i]
             self.tail_w.append(
                 tf.keras.models.Sequential([
