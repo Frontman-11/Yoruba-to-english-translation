@@ -94,11 +94,16 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
 
     def _softmax(self, inp):
         head_logits = self.head_w(inp)
+        print(f'head_logits.shape: {head_logits}')
         head_softmax = tf.nn.softmax(head_logits)
+        print(f'head_softmax.shape: {head_softmax}')
         output = head_softmax[:, :, :-self.cluster_num]
         for i in range(self.cluster_num):
             tail_logits = self.tail_w[i](inp)
+            print(f'tail_logits.shape: {tail_logits}')
             tail_softmax = tf.nn.softmax(tail_logits)
+            print(f'tail_softmax.shape: {tail_softmax}')
+            
             cluster_id = self.cutoffs[0]+i
             tail_softmax *= head_softmax[:, :, cluster_id:cluster_id+1]
             output = tf.concat([output, tail_softmax], axis=-1)
