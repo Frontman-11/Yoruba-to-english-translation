@@ -58,7 +58,7 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
             print(f"hidden_dim: {hidden_dim}, type: {type(hidden_dim)}")
             print(f"self.proj_dims[i]: {self.proj_dims[i]}, type: {type(self.proj_dims[i])}")
             print(f"tail_dim: {tail_dim}, type: {type(tail_dim)}")
-            print(tf.cast(self.proj_dims[i], dtype=tf.int32))
+            print(int(tf.get_static_value(self.proj_dims[i])))
             
             self.tail_w.append(
                 tf.keras.models.Sequential([
