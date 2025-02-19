@@ -48,7 +48,7 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         # initialize dense layers for head. reserve cluster_num spots for
         # each cluster probability
         head_dim = self.cutoffs[0]+self.cluster_num
-        self.head_w = tf.keras.layers.Dense(head_dim, name='ada_softmax_head_w',input_shape=[None, hidden_dim])
+        self.head_w = tf.keras.layers.Dense(head_dim, name='ada_softmax_head_w',input_shape=(hidden_dim,))
 
         # initialize dense layers for each cluster.
         self.tail_w = []
@@ -56,7 +56,7 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
             tail_dim = self.cutoffs[i+1]-self.cutoffs[i]
             self.tail_w.append(
                 tf.keras.models.Sequential([
-                    tf.keras.layers.Dense(self.proj_dims[i], name=f"ada_softmax_tail{i+1}_proj", input_shape=[None, hidden_dim]),
+                    tf.keras.layers.Dense(self.proj_dims[i], name=f"ada_softmax_tail{i+1}_proj", input_shape=(hidden_dim,)),
                     tf.keras.layers.Dense(tail_dim, name=f"ada_softmax_tail{i+1}_w")
                 ])
             )
