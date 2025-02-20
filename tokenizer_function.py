@@ -37,7 +37,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             if exclude_token_ids:
                 input_ids = [token for token in input_ids if token not in exclude_token_ids]
 
-            if truncation:
+            if self.truncation:
                 input_ids = input_ids[:self.max_length] + [self.pad_token_id] * max(0, self.max_length - len(input_ids))
 
         # Create attention mask
