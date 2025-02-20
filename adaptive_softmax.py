@@ -129,6 +129,7 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         return self._loss(inp, labels, reduction)
 
     def compute_mask(self, input, mask=None):
+        print(mask.shape, mask)
         return mask
 
 
