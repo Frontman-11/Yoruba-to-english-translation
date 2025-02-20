@@ -3,8 +3,6 @@ import tensorflow as tf
 
 # ## Creating Positional Encoding
 
-import tensorflow as tf
-
 class PositionalEncoding(tf.keras.layers.Layer):
     def __init__(self, max_seq_length, embed_size, dtype=tf.float32, **kwargs):
         super().__init__(dtype=dtype, **kwargs)
@@ -23,7 +21,7 @@ class PositionalEncoding(tf.keras.layers.Layer):
         self.pos_encodings = tf.expand_dims(pos_encodings, axis=0)  
         self.supports_masking = True
 
-    def call(self, inputs):
+    def call(self, inputs, mask=None):
         batch_max_length = tf.shape(inputs)[1]
         return inputs + self.pos_encodings[:, :batch_max_length]
 
@@ -55,7 +53,7 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
         self.layer_norm2 = [tf.keras.layers.LayerNormalization() for _ in range(N)]
         self.supports_masking = True 
 
-    def call(self, inputs, attention_mask):
+    def call(self, inputs, attention_mask, mask=None):
         Z = inputs
         for i in range(self.N):
             skip = Z
@@ -100,7 +98,7 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
         self.dense2 = [tf.keras.layers.Dense(self.embed_size) for _ in range(N)]
         self.supports_masking = True
 
-    def call(self, inputs, encoder_output, attention_mask1, attention_mask2):
+    def call(self, inputs, encoder_output, attention_mask1, attention_mask2, mask=None):
         Z = inputs
         for i in range(self.N):
             skip = Z
