@@ -10,7 +10,7 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         self.proj_dims = proj_dims if proj_dims is not None else []
         self.head_w = None
         self.tail_w = None
-        self.support_masking = True
+        self.supports_masking = True
 
     def get_config(self):
         base_config = super().get_config()
