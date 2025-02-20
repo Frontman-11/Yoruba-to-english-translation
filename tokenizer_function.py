@@ -9,7 +9,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         self.truncation = truncation
         self.spm = spm.SentencePieceProcessor(model_file=model_path)
 
-    def encode(self, text, out_type='tf', exclude_token_ids=None, **kwargs):
+    def encode(self, text, out_type='tf', exclude_token_ids=None, with_attention_mask=True, **kwargs):
         if out_type == 'tf':
             input_ids = self.spm.encode(text, out_type=int, **kwargs)
             input_ids = tf.ragged.constant(input_ids, dtype=tf.int32)            
@@ -41,9 +41,10 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
                 input_ids = input_ids[:self.max_length] + [self.pad_token_id] * max(0, self.max_length - len(input_ids))
 
         # Create attention mask
-        attention_mask = tf.cast(tf.math.not_equal(input_ids, self.pad_token_id), dtype=tf.int32) if out_type == 'tf' else [int(token != self.pad_token_id) for token in input_ids]
-
-        return {'input_ids': input_ids, 'attention_mask': attention_mask}
+        if with_attention_mask:
+            attention_mask = tf.cast(tf.math.not_equal(input_ids, self.pad_token_id), dtype=tf.int32) if out_type == 'tf' else [int(token != self.pad_token_id) for token in input_ids]
+            return {'input_ids': input_ids, 'attention_mask': attention_mask}
+        return input_ids
 
     def decode(self, input_ids, out_type=str, **kwargs):
         if isinstance(input_ids, tf.Tensor):
