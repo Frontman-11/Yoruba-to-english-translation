@@ -32,7 +32,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
         else:
             input_ids = self.spm.encode(text, out_type=out_type, **kwargs)
-           
+           print(f'First output {input_ids}')
             # Exclude unwanted tokens
             if exclude_token_ids:
                 input_ids = [token for token in input_ids if token not in exclude_token_ids]
@@ -40,10 +40,12 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             # Add padding tokens if necessary
             if len(input_ids[-1]) < self.max_length:
                 input_ids.extend([self.pad_token_id] * (self.max_length - len(input_ids)))  # Append padding tokens
+                print(f'second output {input_ids}')
 
             # Handle truncation and padding
             if self.truncation and len(input_ids) > self.max_length:
                 input_ids = input_ids[:self.max_length]
+                print(f'third output {input_ids}')
 
         # Create attention mask
         if with_attention_mask:
