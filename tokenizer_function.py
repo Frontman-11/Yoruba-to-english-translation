@@ -38,8 +38,8 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
                 input_ids = [token for token in input_ids if token not in exclude_token_ids]
 
             # Add padding tokens if necessary
-            if len(input_ids[-1]) < self.max_length:
-                input_ids.extend([self.pad_token_id] * (self.max_length - len(input_ids)))  # Append padding tokens
+            if len(input_ids) < self.max_length:
+                input_ids += [self.pad_token_id] * (self.max_length - len(input_ids)))  # Append padding tokens
                 print(f'second output {input_ids}')
 
             # Handle truncation and padding
