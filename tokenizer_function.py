@@ -32,7 +32,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
         else:
             input_ids = self.spm.encode(text, out_type=out_type, **kwargs)
-           print(f'First output {input_ids}')
+            print(f'First output {input_ids}')
             # Exclude unwanted tokens
             if exclude_token_ids:
                 input_ids = [token for token in input_ids if token not in exclude_token_ids]
