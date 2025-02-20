@@ -39,7 +39,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
             # Add padding tokens if necessary
             if len(input_ids[-1]) < self.max_length:
-                input_ids += [self.pad_token_id] * (self.max_length - len(input_ids))  # Append padding tokens
+                input_ids.extend([self.pad_token_id] * (self.max_length - len(input_ids)))  # Append padding tokens
 
             # Handle truncation and padding
             if self.truncation and len(input_ids) > self.max_length:
