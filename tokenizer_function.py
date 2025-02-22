@@ -21,7 +21,6 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
             # Convert to regular tensor
             input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
-            print(input_ids)
 
             # Apply truncation
             if  self.truncation:
