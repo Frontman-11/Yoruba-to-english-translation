@@ -21,6 +21,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
             # Convert to regular tensor
             input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
+            print(input_ids)
 
             # Apply truncation
             if  self.truncation:
@@ -50,7 +51,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
         # Create attention mask
         if with_attention_mask:
-            attention_mask = tf.cast(tf.math.not_equal(input_ids, self.pad_token_id), dtype=tf.int32) if out_type == 'tf' else [int(token != self.pad_token_id) for token in input_ids]
+            attention_mask = tf.cast(tf.math.not_equal(input_ids, self.pad_token_id), dtype=tf.int32) if out_type == 'tf' else [int(token != self.pad_token_id) for token in input_ids[0]]
             return {'input_ids': input_ids, 'attention_mask': attention_mask}
         return input_ids
 
