@@ -46,7 +46,8 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
                                                key_dim=self.embed_size,
                                                dropout=self.dropout_rate) for _ in range(N)]
         
-        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation="relu") for _ in range(N)]
+        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=tf.keras.activations.gelu
+                                            ) for _ in range(N)]
         self.dense2 =  [tf.keras.layers.Dense(self.embed_size) for _ in range(N)]
         self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(N)]
         self.layer_norm1 = [tf.keras.layers.LayerNormalization() for _ in range(N)]
@@ -94,7 +95,8 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
         self.layer_norm1 = [tf.keras.layers.LayerNormalization() for _ in range(N)]
         self.layer_norm2 = [tf.keras.layers.LayerNormalization() for _ in range(N)]
         self.layer_norm3 = [tf.keras.layers.LayerNormalization() for _ in range(N)]
-        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation="relu") for _ in range(N)]
+        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=tf.keras.activations.gelu
+                                            ) for _ in range(N)]
         self.dense2 = [tf.keras.layers.Dense(self.embed_size) for _ in range(N)]
         self.supports_masking = True
 
