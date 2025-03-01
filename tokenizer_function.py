@@ -32,7 +32,6 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
             # Convert to regular tensor
             try:
-                print(1111, input_ids)
                 input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
             except AttributeError:
                 pass
@@ -45,7 +44,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             # Apply truncation
             if self.truncation:
                 input_ids = input_ids[:, :self.max_length]
-                pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[1])
+                pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[0])
                 input_ids = tf.pad(input_ids, [[0, 0], [0, pad_length]], constant_values=self.pad_token_id)
 
         else:
