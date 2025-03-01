@@ -177,10 +177,10 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
             output = tf.concat([output, tail_softmax], axis=-1)
         return output
 
-    def call(self, inp, labels=None, use_log=False, reduction='auto', mask=None):
+    def call(self, labels=None, inp=None, use_log=False, reduction='auto', mask=None):
         if labels is None:
             return self._log_softmax(inp) if use_log else self._softmax(inp)
-        return self._loss(inp, labels, reduction)
+        return self._loss(labels, inp, reduction)
 
     def compute_mask(self, input, mask=None):
         # print(mask.shape, mask)
