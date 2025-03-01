@@ -11,7 +11,8 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
     def encode(self, text, out_type='tf', exclude_token_ids=None, with_attention_mask=True, **kwargs):
         # Ensure text is a regular Python string, not a Tensor
         if isinstance(text, tf.Tensor):
-            text = text.numpy().decode("utf-8")  # Convert Tensor -> NumPy -> String
+            text = text.tolist()
+            text = [txt.numpy().decode("utf-8") for txt in text]  # Convert Tensor -> NumPy -> String
     
         if out_type == 'tf':
             input_ids = super().encode(text, out_type=int, **kwargs)  # Call SentencePiece encode
@@ -33,20 +34,19 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             # Convert to regular tensor
             try:
                 input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
+
+                if self.truncation:
+                    input_ids = input_ids[:, :self.max_length]
+                    pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[0])
+                    input_ids = tf.pad(input_ids, [[0, 0], [0, pad_length]], constant_values=self.pad_token_id)
+
             except AttributeError:
                 pass
-                # Apply truncation
                 if self.truncation:
                     input_ids = input_ids[:self.max_length]
-                    pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[1])
-                    input_ids = tf.pad(input_ids, [[0, 0], [0, pad_length]], constant_values=self.pad_token_id)[0]
+                    pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[-1])
+                    input_ids = tf.pad(input_ids, [[0, pad_length]], constant_values=self.pad_token_id)
             
-            # Apply truncation
-            if self.truncation:
-                input_ids = input_ids[:, :self.max_length]
-                pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[0])
-                input_ids = tf.pad(input_ids, [[0, 0], [0, pad_length]], constant_values=self.pad_token_id)
-
         else:
             input_ids = super().encode(text, out_type=out_type, **kwargs)  # Use superclass encode method
 
