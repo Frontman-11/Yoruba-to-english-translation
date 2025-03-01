@@ -51,27 +51,36 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         super().build(input_shape)
         
     def _loss(self, labels, inp, reduction='auto'):
-        labels = tf.cast(labels, dtype=tf.int64)
         head_labels = labels
-        print()
-        print(f'labels/head_labels: {labels}')
-        print(f'inp: {inp}')
+        labels = tf.cast(labels, dtype=tf.int64)
         loss = tf.sparse.SparseTensor([[0, 0]], [0.], tf.cast(tf.shape(labels), tf.int64))
-        print(f'loss: {loss}')
+        print(f'\nAt head')
         for i in range(self.cluster_num):
             mask = tf.logical_and(
                 tf.greater_equal(labels, self.cutoffs[i]),
                 tf.less(labels, self.cutoffs[i + 1])
             )
+            
+            print(f'\n{i} in for loop')
             mask_any = tf.reduce_any(mask)  # Check if any True values exist in mask
-
+            
             def compute_tail_loss():
-                # If mask_any is True, compute tail loss as before
+                print(f'\nIn Compute_tail_loss')
+                
+                # separate the cluster prob from label_prob to prevent underflow
+                # i.e. calculate softmax-loss on cluster prob independently of
+                # labels within that cluster
                 cluster_label = tf.cast(self.cutoffs[0] + i, head_labels.dtype)
                 head_labels_updated = tf.where(mask, cluster_label, head_labels)
 
+                    
+                # NOTE: taking boolean mask will help with efficiency, which is the whole reason
+                # that we need a built-in loss (to only calculate softmax for the bin that the label tells us to)
+                # BUT it will collapse a dimension, i.e. it maps (bsz, seq_len, d_model) to
+                # (num_true, d_model) this is a different input shape to the dense layer than when we call the
+                # logits function. Thus, we must pad the zero dimension to be consistent.
                 tail_inp = tf.boolean_mask(inp, mask)  # (num_in_clust, hidden_dim)
-                tail_logits = self.tail_w[i](tf.expand_dims(tail_inp, 0))[0]
+                tail_logits = self.tail_w[i](tf.expand_dims(tail_inp, 0))[0] # expand then contract back
                 tail_labels = tf.boolean_mask(labels - self.cutoffs[i], mask)
                 tail_loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
                     labels=tail_labels, logits=tail_logits
@@ -80,24 +89,25 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
                     indices=tf.where(mask), values=tail_loss,
                     dense_shape=tf.cast(tf.shape(labels), tf.int64)
                 )
+                # don't convert these to dense yet. slightly more efficient.
                 return tf.sparse.add(loss, aligned_tail_loss), head_labels_updated
 
+            # If mask_any is True, compute tail loss as before
             # Use tf.cond() to avoid Python conditionals on tensors
             loss, head_labels = tf.cond(
                 mask_any, compute_tail_loss, lambda: (loss, head_labels)
             )
-            print()
-            print(f'loss: {loss}')
-            print(f'head_labels: {head_labels}')
+            print(f'\nCompute_tail_loss called')
 
         head_logits = self.head_w(inp)
-        print(f'head_logits:{head_logits}')
+        print(f'\n head_logits:{head_logits}')
         head_loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
             labels=head_labels, logits=head_logits
         )
         loss = head_loss + tf.sparse.to_dense(loss)
 
-        # Mask out padding tokens (assuming label `0` is padding)
+        # Input labels 0, are assumed to represent padding
+        # and must be masked from the loss
         pad_mask = tf.math.not_equal(labels, 0)
         pad_mask = tf.cast(pad_mask, loss.dtype)
         loss *= pad_mask
