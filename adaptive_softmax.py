@@ -51,8 +51,8 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         super().build(input_shape)
         
     def _loss(self, labels, inp, reduction='auto'):
-        head_labels = labels
         labels = tf.cast(labels, dtype=tf.int64)
+        head_labels = labels
         loss = tf.sparse.SparseTensor([[0, 0]], [0.], tf.cast(tf.shape(labels), tf.int64))
         print(f'\nAt head')
         for i in range(self.cluster_num):
