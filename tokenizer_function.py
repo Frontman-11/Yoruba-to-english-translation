@@ -9,9 +9,21 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         self.truncation = truncation
 
     def encode(self, text, out_type='tf', exclude_token_ids=None, with_attention_mask=True, **kwargs):
+        # Ensure text is a regular Python string, not a Tensor
+        if isinstance(text, tf.Tensor):
+            text = text.numpy().decode("utf-8")  # Convert Tensor -> NumPy -> String
+    
         if out_type == 'tf':
-            input_ids = super().encode(text, out_type=int, **kwargs)  # Directly use superclass method
-            input_ids = tf.ragged.constant(input_ids, dtype=tf.int32)            
+            input_ids = super().encode(text, out_type=int, **kwargs)  # Call SentencePiece encode
+    
+            input_ids = tf.ragged.constant(input_ids, dtype=tf.int32)  
+    
+            # (Rest of your method remains unchanged...)
+
+            # def encode(self, text, out_type='tf', exclude_token_ids=None, with_attention_mask=True, **kwargs):
+            #     if out_type == 'tf':
+            #         input_ids = super().encode(text, out_type=int, **kwargs)  # Directly use superclass method
+            #         input_ids = tf.ragged.constant(input_ids, dtype=tf.int32)            
 
             # Exclude unwanted token IDs
             if exclude_token_ids:
