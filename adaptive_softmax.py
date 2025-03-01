@@ -52,6 +52,7 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         
     def _loss(self, labels, inp, reduction='auto'):
         head_labels = labels
+        labels = tf.cast(labels, dtype=tf.int32)
         print()
         print(f'labels/head_labels: {labels}')
         print(f'inp: {inp}')
