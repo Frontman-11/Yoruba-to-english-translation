@@ -32,6 +32,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
             # Convert to regular tensor
             try:
+                print(1111, input_ids)
                 input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
             except AttributeError:
                 input_ids = [input_ids].to_tensor(default_value=self.pad_token_id)
