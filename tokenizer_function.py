@@ -35,10 +35,10 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
                 print(1111, input_ids)
                 input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
             except AttributeError:
-                input_ids = [input_ids].to_tensor(default_value=self.pad_token_id)
+                pass
                 # Apply truncation
                 if self.truncation:
-                    input_ids = input_ids[:, :self.max_length]
+                    input_ids = input_ids[:self.max_length]
                     pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[1])
                     input_ids = tf.pad(input_ids, [[0, 0], [0, pad_length]], constant_values=self.pad_token_id)[0]
             
