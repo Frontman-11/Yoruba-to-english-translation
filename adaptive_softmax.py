@@ -52,8 +52,11 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         
     def _loss(self, labels, inp, reduction='auto'):
         head_labels = labels
+        print()
+        print(f'labels/head_labels: {labels}')
+        print(f'inp: {inp}')
         loss = tf.sparse.SparseTensor([[0, 0]], [0.], tf.cast(tf.shape(labels), tf.int64))
-
+        print(f'loss: {loss}')
         for i in range(self.cluster_num):
             mask = tf.logical_and(
                 tf.greater_equal(labels, self.cutoffs[i]),
@@ -82,8 +85,12 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
             loss, head_labels = tf.cond(
                 mask_any, compute_tail_loss, lambda: (loss, head_labels)
             )
+            print()
+            print(f'loss: {loss}')
+            print(f'head_labels: {head_labels}')
 
         head_logits = self.head_w(inp)
+        print(f'head_logits:{head_logits})
         head_loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
             labels=head_labels, logits=head_logits
         )
