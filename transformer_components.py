@@ -64,9 +64,9 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
         self.self_attn_layer = [
             tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads,
                                                key_dim=embed_size // self.num_heads,
-                                               dropout=self.dropout_rate) for _ in range(N)]
+                                               dropout=self.dropout_rate) for _ in range(self.N)]
         
-        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=tf.keras.activations.gelu) for _ in range(N)]
+        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=tf.keras.activations.gelu) for _ in range(self.N)]
         self.dense2 =  [tf.keras.layers.Dense(embed_size) for _ in range(self.N)]
         super().build(input_shape)
 
@@ -119,14 +119,14 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
         self.self_attn_layer = [
             tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads,
                                                key_dim=embed_size // self.num_heads,
-                                               dropout=self.dropout_rate) for _ in range(N)]
+                                               dropout=self.dropout_rate) for _ in range(self.N)]
         self.cross_attn_layer = [
             tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads,
                                                key_dim=embed_size // self.num_heads,
-                                               dropout=self.dropout_rate) for _ in range(N)]
+                                               dropout=self.dropout_rate) for _ in range(self.N)]
     
-        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=tf.keras.activations.gelu) for _ in range(N)]
-        self.dense2 = [tf.keras.layers.Dense(embed_size) for _ in range(N)]
+        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=tf.keras.activations.gelu) for _ in range(self.N)]
+        self.dense2 = [tf.keras.layers.Dense(embed_size) for _ in range(self.N)]
         super().build(input_shape)
 
     def get_config(self):
