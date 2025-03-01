@@ -104,14 +104,19 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         head_loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
             labels=head_labels, logits=head_logits
         )
+        print(f'\nAfter head_loss')
         loss = head_loss + tf.sparse.to_dense(loss)
+        print(f'\nAfter sparce (main) loss')
 
         # Input labels 0, are assumed to represent padding
         # and must be masked from the loss
         pad_mask = tf.math.not_equal(labels, 0)
+        print(f'\nAfter pad_mask')
+        
         pad_mask = tf.cast(pad_mask, loss.dtype)
+        print(f'\nAfter casted pad_mask')
         loss *= pad_mask
-
+        print(f'\nAfter final loss')
         return tf.reduce_mean(loss) if reduction == 'auto' else loss
         
 
