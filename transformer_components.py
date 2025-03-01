@@ -11,19 +11,7 @@ class PositionalEncoding(tf.keras.layers.Layer):
         
     def build(self, input_shape):
         _, seq_length, embed_size = input_shape
-        
         assert embed_size % 2 == 0, "embed_size must be even"
-        
-        p = tf.range(seq_length, dtype=self.dtype)
-        i = tf.range(embed_size // 2, dtype=self.dtype) * 2  
-        angle_rates = 1 / tf.pow(10_000.0, (tf.cast(i, dtype=self.dtype) / tf.cast(embed_size, dtype=self.dtype)))
-        
-        pos_encodings = tf.concat([
-            tf.sin(tf.tensordot(p, angle_rates, axes=0)),  # Apply sin to even indices
-            tf.cos(tf.tensordot(p, angle_rates, axes=0))   # Apply cos to odd indices
-        ], axis=-1)  # Shape: [max_seq_length, embed_size]
-        
-        self.pos_encodings = tf.expand_dims(pos_encodings, axis=0)
         super().build(input_shape)
 
     def get_config(self):
@@ -34,6 +22,17 @@ class PositionalEncoding(tf.keras.layers.Layer):
         return config
               
     def call(self, inputs):
+        seq_length = inputs[1]
+        p = tf.range(seq_length, dtype=self.dtype)
+        i = tf.range(embed_size // 2, dtype=self.dtype) * 2  
+        angle_rates = 1 / tf.pow(10_000.0, (tf.cast(i, dtype=self.dtype) / tf.cast(embed_size, dtype=self.dtype)))
+        
+        pos_encodings = tf.concat([
+            tf.sin(tf.tensordot(p, angle_rates, axes=0)),  # Apply sin to even indices
+            tf.cos(tf.tensordot(p, angle_rates, axes=0))   # Apply cos to odd indices
+        ], axis=-1)  # Shape: [max_seq_length, embed_size]
+        
+        self.pos_encodings = tf.expand_dims(pos_encodings, axis=0)
         batch_max_length = tf.shape(inputs)[1]
         return inputs + self.pos_encodings[:, :batch_max_length]
 
