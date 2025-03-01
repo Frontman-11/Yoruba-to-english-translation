@@ -2,7 +2,7 @@ import tensorflow as tf
 import sentencepiece as spm
 
 class FrontmanTokenizer(spm.SentencePieceProcessor):
-    def __init__(self, model_path, max_length, truncation=True, pad_token_id=0, **kwargs):
+    def __init__(self, model_path, max_length, truncation=False, pad_token_id=0, **kwargs):
         super().__init__(model_file=model_path, **kwargs)  # Initialize superclass properly
         self.max_length = max_length
         self.pad_token_id = pad_token_id
@@ -10,6 +10,11 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
     def encode(self, text, out_type='tf', exclude_token_ids=None, with_attention_mask=False, **kwargs):
         # Ensure text is a regular Python string, not a Tensor
+        if out_type == str:
+            pad_token_id = super().id_to_piece(self.pad_token_id)
+        else:
+            pad_token_id = self.pad_token_id
+            
         if isinstance(text, tf.Tensor):
             text = text.numpy().tolist()
             text = [txt.decode("utf-8") for txt in text]  # Convert Tensor -> NumPy -> String
@@ -33,19 +38,19 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
             # Convert to regular tensor
             try:
-                input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
+                input_ids = input_ids.to_tensor(default_value=pad_token_id)
 
                 if self.truncation:
                     input_ids = input_ids[:, :self.max_length]
                     pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[0])
-                    input_ids = tf.pad(input_ids, [[0, 0], [0, pad_length]], constant_values=self.pad_token_id)
+                    input_ids = tf.pad(input_ids, [[0, 0], [0, pad_length]], constant_values=pad_token_id)
 
             except AttributeError:
                 pass
                 if self.truncation:
                     input_ids = input_ids[:self.max_length]
                     pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[-1])
-                    input_ids = tf.pad(input_ids, [[0, pad_length]], constant_values=self.pad_token_id)
+                    input_ids = tf.pad(input_ids, [[0, pad_length]], constant_values=pad_token_id)
             
         else:
             input_ids = super().encode(text, out_type=out_type, **kwargs)  # Use superclass encode method
@@ -56,11 +61,11 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             try:
                 ids = []
                 for input_id in input_ids:
-                    input_id += [self.pad_token_id] * (self.max_length - len(input_id))
+                    input_id += [pad_token_id] * (self.max_length - len(input_id))
                     ids.append(input_id)
                 input_ids = ids
             except TypeError:
-                    input_ids += [self.pad_token_id] * (self.max_length - len(input_ids))
+                    input_ids += [pad_token_id] * (self.max_length - len(input_ids))
                 
 
             if self.truncation:
