@@ -22,7 +22,9 @@ class PositionalEncoding(tf.keras.layers.Layer):
         return config
               
     def call(self, inputs):
-        seq_length = inputs[1]
+        seq_length = tf.shape(inputs)[1]
+        embed_size = tf.shape(inputs)[-1]
+        
         p = tf.range(seq_length, dtype=self.dtype)
         i = tf.range(embed_size // 2, dtype=self.dtype) * 2  
         angle_rates = 1 / tf.pow(10_000.0, (tf.cast(i, dtype=self.dtype) / tf.cast(embed_size, dtype=self.dtype)))
