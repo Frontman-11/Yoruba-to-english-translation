@@ -60,19 +60,14 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         # ✅ Replaced with a Dense Tensor to store loss values
         loss = tf.zeros_like(labels, dtype=tf.float32)
         
-        print(f'\nAt head')
         for i in range(self.cluster_num):
             mask = tf.logical_and(
                 tf.greater_equal(labels, self.cutoffs[i]),
                 tf.less(labels, self.cutoffs[i + 1])
             )
-            
-            print(f'\n{i} in for loop')
             mask_any = tf.reduce_any(mask)  # Check if any True values exist in mask
         
             def compute_tail_loss():
-                print(f'\nIn Compute_tail_loss')
-                
                 # separate the cluster prob from label_prob to prevent underflow
                 # i.e. calculate softmax-loss on cluster prob independently of
                 # labels within that cluster
@@ -114,14 +109,11 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
             loss, head_labels = tf.cond(
                 mask_any, compute_tail_loss, lambda: (loss, head_labels)
             )
-            print(f'\nCompute_tail_loss called')
-        
+            
         head_logits = self.head_w(inp)
-        print(f'\n head_logits:{head_logits}')
         head_loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
             labels=head_labels, logits=head_logits
         )
-        print(f'\nAfter head_loss')
         
         # Original Sparse to Dense Conversion (No longer needed since `loss` is dense)
         # loss = head_loss + tf.sparse.to_dense(loss)
@@ -129,17 +121,12 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
         # ✅ `loss` is already dense, so just add it directly
         loss = head_loss + loss
         
-        print(f'\nAfter (main) loss')
-        
         # Input labels 0, are assumed to represent padding
         # and must be masked from the loss
         pad_mask = tf.math.not_equal(labels, 0)
-        print(f'\nAfter pad_mask')
         
         pad_mask = tf.cast(pad_mask, loss.dtype)
-        print(f'\nAfter casted pad_mask')
         loss *= pad_mask
-        print(f'\nAfter final loss')
         return tf.reduce_mean(loss) if reduction == 'auto' else loss
 
         
