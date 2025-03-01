@@ -8,7 +8,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         self.pad_token_id = pad_token_id
         self.truncation = truncation
 
-    def encode(self, text, out_type='tf', exclude_token_ids=None, with_attention_mask=True, **kwargs):
+    def encode(self, text, out_type='tf', exclude_token_ids=None, with_attention_mask=False, **kwargs):
         # Ensure text is a regular Python string, not a Tensor
         if isinstance(text, tf.Tensor):
             text = text.numpy().tolist()
@@ -53,11 +53,15 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             if exclude_token_ids:
                 input_ids = [token for token in input_ids if token not in exclude_token_ids]
 
-            ids = []
-            for input_id in input_ids:
-                input_id += [self.pad_token_id] * (self.max_length - len(input_id))
-                ids.append(input_id)
-            input_ids = ids
+            try:
+                ids = []
+                for input_id in input_ids:
+                    input_id += [self.pad_token_id] * (self.max_length - len(input_id))
+                    ids.append(input_id)
+                input_ids = ids
+            except TypeError:
+                    input_ids += [self.pad_token_id] * (self.max_length - len(input_ids))
+                
 
             if self.truncation:
                 input_ids = input_ids[:self.max_length]
