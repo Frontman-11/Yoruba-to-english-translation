@@ -31,8 +31,16 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
                 input_ids = tf.ragged.boolean_mask(input_ids, mask)
 
             # Convert to regular tensor
-            input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
-
+            try:
+                input_ids = input_ids.to_tensor(default_value=self.pad_token_id)
+            except AttributeError:
+                input_ids = [input_ids].to_tensor(default_value=self.pad_token_id)
+                # Apply truncation
+                if self.truncation:
+                    input_ids = input_ids[:, :self.max_length]
+                    pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[1])
+                    input_ids = tf.pad(input_ids, [[0, 0], [0, pad_length]], constant_values=self.pad_token_id)[0]
+            
             # Apply truncation
             if self.truncation:
                 input_ids = input_ids[:, :self.max_length]
