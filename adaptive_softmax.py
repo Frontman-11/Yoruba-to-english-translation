@@ -90,7 +90,7 @@ class AdaptiveSoftmax(tf.keras.layers.Layer):
             print(f'head_labels: {head_labels}')
 
         head_logits = self.head_w(inp)
-        print(f'head_logits:{head_logits})
+        print(f'head_logits:{head_logits}')
         head_loss = tf.nn.sparse_softmax_cross_entropy_with_logits(
             labels=head_labels, logits=head_logits
         )
