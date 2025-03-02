@@ -107,6 +107,7 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
         self.N = N
         self.n_units = n_units
         self.num_heads = num_heads
+        self.epsilon = 1e-4
         self.dropout_rate = dropout_rate
         
         self.layer_norm1 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
