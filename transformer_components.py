@@ -52,6 +52,7 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
         self.n_units = n_units
         self.num_heads = num_heads
         self.epsilon = 1e-4
+        self.activation = tf.keras.activations.gelu
         self.dropout_rate = dropout_rate
         
         self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(N)]
@@ -67,7 +68,7 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
                                                key_dim=embed_size // self.num_heads,
                                                dropout=self.dropout_rate) for _ in range(self.N)]
         
-        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation='tanh') for _ in range(self.N)]
+        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=self.activation) for _ in range(self.N)]
         self.dense2 =  [tf.keras.layers.Dense(embed_size) for _ in range(self.N)]
         super().build(input_shape)
 
@@ -108,6 +109,7 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
         self.n_units = n_units
         self.num_heads = num_heads
         self.epsilon = 1e-4
+        self.activation = tf.keras.activations.gelu
         self.dropout_rate = dropout_rate
         
         self.layer_norm1 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
@@ -127,7 +129,7 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
                                                key_dim=embed_size // self.num_heads,
                                                dropout=self.dropout_rate) for _ in range(self.N)]
     
-        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation='tanh') for _ in range(self.N)]
+        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=self.activation) for _ in range(self.N)]
         self.dense2 = [tf.keras.layers.Dense(embed_size) for _ in range(self.N)]
         super().build(input_shape)
 
