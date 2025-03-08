@@ -1,6 +1,7 @@
 # %% [code]
 import tensorflow as tf
 import sentencepiece as spm
+import time
 
 class FrontmanTokenizer(spm.SentencePieceProcessor):
     def __init__(self, model_path, max_length, truncation=False, pad_token_id=0, **kwargs):
@@ -21,8 +22,9 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             text = [txt.decode("utf-8") for txt in text]  # Convert Tensor -> NumPy -> String
     
         if out_type == 'tf':
+            start_time = time.time()
             input_ids = super().encode_as_ids(text)
-            print('I am here')
+            print(f'Time spent on encoding: {time.time() - start_time}')
             input_ids = tf.ragged.constant(input_ids, dtype=tf.int32)  
     
             # Exclude unwanted token IDs
@@ -31,6 +33,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
                 input_ids = tf.ragged.boolean_mask(input_ids, mask)
 
             # Convert to regular tensor
+            start_time = time.time()
             try:
                 input_ids = input_ids.to_tensor(default_value=pad_token_id)
 
@@ -45,6 +48,8 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
                     input_ids = input_ids[:self.max_length]
                     pad_length = tf.maximum(0, self.max_length - tf.shape(input_ids)[-1])
                     input_ids = tf.pad(input_ids, [[0, pad_length]], constant_values=pad_token_id)
+            print(f'Time spent on converting to regular tensor: {time.time() - start_time}')
+            
             
         else:
             if out_type == int:
