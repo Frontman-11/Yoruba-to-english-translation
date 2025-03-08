@@ -1,8 +1,3 @@
-# %% [code]
-import tensorflow as tf
-import sentencepiece as spm
-import time
-
 import time
 import numpy as np
 import tensorflow as tf
@@ -54,7 +49,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 def decode(self, input_ids, out_type=str, **kwargs):
     if isinstance(input_ids, tf.Tensor):
         input_ids = input_ids.numpy().tolist()
-    return super().decode(input_ids, out_type=out_type, **kwargs)  # Use superclass decode method
+    return super().decode(input_ids, out_type=out_type, **kwargs)
 
 
 # # Test Script
