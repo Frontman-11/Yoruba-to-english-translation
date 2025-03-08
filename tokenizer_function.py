@@ -21,6 +21,59 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             text = [txt.decode("utf-8") for txt in text]  # Decode bytes to string
 
         # ✅ Batch tokenization for speed
+        if isinstance(text, list):
+            input_ids = self.EncodeAsIds(text)  # Use batch processing for efficiency
+        else:
+            input_ids = [self.EncodeAsIds(text)]
+
+        print(f'Tokenization Time: {time.time() - start_time:.4f}s')
+
+        # ✅ Convert to NumPy array for fast operations (int type for better memory handling)
+        input_ids = np.array([seq[:self.max_length] for seq in input_ids], dtype=np.int32)
+
+        # ✅ Efficient Padding with NumPy Broadcasting
+        if self.padding:
+            padded_array = np.full((len(input_ids), self.max_length), self.pad_token_id, dtype=np.int32)
+            for i, seq in enumerate(input_ids):
+                padded_array[i, :len(seq)] = seq  # Fill actual token values
+            input_ids = padded_array
+
+        # ✅ Convert to Tensor if needed
+        if out_type == 'tf':
+            input_ids = tf.convert_to_tensor(input_ids, dtype=tf.int32)
+
+        # ✅ Compute attention mask if requested
+        if with_attention_mask:
+            attention_mask = (input_ids != self.pad_token_id).astype(np.int32) if isinstance(input_ids, np.ndarray) \
+                else tf.cast(tf.math.not_equal(input_ids, self.pad_token_id), dtype=tf.int32)
+            return {'input_ids': input_ids, 'attention_mask': attention_mask}
+
+        return input_ids
+
+    def decode(self, input_ids, out_type=str, **kwargs):
+        if isinstance(input_ids, tf.Tensor):
+            input_ids = input_ids.numpy().tolist()
+        return super().decode(input_ids, out_type=out_type, **kwargs)
+        
+
+class _FrontmanTokenizer(spm.SentencePieceProcessor):
+    def __init__(self, model_path, max_length, truncation=False, padding=False, pad_token_id=0, **kwargs):
+        super().__init__(model_file=model_path, **kwargs)
+        self.max_length = max_length
+        self.pad_token_id = pad_token_id
+        self.truncation = truncation
+        self.padding = padding  # Allow explicit padding control
+
+    def encode(self, text, out_type='tf', with_attention_mask=False, **kwargs):
+        """Tokenizes input text and returns token IDs, with optional padding, truncation, and attention mask."""
+        start_time = time.time()
+
+        # ✅ Convert TensorFlow tensor input to Python list (if needed)
+        if isinstance(text, tf.Tensor):
+            text = text.numpy().tolist()
+            text = [txt.decode("utf-8") for txt in text]  # Decode bytes to string
+
+        # ✅ Batch tokenization for speed
         input_ids = self.EncodeAsIds(text) if isinstance(text, list) else [self.EncodeAsIds(text)]
         print(f'Tokenization Time: {time.time() - start_time:.4f}s')
 
