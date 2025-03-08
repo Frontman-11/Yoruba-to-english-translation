@@ -10,7 +10,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         self.pad_token_id = pad_token_id
         self.truncation = truncation
 
-    def encode(self, text, out_type='tf', exclude_token_ids=None, with_attention_mask=False, **kwargs):
+    def encode(self, text, out_type='tf', with_attention_mask=False, **kwargs):
         # Ensure text is a regular Python string, not a Tensor
         if out_type == str:
             pad_token_id = super().id_to_piece(self.pad_token_id)
@@ -24,13 +24,8 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         if out_type == 'tf':
             start_time = time.time()
             input_ids = super().encode_as_ids(text)
-            print(f'Time spent on encoding: {time.time() - start_time}')
             input_ids = tf.ragged.constant(input_ids, dtype=tf.int32)  
-    
-            # Exclude unwanted token IDs
-            if exclude_token_ids:
-                mask = ~tf.reduce_any(tf.equal(input_ids[..., None], exclude_token_ids), axis=-1)
-                input_ids = tf.ragged.boolean_mask(input_ids, mask)
+            print(f'Time spent on encoding: {time.time() - start_time}')
 
             # Convert to regular tensor
             start_time = time.time()
@@ -57,9 +52,6 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             else:
                 input_ids = super().encode(text, out_type=out_type, **kwargs)  # Use superclass encode method
 
-            if exclude_token_ids:
-                input_ids = [token for token in input_ids if token not in exclude_token_ids]
-
             try:
                 ids = []
                 for input_id in input_ids:
@@ -69,7 +61,6 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             except TypeError:
                     input_ids += [pad_token_id] * (self.max_length - len(input_ids))
                 
-
             if self.truncation:
                 input_ids = input_ids[:self.max_length]
 
