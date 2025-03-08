@@ -4,6 +4,14 @@ import tensorflow as tf
 import sentencepiece as spm
 from multiprocessing import Pool
 
+class FrontmanTokenizer:
+    def encode(self, text):
+        if self.num_workers > 1:
+            with Pool(self.num_workers) as p:
+                input_ids = p.starmap(truncate_sequence, [(seq, self.max_length) for seq in input_ids])
+        else:
+            input_ids = [np.array(seq[:self.max_length]) for seq in input_ids]
+
 class FrontmanTokenizer(spm.SentencePieceProcessor):
     def __init__(self, model_path, max_length, truncation=False, padding=False, pad_token_id=0, num_workers=None, **kwargs):
         super().__init__(model_file=model_path, **kwargs)
@@ -29,9 +37,12 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         # ✅ Convert to NumPy array for fast vectorized operations
         input_ids = np.array([np.array(seq[:self.max_length]) for seq in input_ids], dtype=object)
         
+        def truncate_sequence(seq, max_length):
+            return np.array(seq[:max_length])
+            
         if self.num_workers > 1:
             with Pool(self.num_workers) as p:
-                input_ids = p.map(lambda seq: np.array(seq[:self.max_length]), input_ids)
+                input_ids = p.starmap(truncate_sequence, [(seq, self.max_length) for seq in input_ids])
         else:
             input_ids = [np.array(seq[:self.max_length]) for seq in input_ids]
 
