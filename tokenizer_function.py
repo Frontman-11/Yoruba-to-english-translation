@@ -1,3 +1,4 @@
+# %% [code]
 import tensorflow as tf
 import sentencepiece as spm
 
@@ -20,7 +21,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             text = [txt.decode("utf-8") for txt in text]  # Convert Tensor -> NumPy -> String
     
         if out_type == 'tf':
-            input_ids = super().encode(text, out_type=int, **kwargs)  # Call SentencePiece encode
+            input_ids = super().encode_as_ids(text)  # Call SentencePiece encode
     
             input_ids = tf.ragged.constant(input_ids, dtype=tf.int32)  
     
@@ -53,7 +54,10 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
                     input_ids = tf.pad(input_ids, [[0, pad_length]], constant_values=pad_token_id)
             
         else:
-            input_ids = super().encode(text, out_type=out_type, **kwargs)  # Use superclass encode method
+            if out_type == int:
+                input_ids = super().encode_as_ids(text)  # Use superclass encode method
+            else:
+                input_ids = super().encode(text, out_type=out_type, **kwargs)  # Use superclass encode method
 
             if exclude_token_ids:
                 input_ids = [token for token in input_ids if token not in exclude_token_ids]
