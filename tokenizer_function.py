@@ -2,9 +2,10 @@ import time
 import numpy as np
 import tensorflow as tf
 import sentencepiece as spm
+from multiprocessing import Pool
 
 class FrontmanTokenizer(spm.SentencePieceProcessor):
-    def __init__(self, model_path, max_length, truncation=False, padding=False, pad_token_id=0, **kwargs):
+    def __init__(self, model_path, max_length, truncation=False, padding=False, pad_token_id=0, num_workers=None, **kwargs):
         super().__init__(model_file=model_path, **kwargs)
         self.max_length = max_length
         self.pad_token_id = pad_token_id
@@ -26,6 +27,12 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
         # ✅ Convert to NumPy array for fast vectorized operations
         input_ids = np.array([np.array(seq[:self.max_length]) for seq in input_ids], dtype=object)
+        
+        if num_workers > 1:
+            with Pool(num_workers) as p:
+                input_ids = p.map(lambda seq: np.array(seq[:self.max_length]), input_ids)
+        else:
+            input_ids = [np.array(seq[:self.max_length]) for seq in input_ids]
 
         # ✅ Efficient padding (if needed)
         if self.padding:
