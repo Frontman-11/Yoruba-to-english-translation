@@ -21,17 +21,10 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             text = [txt.decode("utf-8") for txt in text]  # Convert Tensor -> NumPy -> String
     
         if out_type == 'tf':
-            input_ids = super().encode_as_ids(text)  # Call SentencePiece encode
-    
+            input_ids = super().encode_as_ids(text)
+            print('I am here')
             input_ids = tf.ragged.constant(input_ids, dtype=tf.int32)  
     
-            # (Rest of your method remains unchanged...)
-
-            # def encode(self, text, out_type='tf', exclude_token_ids=None, with_attention_mask=True, **kwargs):
-            #     if out_type == 'tf':
-            #         input_ids = super().encode(text, out_type=int, **kwargs)  # Directly use superclass method
-            #         input_ids = tf.ragged.constant(input_ids, dtype=tf.int32)            
-
             # Exclude unwanted token IDs
             if exclude_token_ids:
                 mask = ~tf.reduce_any(tf.equal(input_ids[..., None], exclude_token_ids), axis=-1)
@@ -55,7 +48,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             
         else:
             if out_type == int:
-                input_ids = super().encode_as_ids(text)  # Use superclass encode method
+                input_ids = super().encode_as_ids(text)
             else:
                 input_ids = super().encode(text, out_type=out_type, **kwargs)  # Use superclass encode method
 
