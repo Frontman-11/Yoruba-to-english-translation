@@ -11,6 +11,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         self.pad_token_id = pad_token_id
         self.truncation = truncation
         self.padding = padding  # Allow explicit padding control
+        self.num_workers = num_workers
 
     def encode(self, text, out_type='tf', with_attention_mask=False, **kwargs):
         """Tokenizes input text and returns token IDs, with optional padding, truncation, and attention mask."""
@@ -28,8 +29,8 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         # ✅ Convert to NumPy array for fast vectorized operations
         input_ids = np.array([np.array(seq[:self.max_length]) for seq in input_ids], dtype=object)
         
-        if num_workers > 1:
-            with Pool(num_workers) as p:
+        if self.num_workers > 1:
+            with Pool(self.num_workers) as p:
                 input_ids = p.map(lambda seq: np.array(seq[:self.max_length]), input_ids)
         else:
             input_ids = [np.array(seq[:self.max_length]) for seq in input_ids]
