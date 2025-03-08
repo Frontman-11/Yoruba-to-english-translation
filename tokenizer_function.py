@@ -3,14 +3,14 @@ import numpy as np
 import tensorflow as tf
 import sentencepiece as spm
 from multiprocessing import Pool
+from joblib import Parallel, delayed
 
-class FrontmanTokenizer:
-    def encode(self, text):
-        if self.num_workers > 1:
-            with Pool(self.num_workers) as p:
-                input_ids = p.starmap(truncate_sequence, [(seq, self.max_length) for seq in input_ids])
-        else:
-            input_ids = [np.array(seq[:self.max_length]) for seq in input_ids]
+
+def truncate_sequence(seq, max_length):
+    return np.array(seq[:max_length])
+
+def pad_sequence(seq, max_length, pad_token_id):
+    return np.pad(seq, (0, max_length - len(seq)), constant_values=pad_token_id)
 
 class FrontmanTokenizer(spm.SentencePieceProcessor):
     def __init__(self, model_path, max_length, truncation=False, padding=False, pad_token_id=0, num_workers=None, **kwargs):
@@ -36,21 +36,22 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
         # ✅ Convert to NumPy array for fast vectorized operations
         input_ids = np.array([np.array(seq[:self.max_length]) for seq in input_ids], dtype=object)
-        
-        def truncate_sequence(seq, max_length):
-            return np.array(seq[:max_length])
             
         if self.num_workers > 1:
-            with Pool(self.num_workers) as p:
-                input_ids = p.starmap(truncate_sequence, [(seq, self.max_length) for seq in input_ids])
+            input_ids = Parallel(n_jobs=self.num_workers)(delayed(truncate_sequence)(seq, self.max_length) for seq in input_ids)
         else:
             input_ids = [np.array(seq[:self.max_length]) for seq in input_ids]
 
         # ✅ Efficient padding (if needed)
         if self.padding:
-            pad_widths = [(0, self.max_length - len(seq)) for seq in input_ids]  # Compute padding lengths
-            input_ids = np.array([np.pad(seq, pad_width, constant_values=self.pad_token_id) 
-                                  for seq, pad_width in zip(input_ids, pad_widths)], dtype=np.int32)
+            if self.num_workers > 1:
+                input_ids = Parallel(n_jobs=self.num_workers)(
+                    delayed(pad_sequence)(seq, self.max_length, self.pad_token_id) for seq in input_ids
+                )
+            else:
+                input_ids = [np.pad(seq, (0, self.max_length - len(seq)), constant_values=self.pad_token_id) for seq in input_ids]
+        
+            input_ids = np.array(input_ids, dtype=np.int32)  # Convert to NumPy array after padding
 
         # ✅ Convert to Tensor if needed
         if out_type == 'tf':
