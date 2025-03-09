@@ -28,7 +28,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         if isinstance(text, list):
             input_ids = super().encode_as_ds(text, **kwargs) 
         else:
-            input_ids = [super().encode_as_ids(text), **kwargs]
+            input_ids = [super().encode_as_ids(text, **kwargs)]
 
         # ✅ First, truncate sequences before converting to NumPy
         if truncation:
