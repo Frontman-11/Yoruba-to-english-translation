@@ -26,7 +26,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
         # ✅ Batch tokenization for speed
         if isinstance(text, list):
-            input_ids = super().encode_as_ds(text, **kwargs) 
+            input_ids = super().encode_as_ids(text, **kwargs) 
         else:
             input_ids = [super().encode_as_ids(text, **kwargs)]
 
