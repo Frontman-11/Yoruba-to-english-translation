@@ -92,7 +92,8 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
             Z = self.dense1[i](Z)
             Z = self.dense2[i](Z)
             Z = self.dropout[i](Z, training=training)
-            Z = self.layer_norm2[i](Z + skip)
+            Z = skip + Z 
+            Z = self.layer_norm2[i](Z)
         return Z
 
     def compute_mask(self, inputs, mask=None):
@@ -111,7 +112,8 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
         self.epsilon = 1e-4
         self.activation =activation
         self.dropout_rate = dropout_rate
-        
+
+        self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(N)]
         self.layer_norm1 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
         self.layer_norm2 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
         self.layer_norm3 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
@@ -155,7 +157,9 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
             skip = Z
             Z = self.dense1[i](Z)
             Z = self.dense2[i](Z)
-            Z = self.layer_norm3[i](Z + skip)
+            Z = self.dropout[i](Z, training=training)
+            Z = skip + Z 
+            Z = self.layer_norm3[i](Z)
         return Z
 
     def compute_mask(self, inputs, mask=None):
