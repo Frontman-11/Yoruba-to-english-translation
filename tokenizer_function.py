@@ -5,7 +5,6 @@ import sentencepiece as spm
 class FrontmanTokenizer(spm.SentencePieceProcessor):
     def __init__(self,
                  model_path, 
-                 max_length,
                  **kwargs):
         super().__init__(model_file=model_path, **kwargs)
         
