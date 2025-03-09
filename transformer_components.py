@@ -46,13 +46,13 @@ class PositionalEncoding(tf.keras.layers.Layer):
 # ## Decoder (Multi-Attention Head)
 
 class EncoderTransformerBlock(tf.keras.layers.Layer):
-    def __init__(self, n_units=128, num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):
+    def __init__(self, n_units=128, activation='relu', num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):
         super().__init__(dtype=dtype, **kwargs)
         self.N = N
         self.n_units = n_units
         self.num_heads = num_heads
         self.epsilon = 1e-4
-        self.activation = tf.keras.activations.gelu
+        self.activation = activation 
         self.dropout_rate = dropout_rate
         
         self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(N)]
@@ -68,8 +68,8 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
                                                key_dim=embed_size // self.num_heads,
                                                dropout=self.dropout_rate) for _ in range(self.N)]
         
-        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=self.activation) for _ in range(self.N)]
-        self.dense2 =  [tf.keras.layers.Dense(embed_size) for _ in range(self.N)]
+        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=self.activation, kernel_initializer="he_normal") for _ in range(self.N)]
+        self.dense2 =  [tf.keras.layers.Dense(embed_size, kernel_initializer="glorot_normal") for _ in range(self.N)]
         super().build(input_shape)
 
     def get_config(self):
@@ -103,13 +103,13 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
 # ## Encoder (Multi-Attention Head)
 
 class DecoderTransformerBlock(tf.keras.layers.Layer):
-    def __init__(self, n_units=128, num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):
+    def __init__(self, n_units=128, activation='relu', num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):
         super().__init__(dtype=dtype, **kwargs)
         self.N = N
         self.n_units = n_units
         self.num_heads = num_heads
         self.epsilon = 1e-4
-        self.activation = tf.keras.activations.gelu
+        self.activation =activation
         self.dropout_rate = dropout_rate
         
         self.layer_norm1 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
@@ -129,8 +129,8 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
                                                key_dim=embed_size // self.num_heads,
                                                dropout=self.dropout_rate) for _ in range(self.N)]
     
-        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=self.activation) for _ in range(self.N)]
-        self.dense2 = [tf.keras.layers.Dense(embed_size) for _ in range(self.N)]
+        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=self.activation, kernel_initializer="he_normal") for _ in range(self.N)]
+        self.dense2 = [tf.keras.layers.Dense(embed_size, kernel_initializer="glorot_normal") for _ in range(self.N)]
         super().build(input_shape)
 
     def get_config(self):
