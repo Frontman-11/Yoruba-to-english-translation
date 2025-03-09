@@ -8,7 +8,7 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
                  **kwargs):
         super().__init__(model_file=model_path, **kwargs)
         
-    def encode(self, 
+    def special_encode(self, 
                text,
                out_type='tf',
                with_attention_mask=False,
@@ -25,12 +25,8 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
             text = [txt.decode("utf-8") for txt in text]  # Decode bytes to string
 
         # ✅ Batch tokenization for speed
-        if isinstance(text, list) and out_type != str:
+        if isinstance(text, list):
             input_ids = super().EncodeAsIds(text) 
-        elif isinstance(text, list) and out_type == str:
-            input_ids = super().encode(text, out_type=out_type)
-        elif out_type == str:
-            input_ids = [super().encode(text, out_type=out_type)]
         else:
             input_ids = [super().EncodeAsIds(text)]
 
