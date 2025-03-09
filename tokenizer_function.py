@@ -15,8 +15,8 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
                max_length=None, 
                pad_token_id=0,
                padding=False,
-               truncation=False,
-               **kwargs):
+               truncation=False
+                      ):
         """Tokenizes input text and returns token IDs, with optional padding, truncation, and attention mask."""
 
         # ✅ Convert TensorFlow tensor input to Python list (if needed)
@@ -26,9 +26,9 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
         # ✅ Batch tokenization for speed
         if isinstance(text, list):
-            input_ids = super().EncodeAsIds(text, **kwargs) 
+            input_ids = super().encode_as_ids(text, add_bos=False, add_eos=False) 
         else:
-            input_ids = [super().EncodeAsIds(text, **kwargs)]
+            input_ids = [super().encode_as_ids(text, add_bos=False, add_eos=False)]
 
         # ✅ First, truncate sequences before converting to NumPy
         if truncation:
