@@ -15,7 +15,9 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
                max_length=None, 
                pad_token_id=0,
                padding=False,
-               truncation=False
+               truncation=False,
+               add_bos=False,
+               add_eos=False
                       ):
         """Tokenizes input text and returns token IDs, with optional padding, truncation, and attention mask."""
 
