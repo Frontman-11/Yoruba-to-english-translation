@@ -28,15 +28,16 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
         print(f'Tokenization Time: {time.time() - start_time:.4f}s')
 
-        # ✅ Convert to NumPy array for fast operations (int type for better memory handling)
-        input_ids = np.array([seq[:self.max_length] for seq in input_ids], dtype=np.int32)
-
+        # ✅ First, truncate sequences before converting to NumPy
+        input_ids = [seq[:self.max_length] for seq in input_ids]  
+        
         # ✅ Efficient Padding with NumPy Broadcasting
         if self.padding:
-            padded_array = np.full((len(input_ids), self.max_length), self.pad_token_id, dtype=np.int32)
+            padded_array = np.full((len(input_ids), self.max_length), self.pad_token_id, dtype=np.int32)  # Create a full array with padding
             for i, seq in enumerate(input_ids):
-                padded_array[i, :len(seq)] = seq  # Fill actual token values
-            input_ids = padded_array
+                padded_array[i, :len(seq)] = seq  # Copy actual sequences
+            input_ids = padded_array  # Assign back
+
 
         # ✅ Convert to Tensor if needed
         if out_type == 'tf':
