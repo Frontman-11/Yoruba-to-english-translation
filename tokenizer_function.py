@@ -28,9 +28,9 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
 
         # ✅ Batch tokenization for speed
         if isinstance(text, list):
-            input_ids = super().encode_as_ids(text, add_bos=False, add_eos=False) 
+            input_ids = super().encode_as_ids(text, add_bos=add_bos, add_eos=add_eos) 
         else:
-            input_ids = [super().encode_as_ids(text, add_bos=False, add_eos=False)]
+            input_ids = [super().encode_as_ids(text, add_bos=add_bos, add_eos=add_eos)]
 
         # ✅ First, truncate sequences before converting to NumPy
         if truncation:
