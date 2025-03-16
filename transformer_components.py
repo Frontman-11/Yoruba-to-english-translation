@@ -15,11 +15,7 @@ class PositionalEncoding(tf.keras.layers.Layer):
         super().build(input_shape)
 
     def get_config(self):
-        config = super().get_config()
-        config.update({
-            "pos_encodings": self.pos_encodings,
-        })
-        return config
+        return super().get_config() 
               
     def call(self, inputs):
         seq_length = tf.shape(inputs)[1]
@@ -46,18 +42,14 @@ class PositionalEncoding(tf.keras.layers.Layer):
 # ## Decoder (Multi-Attention Head)
 
 class EncoderTransformerBlock(tf.keras.layers.Layer):
-    def __init__(self, n_units=128, activation='relu', num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):
+    def __init__(self, n_units=128, activation='relu', num_heads=8, dropout_rate=0.0, epsilon=1e-4, N=2, dtype=tf.float32, **kwargs):
         super().__init__(dtype=dtype, **kwargs)
         self.N = N
         self.n_units = n_units
         self.num_heads = num_heads
-        self.epsilon = 1e-4
+        self.epsilon = epsilon
         self.activation = activation 
         self.dropout_rate = dropout_rate
-        
-        self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(N)]
-        self.layer_norm1 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
-        self.layer_norm2 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
         self.supports_masking = True 
 
     def build(self, input_shape):
@@ -70,15 +62,22 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
         
         self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=self.activation, kernel_initializer="he_normal") for _ in range(self.N)]
         self.dense2 =  [tf.keras.layers.Dense(embed_size, kernel_initializer="glorot_normal") for _ in range(self.N)]
+
+        self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(self.N)]
+        self.layer_norm1 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(self.N)]
+        self.layer_norm2 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(self.N)]
+        
         super().build(input_shape)
 
     def get_config(self):
         config = super().get_config()
         config.update({
             "n_units": self.n_units,
+            'activation': self.activation,
             "num_heads": self.num_heads,
             "dropout_rate": self.dropout_rate,
-            "N": self.N
+            "N": self.N,
+            "epsilon": self.epsilon
         })
         return config
 
@@ -104,19 +103,14 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
 # ## Encoder (Multi-Attention Head)
 
 class DecoderTransformerBlock(tf.keras.layers.Layer):
-    def __init__(self, n_units=128, activation='relu', num_heads=8, dropout_rate=0.0, N=2, dtype=tf.float32, **kwargs):
+    def __init__(self, n_units=128, activation='relu', num_heads=8, dropout_rate=0.0, epsilon=1e-4, N=2, dtype=tf.float32, **kwargs):
         super().__init__(dtype=dtype, **kwargs)
         self.N = N
         self.n_units = n_units
         self.num_heads = num_heads
-        self.epsilon = 1e-4
+        self.epsilon = epsilon
         self.activation =activation
         self.dropout_rate = dropout_rate
-
-        self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(N)]
-        self.layer_norm1 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
-        self.layer_norm2 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
-        self.layer_norm3 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(N)]
         self.supports_masking = True
 
     def build(self, input_shape):
@@ -133,15 +127,22 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
     
         self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=self.activation, kernel_initializer="he_normal") for _ in range(self.N)]
         self.dense2 = [tf.keras.layers.Dense(embed_size, kernel_initializer="glorot_normal") for _ in range(self.N)]
+
+        self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(self.N)]
+        self.layer_norm1 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(self.N)]
+        self.layer_norm2 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(self.N)]
+        self.layer_norm3 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(self.N)]
         super().build(input_shape)
 
     def get_config(self):
         config = super().get_config()
         config.update({
             "n_units": self.n_units,
+            'activation': self.activation,
             "num_heads": self.num_heads,
             "dropout_rate": self.dropout_rate,
-            "N": self.N
+            "N": self.N,
+            "epsilon": self.epsilon
         })
         return config
         
