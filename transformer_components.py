@@ -54,18 +54,26 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
 
     def build(self, input_shape):
         _, _, embed_size = input_shape
-
-        self.self_attn_layer = [
-            tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads,
-                                               key_dim=embed_size // self.num_heads,
-                                               dropout=self.dropout_rate) for _ in range(self.N)]
         
-        self.dense1 = [tf.keras.layers.Dense(self.n_units, activation=self.activation, kernel_initializer="he_normal") for _ in range(self.N)]
-        self.dense2 =  [tf.keras.layers.Dense(embed_size, kernel_initializer="glorot_normal") for _ in range(self.N)]
+        for i in range(self.N):
+            layer = tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads, key_dim=embed_size // self.num_heads,
+                                               dropout=self.dropout_rate, name=f'encoder_attention{i}')
+            setattr(self, f"encoder_attention_{i}", layer)
 
-        self.dropout = [tf.keras.layers.Dropout(self.dropout_rate) for _ in range(self.N)]
-        self.layer_norm1 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(self.N)]
-        self.layer_norm2 = [tf.keras.layers.LayerNormalization(epsilon=self.epsilon) for _ in range(self.N)]
+            layer = tf.keras.layers.Dense(self.n_units, activation=self.activation, kernel_initializer="he_normal", name=f'encoder_dense1_{i}')
+            setattr(self, f"encoder_dense1_{i}", layer)
+
+            layer = tf.keras.layers.Dense(embed_size, kernel_initializer="glorot_normal", name=f'encoder_dense2_{i}')
+            setattr(self, f"encoder_dense2_{i}", layer)
+        
+            layer = tf.keras.layers.Dropout(self.dropout_rate, name=f'encoder_dropout_{i}')
+            setattr(self, f"encoder_dropout_{i}", layer)
+            
+            layer = tf.keras.layers.LayerNormalization(epsilon=self.epsilon, name=f'encoder_layer_norm1_{i}')
+            setattr(self, f"encoder_layer_norm1_{i}", layer)
+            
+            layer = tf.keras.layers.LayerNormalization(epsilon=self.epsilon, name=f'encoder_layer_norm2_{i}')
+            setattr(self, f"encoder_layer_norm2_{i}", layer)
         
         super().build(input_shape)
 
@@ -85,14 +93,14 @@ class EncoderTransformerBlock(tf.keras.layers.Layer):
         Z = inputs
         for i in range(self.N):
             skip = Z
-            Z = self.self_attn_layer[i](query=Z, key=Z, value=Z, attention_mask=attention_mask, training=training)
-            Z = self.layer_norm1[i](Z + skip)
+            Z = getattr(self, f'encoder_attention_{i}')(query=Z, key=Z, value=Z, attention_mask=attention_mask, training=training)
+            Z = getattr(self, f'encoder_layer_norm1_{i}')(Z + skip)
             skip = Z
-            Z = self.dense1[i](Z)
-            Z = self.dense2[i](Z)
-            Z = self.dropout[i](Z, training=training)
-            Z = skip + Z 
-            Z = self.layer_norm2[i](Z)
+            Z = getattr(self, f'encoder_dense1_{i}')(Z)
+            Z = getattr(self, f'encoder_dense2_{i}')(Z)
+            Z = getattr(self, f'encoder_dropout_{i}')(Z, training=training)
+            Z = Z + skip 
+            Z = getattr(self, f'encoder_layer_norm2_{i}')(Z)
         return Z
 
     def compute_mask(self, inputs, mask=None):
