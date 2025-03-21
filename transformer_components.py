@@ -129,7 +129,7 @@ class DecoderTransformerBlock(tf.keras.layers.Layer):
                                                dropout=self.dropout_rate, name=f'decoder_attention_{i}')
             setattr(self, f"decoder_attention_{i}", layer)
 
-            layer = ttf.keras.layers.MultiHeadAttention(num_heads=self.num_heads, key_dim=embed_size // self.num_heads,
+            layer = tf.keras.layers.MultiHeadAttention(num_heads=self.num_heads, key_dim=embed_size // self.num_heads,
                                                dropout=self.dropout_rate, name=f'decoder_cross_attention_{i}')
             setattr(self, f"decoder_cross_attention_{i}", layer)
             
