@@ -32,7 +32,7 @@ class PositionalEncoding(tf.keras.layers.Layer):
         
         self.pos_encodings = tf.expand_dims(pos_encodings, axis=0)
         batch_max_length = tf.shape(inputs)[1]
-        return inputs + self.pos_encodings[:, :batch_max_length]
+        return self.pos_encodings[:, :batch_max_length]
 
     def compute_mask(self, inputs, mask=None):
         return mask
