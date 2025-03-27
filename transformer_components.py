@@ -1,38 +1,36 @@
 import tensorflow as tf
 
-
 # ## Creating Positional Encoding
-
 class PositionalEncoding(tf.keras.layers.Layer):
     def __init__(self, dtype=tf.float32, **kwargs):
         super().__init__(dtype=dtype, **kwargs)
-        self.pos_encodings = None
         self.supports_masking = True
+        self.pos_encodings = None
         
     def build(self, input_shape):
         _, seq_length, embed_size = input_shape
-        assert embed_size % 2 == 0, "embed_size must be even"
-        super().build(input_shape)
+        assert embed_size % 2 == 0, "Embedding size must be even"
 
-    def get_config(self):
-        return super().get_config() 
-              
-    def call(self, inputs):
-        seq_length = tf.shape(inputs)[1]
-        embed_size = tf.shape(inputs)[-1]
-        
         p = tf.range(seq_length, dtype=self.dtype)
         i = tf.range(embed_size // 2, dtype=self.dtype) * 2  
         angle_rates = 1 / tf.pow(10_000.0, (tf.cast(i, dtype=self.dtype) / tf.cast(embed_size, dtype=self.dtype)))
-        
-        pos_encodings = tf.concat([
-            tf.sin(tf.tensordot(p, angle_rates, axes=0)),  # Apply sin to even indices
-            tf.cos(tf.tensordot(p, angle_rates, axes=0))   # Apply cos to odd indices
-        ], axis=-1)  # Shape: [max_seq_length, embed_size]
-        
-        self.pos_encodings = tf.expand_dims(pos_encodings, axis=0)
-        batch_max_length = tf.shape(inputs)[1]
-        return self.pos_encodings[:, :batch_max_length]
+        angle_rads = tf.tensordot(p, angle_rates, axes=0)  # (seq_len, embed_size/2)
+
+        # Apply sin to even indices, cos to odd indices
+        pos_encodings = tf.stack([tf.sin(angle_rads), tf.cos(angle_rads)], axis=-1)
+        pos_encodings = tf.reshape(pos_encodings, (seq_length, embed_size))  # Reshape to (seq_len, embed_size)
+
+        # Store as a non-trainable weight
+        self.pos_encodings = self.add_weight(
+            name="positional_encoding",
+            shape=pos_encodings.shape,
+            initializer=tf.constant_initializer(pos_encodings.numpy()),  
+            trainable=False
+        )
+        super().build(input_shape)
+
+    def call(self, inputs):
+        return inputs + self.pos_encodings  
 
     def compute_mask(self, inputs, mask=None):
         return mask
