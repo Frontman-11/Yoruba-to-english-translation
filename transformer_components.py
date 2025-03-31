@@ -35,8 +35,8 @@ class PositionalEncoding(tf.keras.layers.Layer):
     def compute_mask(self, inputs, mask=None):
         return mask
 
-    def compute_output_shape(self, input_shape):
-        return input_shape
+    # def compute_output_shape(self, input_shape):
+    #     return input_shape
 
 
 
