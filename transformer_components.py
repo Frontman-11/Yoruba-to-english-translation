@@ -30,8 +30,7 @@ class PositionalEncoding(tf.keras.layers.Layer):
         super().build(input_shape)
 
     def call(self, inputs):
-        out = inputs + self.pos_encodings  
-        return out
+        return inputs + self.pos_encodings
         
     def compute_mask(self, inputs, mask=None):
         return mask
