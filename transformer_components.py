@@ -24,7 +24,7 @@ class PositionalEncoding(tf.keras.layers.Layer):
         self.pos_encodings = self.add_weight(
             name="positional_encoding",
             shape=pos_encodings.shape,
-            initializer=tf.constant_initializer(pos_encodings.numpy()),  
+            initializer=tf.constant_initializer(pos_encodings),  
             trainable=False
         )
         super().build(input_shape)
