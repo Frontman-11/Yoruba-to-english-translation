@@ -1,3 +1,8 @@
+import keras
+import numpy as np
+import tensorflow as tf
+
+
 def positional_encoding(length, depth):
     half_depth = depth / 2
     
