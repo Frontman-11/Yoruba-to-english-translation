@@ -1,3 +1,8 @@
+import keras
+import pandas as pd
+import tensorflow as tf
+
+
 def read_file(filepath, delimiter='\t'):
     '''Returns pandas dataframe with Capitalized column names and stripped text.
     Drops nan rows if any, drops duplicates. Returns concatinated dataframe if 
