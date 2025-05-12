@@ -1,3 +1,36 @@
+def read_file(filepath, delimiter='\t'):
+    '''Returns pandas dataframe with Capitalized column names and stripped text.
+    Drops nan rows if any, drops duplicates. Returns concatinated dataframe if 
+    filepath is a list, otherwise returns dataframe for filepath'''
+    
+    if isinstance(filepath, list):
+        df = pd.DataFrame()
+        for path in filepath:
+            a = pd.read_csv(path, delimiter=delimiter)
+            a.columns = a.columns.str.capitalize()
+            
+            # Strip trailing and leading spaces from all string values
+            a = a.map(lambda x: x.strip() if isinstance(x, str) else x)
+            
+            df = pd.concat([df, a], axis=0, ignore_index=True)
+            
+        df.dropna(how='any', inplace=True)
+        df.drop_duplicates(inplace=True)
+        
+        return df
+    
+    else:
+        df = pd.read_csv(filepath, delimiter=delimiter)
+        df.dropna(how='any', inplace=True)
+        df.columns = df.columns.str.capitalize()
+        
+        # Strip trailing and leading spaces from all string values
+        df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
+        df.drop_duplicates(inplace=True)
+        
+        return df
+        
+
 @keras.saving.register_keras_serializable()
 class CustomSchedule(tf.keras.optimizers.schedules.LearningRateSchedule):
     def __init__(self, d_model, warmup_steps=4000):
