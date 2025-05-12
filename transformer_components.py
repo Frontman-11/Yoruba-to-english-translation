@@ -140,7 +140,7 @@ class EncoderLayer(tf.keras.layers.Layer):
         
         self.glob_self_attn = GlobalSelfAttention(
             num_heads=num_heads,
-            key_dim=d_model//num_heads,
+            key_dim=d_model,
             dropout=dropout_rate)
         
         self.ffn = FeedForward(d_model, d_ffn)
@@ -190,12 +190,12 @@ class DecoderLayer(tf.keras.layers.Layer):
         
         self.causal_self_attn = CausalSelfAttention(
             num_heads=num_heads,
-            key_dim=d_model//num_heads,
+            key_dim=d_model,
             dropout=dropout_rate)
         
         self.cross_attn = CrossAttention(
             num_heads=num_heads,
-            key_dim=d_model//num_heads,
+            key_dim=d_model,
             dropout=dropout_rate)
         
         self.ffn = FeedForward(d_model, d_ffn)
