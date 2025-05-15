@@ -3,6 +3,9 @@ import numpy as np
 import tensorflow as tf
 
 
+# # Clear all previously registered custom objects
+keras.saving.get_custom_objects().clear()
+
 def positional_encoding(length, depth):
     half_depth = depth / 2
     
@@ -19,9 +22,10 @@ def positional_encoding(length, depth):
     return tf.cast(pos_encoding, dtype=tf.float32)
 
 
+@keras.saving.register_keras_serializable()
 class PositionalEmbedding(tf.keras.layers.Layer):
-    def __init__(self, vocab_size, d_model, dtype=tf.float32, **kwargs):
-        super().__init__(dtype=dtype, **kwargs)
+    def __init__(self, vocab_size, d_model, **kwargs):
+        super().__init__(**kwargs)
         
         assert d_model % 2 == 0, "Embedding size must be even"
         self.d_model = d_model
@@ -44,9 +48,17 @@ class PositionalEmbedding(tf.keras.layers.Layer):
 
     def compute_output_shape(self, *args, **kwargs):
         return self.embedding.compute_output_shape(*args, **kwargs)
-        
-        
 
+    # def get_config(self):
+    #     config =super().get_config()
+    #     config.update({
+    #         'vocab_size':vocab_size,
+    #         'd_model':d_model
+    #     })
+    #     return config
+        
+        
+@keras.saving.register_keras_serializable()
 class BaseAttention(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         super().__init__()
@@ -57,13 +69,14 @@ class BaseAttention(tf.keras.layers.Layer):
         self.add = tf.keras.layers.Add()
         
 
+@keras.saving.register_keras_serializable()
 class GlobalSelfAttention(BaseAttention): 
     def call(self, x, mask=None, training=False):
         attn_output = self.mha(
             query=x,
             key=x,
             value=x,
-            attention_mask=mask[:, tf.newaxis],
+            attention_mask=mask[:, tf.newaxis] if mask is not None else None,
             training=training
         )
         
@@ -72,13 +85,14 @@ class GlobalSelfAttention(BaseAttention):
         return x
 
 
+@keras.saving.register_keras_serializable()
 class CausalSelfAttention(BaseAttention):
     def call(self, x, mask=None, training=False):
         attn_output = self.mha(
             query=x,
             value=x,
             key=x,
-            attention_mask=mask[:, tf.newaxis],
+            attention_mask=mask[:, tf.newaxis] if mask is not None else None,
             use_causal_mask = True,
             training=training
         )
@@ -88,6 +102,7 @@ class CausalSelfAttention(BaseAttention):
         return x
 
 
+@keras.saving.register_keras_serializable()
 class CrossAttention(BaseAttention):
     def call(self, x, mask=None, training=False):
         x, encoder_output = x
@@ -110,10 +125,11 @@ class CrossAttention(BaseAttention):
         return x
 
 
+@keras.saving.register_keras_serializable()
 class FeedForward(tf.keras.layers.Layer):
-    def __init__(self, d_model, d_ffn, dropout_rate=0.1):
+    def __init__(self, d_model, d_ffn, dropout_rate=0.1, **kwargs):
         '''d_ffn: (first) feed forward dimension'''
-        super().__init__()
+        super().__init__(**kwargs)
         self.supports_masking = True
         
         self.seq = tf.keras.Sequential([
@@ -133,9 +149,10 @@ class FeedForward(tf.keras.layers.Layer):
         return mask
 
 
+@keras.saving.register_keras_serializable()
 class EncoderLayer(tf.keras.layers.Layer):
-    def __init__(self, *, d_model, num_heads, d_ffn, dropout_rate=0.1):
-        super().__init__()
+    def __init__(self, *, d_model, num_heads, d_ffn, dropout_rate=0.1, **kwargs):
+        super().__init__(**kwargs)
         self.supports_masking=True
         
         self.glob_self_attn = GlobalSelfAttention(
@@ -151,10 +168,10 @@ class EncoderLayer(tf.keras.layers.Layer):
         return x
 
 
+@keras.saving.register_keras_serializable()
 class Encoder(tf.keras.layers.Layer):
-    def __init__(self, *, N, d_model, num_heads,
-                   d_ffn, vocab_size, dropout_rate=0.1):
-        super().__init__()
+    def __init__(self, *, N, d_model, num_heads, d_ffn, vocab_size, dropout_rate=0.1, **kwargs):
+        super().__init__(**kwargs)
         self.N = N
         
         self.pos_embedding = PositionalEmbedding(vocab_size=vocab_size, d_model=d_model)
@@ -182,10 +199,11 @@ class Encoder(tf.keras.layers.Layer):
     def compute_output_shape(self, *args, **kwargs):
         return self.pos_embedding.compute_output_shape(*args, **kwargs)
 
-    
+
+@keras.saving.register_keras_serializable()
 class DecoderLayer(tf.keras.layers.Layer):
-    def __init__(self, *, d_model, num_heads, d_ffn, dropout_rate=0.1):
-        super().__init__()
+    def __init__(self, *, d_model, num_heads, d_ffn, dropout_rate=0.1, **kwargs):
+        super().__init__(**kwargs)
         self.supports_masking = True
         
         self.causal_self_attn = CausalSelfAttention(
@@ -211,9 +229,10 @@ class DecoderLayer(tf.keras.layers.Layer):
         return x
         
 
+@keras.saving.register_keras_serializable()
 class Decoder(tf.keras.layers.Layer):
-    def __init__(self, *, N, d_model, num_heads, d_ffn, vocab_size, dropout_rate=0.1):
-        super().__init__()
+    def __init__(self, *, N, d_model, num_heads, d_ffn, vocab_size, dropout_rate=0.1, **kwargs):
+        super().__init__(**kwargs)
         
         self.N = N
         
@@ -245,8 +264,6 @@ class Decoder(tf.keras.layers.Layer):
         return self.pos_embedding.compute_output_shape(*args, **kwargs)
 
 
-# # Clear all previously registered custom objects
-keras.saving.get_custom_objects().clear()
 
 @keras.saving.register_keras_serializable()
 class Transformer(tf.keras.Model):
