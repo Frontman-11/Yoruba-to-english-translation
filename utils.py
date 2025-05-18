@@ -113,3 +113,56 @@ def masked_accuracy(label, pred):
     match = tf.cast(match, dtype=tf.float32)
     mask = tf.cast(mask, dtype=tf.float32)
     return tf.reduce_sum(match)/tf.reduce_sum(mask)
+
+
+class Translator(tf.Module):
+    def __init__(self, tgt_tokenizer, model):
+        self.tgt_tokenizer = tgt_tokenizer
+        self.model = model
+
+    def __call__(self, sentence, max_seq_length=128):
+        assert isinstance(sentence, tf.Tensor), 'Input senetence not instance of tf.Tensor'
+
+        if len(sentence.shape) == 1:
+            sentence = sentence[tf.newaxis :]
+
+        # Initialize bos and eos tokens for decoder
+        bos = self.tgt_tokenizer.piece_to_id('<BOS>')
+        eos = self.tgt_tokenizer.piece_to_id('<EOS>')
+
+        # Convert to tensors and add new axis for batch_size
+        bos = tf.constant(bos, dtype=tf.int64)[tf.newaxis]
+        eos = tf.constant(eos, dtype=tf.int64)[tf.newaxis]
+
+        collated_pred = tf.TensorArray(size=0,
+                                      dtype=tf.int64,
+                                      dynamic_size=True, 
+                                      clear_after_read=False,
+                                      tensor_array_name='predictions'
+                                     )
+        
+        collated_pred  = collated_pred.write(0, bos)
+        
+        for i in range(max_seq_length):
+            
+            output = tf.transpose(collated_pred.stack())
+            
+            new_pred = self.model(inputs=(sentence, output), training=False)
+            
+            # selecting the last token
+            new_pred =  new_pred[:, -1:, :]  # Shape `(batch_size, 1, vocab_size)`.
+            new_pred = tf.argmax(new_pred, axis=-1)
+
+            collated_pred  = collated_pred.write(i+1, new_pred[0])
+            
+            if new_pred[0] == eos:
+                break
+
+        # decode generated tokens
+        decoded_tokens = tf.TensorArray(dtype=tf.string, size=0, dynamic_size=True)
+
+        for i, token in enumerate(collated_pred.stack()):
+            decoded_tokens = decoded_tokens.write(i, self.tgt_tokenizer.decode(token))
+        decoded_tokens = decoded_tokens.stack()
+        decoded_tokens = tf.strings.reduce_join(decoded_tokens, separator=' ')
+        return decoded_tokens.numpy().decode('utf-8')
