@@ -59,6 +59,6 @@ class FrontmanTokenizer(spm.SentencePieceProcessor):
         return input_ids
 
     def decode(self, input_ids, out_type=str, **kwargs):
-        if isinstance(input_ids, tf.Tensor) or if isinstance(input_ids, np.ndarray):
+        if isinstance(input_ids, tf.Tensor) or isinstance(input_ids, np.ndarray):
             input_ids = input_ids.numpy().tolist()
         return super().decode(input_ids, out_type=out_type, **kwargs)
