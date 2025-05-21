@@ -336,35 +336,61 @@ class Transformer(tf.keras.Model):
         return config
 
 
-    def translate(self, sentence, tgt_tokenizer, max_seq_length=128):
-        assert isinstance(sentence, tf.Tensor), 'Input sentence not instance of tf.Tensor'
-
-        # Add batch dimension if single example
-        if len(sentence.shape) == 1:
-            sentence = sentence[tf.newaxis, :]  # (1, seq_len)
-
+    def _translate_batch(self, sentence, tgt_tokenizer, max_seq_length):
         batch_size = tf.shape(sentence)[0]
-
-        # Initialize BOS and EOS tokens
-        bos_id = tgt_tokenizer.piece_to_id('<BOS>')
-        eos_id = tgt_tokenizer.piece_to_id('<EOS>')
-
-        bos_tokens = tf.fill([batch_size, 1], tf.constant(bos_id, dtype=tf.int64))
-        decoded = bos_tokens  # (batch_size, 1)
-
-        for _ in range(max_seq_length):
-            logits = self.call((sentence, decoded), training=False)  # (batch, seq, vocab)
-            next_token = tf.argmax(logits[:, -1:, :], axis=-1, output_type=tf.int64)  # (batch_size, 1)
-
-            decoded = tf.concat([decoded, next_token], axis=-1)  # (batch_size, seq+1)
-
-        # Decode each sequence to text
-        decoded_sentences = []
-        decoded_np = decoded.numpy()
-        for seq in decoded_np:
-            # Remove everything after EOS
-            if eos_id in seq:
-                seq = seq[:list(seq).index(eos_id)]
-            decoded_sentences.append(tgt_tokenizer.decode(seq.tolist()))
-
-        return decoded_sentences
+        bos_id = tf.constant(tgt_tokenizer.piece_to_id('<BOS>'), dtype=tf.int64)
+        eos_id = tf.constant(tgt_tokenizer.piece_to_id('<EOS>'), dtype=tf.int64)
+    
+        bos_tokens = tf.fill([batch_size, 1], bos_id)
+        decoded = bos_tokens
+    
+        for _ in tf.range(max_seq_length):
+            logits = self.call((sentence, decoded), training=False)
+            next_token = tf.argmax(logits[:, -1:, :], axis=-1, output_type=tf.int64)
+            decoded = tf.concat([decoded, next_token], axis=-1)
+    
+        # Use tf.TensorArray to accumulate decoded sentences
+        def decode_sequence(seq):
+            # Mask everything after EOS
+            eos_positions = tf.where(tf.equal(seq, eos_id))
+            eos_idx = tf.cond(tf.shape(eos_positions)[0] > 0,
+                              lambda: eos_positions[0][0],
+                              lambda: tf.shape(seq)[0])
+            return seq[:eos_idx]
+    
+        decoded = tf.map_fn(decode_sequence, decoded, fn_output_signature=tf.TensorSpec(shape=(None,), dtype=tf.int64))
+        
+        # Decode with py_function (not graph-safe, but allows tokenizer use)
+        def decode_py(seq):
+            return tf.constant(tgt_tokenizer.decode(seq.numpy().tolist()), dtype=tf.string)
+    
+        decoded_strings = tf.map_fn(
+            lambda x: tf.py_function(decode_py, [x], tf.string),
+            decoded,
+            fn_output_signature=tf.TensorSpec(shape=(), dtype=tf.string)
+        )
+    
+        return decoded_strings
+    
+    
+    @tf.function
+    def translate(self, sentence, tgt_tokenizer, max_seq_length=128, batch_size=128):
+        if tf.rank(sentence) == 1:
+            sentence = tf.expand_dims(sentence, 0)
+    
+        total_samples = tf.shape(sentence)[0]
+        i = tf.constant(0)
+        result = tf.TensorArray(tf.string, size=0, dynamic_size=True)
+    
+        def cond(i, result):
+            return i < total_samples
+    
+        def body(i, result):
+            batch = sentence[i:i+batch_size]
+            decoded = self._translate_batch(batch, tgt_tokenizer, max_seq_length)
+            batch_size_actual = tf.shape(decoded)[0]
+            result = result.scatter(tf.range(i, i + batch_size_actual), decoded)
+            return i + batch_size, result
+    
+        _, result = tf.while_loop(cond, body, [i, result])
+        return result.stack()
