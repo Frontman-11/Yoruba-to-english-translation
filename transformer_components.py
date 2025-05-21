@@ -335,7 +335,6 @@ class Transformer(tf.keras.Model):
         })
         return config
 
-
     def _translate_batch(self, sentence, tgt_tokenizer, max_seq_length):
         batch_size = tf.shape(sentence)[0].numpy()
         bos_id = tgt_tokenizer.piece_to_id('<BOS>')
@@ -356,10 +355,7 @@ class Transformer(tf.keras.Model):
                 seq = seq[:seq.index(eos_id)]
             decoded_sentences.append(tgt_tokenizer.decode(seq))
     
-        return decoded_sentences
-    
-    
-    
+        return decoded_sentences  
     
     def translate(self, sentence, tgt_tokenizer, max_seq_length=128, batch_size=128):
         assert isinstance(sentence, tf.Tensor), 'Input sentence not instance of tf.Tensor'
