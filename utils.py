@@ -88,7 +88,7 @@ class CustomSchedule(tf.keras.optimizers.schedules.LearningRateSchedule):
     def from_config(cls, config):
         return cls(**config)
 
-
+@keras.saving.register_keras_serializable()
 def masked_loss(label, pred):
     mask = label != 0
     loss_object = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True, reduction='none')
@@ -100,7 +100,7 @@ def masked_loss(label, pred):
     loss = tf.reduce_sum(loss)/tf.reduce_sum(mask)
     return loss
 
-
+@keras.saving.register_keras_serializable()
 def masked_accuracy(label, pred):
     pred = tf.argmax(pred, axis=2)
     label = tf.cast(label, pred.dtype)
@@ -113,42 +113,3 @@ def masked_accuracy(label, pred):
     match = tf.cast(match, dtype=tf.float32)
     mask = tf.cast(mask, dtype=tf.float32)
     return tf.reduce_sum(match)/tf.reduce_sum(mask)
-
-
-class Translator(tf.Module):
-    def __init__(self, tgt_tokenizer, model):
-        self.tgt_tokenizer = tgt_tokenizer
-        self.model = model
-
-    def __call__(self, sentence, max_seq_length=128):
-        assert isinstance(sentence, tf.Tensor), 'Input sentence not instance of tf.Tensor'
-
-        # Add batch dimension if single example
-        if len(sentence.shape) == 1:
-            sentence = sentence[tf.newaxis, :]  # (1, seq_len)
-
-        batch_size = tf.shape(sentence)[0]
-
-        # Initialize BOS and EOS tokens
-        bos_id = self.tgt_tokenizer.piece_to_id('<BOS>')
-        eos_id = self.tgt_tokenizer.piece_to_id('<EOS>')
-
-        bos_tokens = tf.fill([batch_size, 1], tf.constant(bos_id, dtype=tf.int64))
-        decoded = bos_tokens  # (batch_size, 1)
-
-        for _ in range(max_seq_length):
-            logits = self.model((sentence, decoded), training=False)  # (batch, seq, vocab)
-            next_token = tf.argmax(logits[:, -1:, :], axis=-1, output_type=tf.int64)  # (batch_size, 1)
-
-            decoded = tf.concat([decoded, next_token], axis=-1)  # (batch_size, seq+1)
-
-        # Decode each sequence to text
-        decoded_sentences = []
-        decoded_np = decoded.numpy()
-        for seq in decoded_np:
-            # Remove everything after EOS
-            if eos_id in seq:
-                seq = seq[:list(seq).index(eos_id)]
-            decoded_sentences.append(self.tgt_tokenizer.decode(seq.tolist()))
-
-        return decoded_sentences
