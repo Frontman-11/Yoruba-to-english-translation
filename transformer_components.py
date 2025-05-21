@@ -336,12 +336,7 @@ class Transformer(tf.keras.Model):
         return config
 
 
-class Translator(tf.Module):
-    def __init__(self, tgt_tokenizer, model):
-        self.tgt_tokenizer = tgt_tokenizer
-        self.model = model
-
-    def __call__(self, sentence, max_seq_length=128):
+    def translate(self, sentence, tgt_tokenizer, max_seq_length=128):
         assert isinstance(sentence, tf.Tensor), 'Input sentence not instance of tf.Tensor'
 
         # Add batch dimension if single example
@@ -351,14 +346,14 @@ class Translator(tf.Module):
         batch_size = tf.shape(sentence)[0]
 
         # Initialize BOS and EOS tokens
-        bos_id = self.tgt_tokenizer.piece_to_id('<BOS>')
-        eos_id = self.tgt_tokenizer.piece_to_id('<EOS>')
+        bos_id = tgt_tokenizer.piece_to_id('<BOS>')
+        eos_id = tgt_tokenizer.piece_to_id('<EOS>')
 
         bos_tokens = tf.fill([batch_size, 1], tf.constant(bos_id, dtype=tf.int64))
         decoded = bos_tokens  # (batch_size, 1)
 
         for _ in range(max_seq_length):
-            logits = self.model((sentence, decoded), training=False)  # (batch, seq, vocab)
+            logits = self.call((sentence, decoded), training=False)  # (batch, seq, vocab)
             next_token = tf.argmax(logits[:, -1:, :], axis=-1, output_type=tf.int64)  # (batch_size, 1)
 
             decoded = tf.concat([decoded, next_token], axis=-1)  # (batch_size, seq+1)
@@ -370,6 +365,6 @@ class Translator(tf.Module):
             # Remove everything after EOS
             if eos_id in seq:
                 seq = seq[:list(seq).index(eos_id)]
-            decoded_sentences.append(self.tgt_tokenizer.decode(seq.tolist()))
+            decoded_sentences.append(tgt_tokenizer.decode(seq.tolist()))
 
         return decoded_sentences
