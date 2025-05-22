@@ -353,7 +353,7 @@ class Transformer(tf.keras.Model):
             seq = decoded[i].numpy().tolist()
             if eos_id in seq:
                 seq = seq[:seq.index(eos_id)]
-            decoded_sentences.append(tgt_tokenizer.decode(seq))
+            decoded_sentences.append(seq)
     
         return decoded_sentences  
     
