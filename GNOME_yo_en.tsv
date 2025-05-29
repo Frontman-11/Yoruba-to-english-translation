@@ -1,0 +1,1517 @@
+yoruba	english
+Àwọn Àmì-ìwé Wẹ́ẹ̀bù Epiphany	Epiphany Web Bookmarks
+Àwọn Àmì-ìwé Wẹ́ẹ̀bù	Web Bookmarks
+Wáròyìn kí o sì ṣààtò àwọn àmì-ìwé rẹ	Browse and organize your bookmarks
+"Wá wẹ́ẹ̀bù náàhttp://www.google.nl"" and ""http://www.google.nl/search?q=<UNK>"	Search the web
+"http://www.google.com/search?ie=UTF-8oe=UTF-8q=http://www.google.nl"" and ""http://www.google.nl/search?q=<UNK>"	http://www.google.com
+http://www.google.com/search?q=<UNK>ie=UTF-8oe=UTF-8	http://www.google.com/search?q=<UNK>amp;ie=UTF-8amp;oe=UTF-8
+Epiphany (RDF)	Epiphany
+Awáròyìn Wẹ́ẹ̀bù	Web Browser
+Awáròyìn Wẹ́ẹ̀bù Epiphany	Epiphany Web Browser
+Wáròyìn wẹ́ẹ̀bù náà	Browse the web
+Gbagbára iṣẹ́ ìdarí JavaScript chrome	Disable JavaScript chrome control
+Gbagbára iṣẹ́ ìdarí JavaScript lórí chrome fèrèsé.	Disable JavaScript's control over window chrome.
+Fi àká-àtòjọ-ẹ̀yàn pamọ́ nípa ìpéwọ̀n	Hide menubar by default
+Fi àká-àtòjọ-ẹ̀yàn pamọ́ nípa ìpéwọ̀n	Hide the menubar by default.
+Gbagbá iṣẹ́ àwọn ìlàálẹ̀ òfin tó léwu	Disable unsafe protocols
+Ń gbagbára iṣẹ́ kíki àkóónú láti inú àwọn ìlàálẹ̀ òfin tó léwu. Àwọn ìlàálẹ̀ òfin tí kò léwu ni http àti àwọn http.	Disables loading of content from unsafe protocols. Safe protocols are http and https.
+Àfikún à̀wọn ìlàálẹ̀ òfin tí kò léwu	Additional safe protocols
+Àtòjọ àwọn ìlàálẹ̀ òfin tí a lè ní pé kòséwu fún ní àfikún sí ìpéwọ̀n náà nígbà tí a bá fún gba agbára kíàwọn ìlàálẹ̀ òfintó léwu lágbára láti ṣiṣẹ́.	A list of protocols to be considered safe in addition to the default, when disableunsafeprotocols is enabled.
+Gbagbára iṣẹ́ àwọn URL aláìnídìí	Disable arbitrary URLs
+Gbagbára iṣẹ́ ipá òǹlò láti tẹ̀wé nínú URL sí Epiphany.	Disable the user's ability to type in a URL to Epiphany.
+Gbagbára iṣẹ́ ìṣàyẹ̀wò àmì-ìwé	Disable bookmark editing
+Gbagbára iṣẹ́ ipá òǹlò láti ṣàfikún tàbí láti ṣàyẹ̀wò àwọn àmì-ìwé.	Disable the user's ability to add or edit bookmarks.
+Gbagbára ìṣàyẹ̀wò àká-irinṣẹ́	Disable toolbar editing
+Gbagbára iṣẹ́ ipá òǹlò láti ṣàyẹ̀wò àwọn àká-irinṣẹ́.	Disable the user's ability to edit toolbars.
+Gbagbára iṣẹ́ ìtàn	Disable history
+Gbagbára iṣẹ́ gbogbo ìròyìn ajẹmọ́tàn nípa gbígbára ìtọpa ìlọsẹ́yìn àti iwájú. Kó má́ fàyè gba onísọ̀rọ̀gbèsì ìtàn kó sí fi àtòjọ àwọn àmì-ìwé tó lò jù pamọ́.	Disable all historical information by disabling back and forward navigation, not allowing the history dialog and hiding the most used bookmarks list.
+Tìí ní móòdù ojú kọ̀ǹpútà kíkún	Lock in fullscreen mode
+Ń ti Epiphany ní móòdù ojú kọ̀ǹpútà kíkún.	Locks Epiphany in fullscreen mode.
+Epiphany kò lè jáde	Epiphany cannot quit
+A kò fàyè gba òǹlò láti ti Epiphany	User is not allowed to close Epiphany
+Ojú-ìwé ilé	Home page
+Àdírẹ̀sì ojú-ìwé ilé òǹlò náà.	Address of the user's home page.
+Sákánì àkókò àwọn ojú-ìwé ìtàn	History pages time range
+"Fi àwọn ojú-ìwé ìtàn tí a bẹ̀wò hàn ""nígbà gbogbo"", ""lọ́jọ́méjìsẹ́yìn"", ""lónìí""."	"Show the history pages visited ""ever"", ""lasttwodays"", ""lastthreedays"", ""today""."
+Ìròyìn àmì-ìwé náà tí a fi hàn nínú òye olótùú náà	The bookmark information shown in the editor view
+"Ìròyìn àmì-ìwé náà tí a fi hàn nínú òye olótùú náà. Àwọn fálù tó fesẹ̀múlẹ̀ nínú àtòjọ náà ni ""àdírẹ̀sì"" àti""àkọ́lé""."	"The bookmark information shown in the editor view. Valid values in the list are ""address"" and ""title""."
+Ìròyìn ojú-ìwé tí a fihàn nínú òye ìtàn náà	The page information shown in the history view
+"Ìròyìn ojú-ìwé tí a fihàn nínú òye ìtàn náà. Àwọn fálù tó fẹsẹ̀múlẹ̀ nínú àtòjọ náà ni ""àdírẹ̀sì"", ""àkọ́lé""."	"The page information shown in the history view. Valid values in the list are ""ViewTitle"", ""ViewAddress"" and ""ViewDateTime""."
+x-western	x-western
+Èdè àwọn ìrísí-lẹ́tà tí a ṣẹ̀ yàn lọ́wọ́lọ́wọ́	The currently selected fonts language
+"Èdè àwọn ìrísí-lẹ́tà tí a ṣẹ̀ yàn lọ́wọ́lọ́wọ́. Àwọn fálù tó fẹ̀sẹ̀múlẹ̀ ni ""ar"" (arabic), ""x-baltic"" (baltic languages), ""x-central-euro"" (central european languages), ""x-cyrillic"" (languages written with cyrillic alphabet), ""el"" (greek), ""he"" (hebrew), ""ja"" (japanese), ""ko"" (korean), ""zh-CN"" (simplified chinese), ""th"" (thai), ""zh-TW"" (traditional chinese), ""tr"" (turkish), ""x-unicode"" (other languages), ""x-western"" (languages written in latin script), ""x-tamil"" (tamil) and ""x-devanagari"" (devanagari)."	"The currently selected fonts language. Valid values are ""ar"" (arabic), ""x-baltic"" (baltic languages), ""x-central-euro"" (central european languages), ""x-cyrillic"" (languages written with cyrillic alphabet), ""el"" (greek), ""he"" (hebrew), ""ja"" (japanese), ""ko"" (korean), ""zh-CN"" (simplified chinese), ""th"" (thai), ""zh-TW"" (traditional chinese), ""tr"" (turkish), ""x-unicode"" (other languages), ""x-western"" (languages written in latin script), ""x-tamil"" (tamil) and ""x-devanagari"" (devanagari)."
+Ìwọ̀n ìrísí-lẹ́tà tó kéré jù	Minimum font size
+Lo àwọn àwọ̀ rẹ	Use own colors
+Lo àwọn àwọ̀ tìrẹ dípò àwọn àwọ̀ tí ojú-ìwé náà bèrè fún.	Use your own colors instead of the colors the page requests.
+Lo àwọn ìrísí-lẹ́tà rẹ	Use own fonts
+Lo àwọn ìrísí-lẹ́tà tìrẹ dípò àwọn ìrísí-lẹ́tà tí ojú-ìwé náà bèrè fún.	Use your own fonts instead of the fonts the page requests.
+Ìgbà gbogbo ló máa ń fi àká táàbù hàn	Always show the tab bar
+Tún fi àká táàbù náà hàn nígbà tóbá ti ẹ̀ jẹ́ wí pé táàbù kan wà ní ṣíṣí.	Show the tab bar also when there is only one tab open.
+Àwọn àgbéwọlé aládàáṣe	Automatic downloads
+Nígbà tí a kò bá lè ṣí àwọn fáìlì pẹ̀lú awáròyìn, a jẹ́ pé a ti gbéwọn wọlé nìyẹn sínú fódà àgbéwọlé. bẹ́ẹ̀, la sì ti ṣi pẹ̀lú ìṣàmúlò-ètò tó yẹ.	When files cannot be opened by the browser they are automatically downloaded to the download folder and opened with the appropriate application.
+Tẹ à́árín láti ṣí ojú-ìwé wẹ́ẹ̀bù tí àyọkà tí a yàn lọ́wọ́lọ́wọ́ tọ́ka sí	Middle click to open the web page pointed to by the currently selected text
+Títẹ̀ péènì òye àárín gangan láàrin á ṣí ojú-ìwé wẹ́ẹ̀bù tí àyọkà tí a yàn lọ́wọ́lọ́wọ́ ń tọ́ka sí.	Middle clicking on the main view pane will open the web page pointed to by the currently selected text.
+Sítàì àká-irinṣẹ́	Toolbar style
+"Sítàì àká-irinṣẹ́. Àwọn fálù tí a fàyè gbà ni """" (lo sítàì ìpéwọ̀n GNOME),.""àti"" (àyọkà àti àwọn áíkànnù), ""both-horiz"" (àyọkà yàtọ̀ sí àwọn áíkànnù), ""àwọn áíkànnù"" àti ""àyọkà""."	"Toolbar style. Allowed values are """" (use GNOME default style), ""both"" (text and icons), ""both-horiz"" (text besides icons), ""icons"", and ""text""."
+Fi àwọn àká-irinṣẹ́ hàn nípa ìpéwọ̀n	Show toolbars by default
+Fi àká àwọn àmì-ìwé hàn nípa ìpéwọ̀n	Show bookmarks bar by default
+Fi àká-ipò hàn nípa ìpéwọ̀n	Show statusbar by default
+Àwọn amúgbálẹ̀gbẹ́ alápọn	Active extensions
+́Ń ṣàtòjọ àwọn amúgbálẹ̀gbẹ́ alápọn	Lists the active extensions.
+ISO-8859-1	ISO-8859-1
+Ìyítumọ̀ ìpéwọ̀n	Default encoding
+"Ìyítumọ̀ ìpéwọ̀n. Àwọn fálù tó gbà ni: ""armscii-8"", ""Big5"", ""Big5-HKSCS"", ""EUC-JP"", ""EUC-KR"", ""gb18030"", ""GB2312"", ""geostd8"", ""HZ-GB-2312"", ""IBM850"", ""IBM852"", ""IBM855"", ""IBM857"", ""IBM862"", ""IBM864"", ""IBM866"", ""ISO-2022-CN"", ""ISO-2022-JP"", ""ISO-2022-KR"", ""ISO-8859-1"", ""ISO-8859-2"", ""ISO-8859-3"", ""ISO-8859-4"", ""ISO-8859-5"", ""ISO-8859-6"", ""ISO-8859-7"", ""ISO-8859-8"", ""ISO-8859-8-I"", ""ISO-8859-9"", ""ISO-8859-10"", ""ISO-8859-11"", ""ISO-8859-13"", ""ISO-8859-14"", ""ISO-8859-15"", ""ISO-8859-16"", ""ISO-IR-111"", ""KOI8-R"", ""KOI8-U"", ""ShiftJIS"", ""TIS-620"", ""UTF-7"", ""UTF-8"", ""VISCII"", ""windows-874"", ""windows-1250"", ""windows-1251"", ""windows-1252"", ""windows-1253"", ""windows-1254"", ""windows-1255"", ""windows-1256"", ""windows-1257"", ""windows-1258"", ""x-euc-tw"", ""x-gbk"", ""x-johab"", ""x-mac-arabic"", ""x-mac-ce"", ""x-mac-croatian"", ""x-mac-cyrillic"", ""x-mac-devanagari"", ""x-mac-farsi"", ""x-mac-greek"", ""x-mac-gujarati"", ""x-mac-gurmukhi"", ""x-mac-hebrew"", ""x-mac-icelandic"", ""x-mac-roman"", ""x-mac-romanian"", ""x-mac-turkish"", ""x-mac-ukrainian"", ""x-user-defined"", ""x-viet-tcvn5712"", ""x-viet-vps"" and ""x-windows-949""."	"Default encoding. Accepted values are: ""armscii-8"", ""Big5"", ""Big5-HKSCS"", ""EUC-JP"", ""EUC-KR"", ""gb18030"", ""GB2312"", ""geostd8"", ""HZ-GB-2312"", ""IBM850"", ""IBM852"", ""IBM855"", ""IBM857"", ""IBM862"", ""IBM864"", ""IBM866"", ""ISO-2022-CN"", ""ISO-2022-JP"", ""ISO-2022-KR"", ""ISO-8859-1"", ""ISO-8859-2"", ""ISO-8859-3"", ""ISO-8859-4"", ""ISO-8859-5"", ""ISO-8859-6"", ""ISO-8859-7"", ""ISO-8859-8"", ""ISO-8859-8-I"", ""ISO-8859-9"", ""ISO-8859-10"", ""ISO-8859-11"", ""ISO-8859-13"", ""ISO-8859-14"", ""ISO-8859-15"", ""ISO-8859-16"", ""ISO-IR-111"", ""KOI8-R"", ""KOI8-U"", ""ShiftJIS"", ""TIS-620"", ""UTF-7"", ""UTF-8"", ""VISCII"", ""windows-874"", ""windows-1250"", ""windows-1251"", ""windows-1252"", ""windows-1253"", ""windows-1254"", ""windows-1255"", ""windows-1256"", ""windows-1257"", ""windows-1258"", ""x-euc-tw"", ""x-gbk"", ""x-johab"", ""x-mac-arabic"", ""x-mac-ce"", ""x-mac-croatian"", ""x-mac-cyrillic"", ""x-mac-devanagari"", ""x-mac-farsi"", ""x-mac-greek"", ""x-mac-gujarati"", ""x-mac-gurmukhi"", ""x-mac-hebrew"", ""x-mac-icelandic"", ""x-mac-roman"", ""x-mac-romanian"", ""x-mac-turkish"", ""x-mac-ukrainian"", ""x-user-defined"", ""x-viet-tcvn5712"", ""x-viet-vps"" and ""x-windows-949""."
+Irúfẹ́ ìrísí-lẹ́tà ìpéwọ̀n	Default font type
+"Irúfẹ́ ìrísí-lẹ́tà ìpéwọ̀n. Àwọn fálù tó lè jẹ́ ni ""serif"" àti ""sans-serif""."	"Default font type. Possible values are ""serif"" and ""sans-serif""."
+Ìwọ̀n àkópamọ́ fọ́nrán	Size of disk cache
+Ìwọ̀n àkópamọ́ fọ́nrán nínú MB.	Size of disk cache, in MB.
+Àwọn èdè	Languages
+Àwọn èdè tí a fẹ́ jù, àwọn kóòdù lẹ́tà méjì.	Preferred languages, two letter codes.
+Bóyá ká píríǹtì àkọ́lẹ́ ojú-ìwé inú àyọkà òkè-ilà náà	Whether to print the page title in the header
+Bóyá ká píríǹtì déètì náà nínú àyọkà ìsàlẹ̀-ilà	Whether to print the page address in the header
+Bóyá ká píríǹtì déètì náà nínú àyọkà ìsàlẹ̀-ilà	Whether to print the date in the footer
+Bóyá ká píríǹtì déètì náà nínú àyọkà ìsàlẹ̀-ilà	Whether to print the background color
+Bóyá ká píríǹtì déètì náà nínú àyọkà ìsàlẹ̀-ilà	Whether to print the background images
+Bóyá ká píríǹtì àwọn nọ́ńbà ojú-ìwé (àpapọ̀ x) inú àyọkà ìsàlẹ̀-ilà	Whether to print the page numbers (x of total) in the footer
+"Bí a ṣe lè ṣàgbékalẹ̀ àwọn àwòrán aṣàfarawé kọ̀ǹpútà. Àwọn fálù tó lẹ̀ jẹ́ ni ""déédé"", ""lẹ́ẹ̀kan"" àti ""gbagbára iṣẹ́""."	"How to print pages containing frames. Allowed values are ""normal"", ""separately"" and ""selected""."
+Fódà àwọn àgbéwọlé	The downloads folder
+"Ipà fódà tí a fẹ́ ṣàgbéwọlé àwọn fáìlì sí; tàbí""Àwọn àgbéwọlé"" láti lo fódà àwọn àgbéwọlé ìpéwọ̀n, tàbí ""Ojú-iṣẹ́"" láti lo fódà ojú-iṣẹ́."	"The path of the folder where to download files to; or ""Downloads"" to use the default downloads folder, or ""Desktop"" to use the desktop folder."
+Kúkì gbà	Cookie accept
+"Níbì tí a ti máà gba kúkì. Àwọn fálù tó lè̀jẹ́ ni ""ibikíbi"", gbàgede lọ́wọ́ĺọ́wọ́"" àti ""àìsí-níbikíbi""."	"Where to accept cookies from. Possible values are ""anywhere"", ""current site"" and ""nowhere""."
+Móòdù ìṣàfarawé kọ̀ǹpútà àwòrán	Image animation mode
+"Bí a ṣe lè ṣàgbékalẹ̀ àwọn àwòrán aṣàfarawé kọ̀ǹpútà. Àwọn fálù tó lẹ̀ jẹ́ ni ""déédé"", ""lẹ́ẹ̀kan"" àti ""gbagbára iṣẹ́""."	"How to present animated images. Possible values are ""normal"", ""once"" and ""disabled""."
+Yan àmì-àṣírí.	Remember passwords
+Fàyè gba àwọn ìtasókè	Allow popups
+Fàyè gba àwọn gbàgede láti ṣí àwọn fèrèsé tuntun nípa lílo JavaScript (tí a bá fún JavaScript lágbára iṣẹ́).	Allow sites to open new windows using JavaScript (if JavaScript is enabled).
+Fún Java lágbára iṣẹ́	Enable Java
+Fún JavaScript lágbára iṣẹ́	Enable JavaScript
+Wáròyìn pẹ̀lú caret	Browse with caret
+Bójútó ipò àìsí lórí wáyà pẹ̀lú Alábòójútó-Alátagbà	Automatically manage offline status with NetworkManager
+Ti fèrèsé àwọn àmì-ìwé	Visibility of the downloads window
+Ìpínfúnni Fún	Issued To
+Orúkọ Tó Wọ́pọ̀:	Common Name:
+Àjọ:	Organization:
+Àjọ:	Organizational Unit:
+Nọ́ńbà Atẹ̀léra:	Serial Number:
+Ìpínfúnni Láti Ọwọ́ọ	Issued By
+Ìfẹsẹ̀múlẹ̀	Validity
+Ìpínfúnni Ní:	Issued On:
+Á Parí Iṣẹ́ Ní:	Expires On:
+Àwọn ìtẹ̀-ìka ọwọ́	Fingerprints
+Ìtẹ̀-ìka ọwọ́ SHA1:	SHA1 Fingerprint:
+Ìtẹ̀-ìka ọwọ́ MD5:	MD5 Fingerprint:
+Gbogbogbò	General
+Ààtò-ìgasí Ìwé-ẹ̀rí	Certificate Hierarchy
+Àwon Ààyè Wúnrẹ̀nÌwé-ẹ̀rí	Certificate Fields
+Fálù Ààyè Wúnrẹ̀n	Field Value
+Àwọn àlàyé	Details
+Àkójọpọ̀-ẹ̀rì Ara-ẹni	Personal Data
+Àwọn kúkì	Cookies
+Fi àmì-àṣírí hàn	Show passwords
+Àwọn Àmì-àṣírí	Passwords
+Ìyítumọ̀ Àyọkà	Text Encoding
+Aládàáṣe	Automatic
+Lo ìyítumọ̀ tí àkọsílẹ̀ náà sọ ní pàtó	Use the encoding specified by the document
+Lo ìyítumọ̀ mìíràn:	Use a different encoding:
+Àwon àgbéwọlé	Downloads
+Wá Èyí Tókàn	Sign Text
+ÀwọnÌwé-ẹ̀rí	Certificate:
+Àmì-àṣírí:	Password:
+Wòye Ìwé-ẹ̀rí	View Certificate…
+Àwọn Ìkúndùn	Preferences
+Àdírẹ̀sì:	Address:
+Gbékalẹ̀ sí Ojú-ìwé Lọ́wọ́lọ́wọ́	Set to Current Page
+Gbekalẹ̀ sí Ojú-ìwé Òfìfo	Set to Blank Page
+Àwọn àgbéwọlé	Downloads
+Ṣàgbéwọlé fódà:	Download folder:
+Ṣàgbéwọlé àwọn fáìlì náà láládàáṣe kí o sì ṣí wọn	Automatically download and open files
+Àkóónú Wẹ́ẹ̀bù	Web Development
+Ìwọ̀n tó kéré jù:	Minimum size:
+Jẹ́ kí àwọn ojú-ìwé wẹ́ẹ̀bù sọ ní pàtó àwọn ìrísí-lẹ́tà wọn	Let web pages specify their own fonts
+Jẹ́ kí àwọn ojú-ìwé wẹ́ẹ̀bù sọ ní pàtó àwon àwọ̀ wọn	Let web pages specify their own colors
+Lo sítàì-ṣiìtì àkànṣe	Use custom stylesheet
+Ṣàyẹ̀wò Sítàì-ṣiìtì...	Edit Stylesheet…
+Àwọn Ìrísí-lẹ́tà & Sítàì	Fonts & Style
+Àkóónú Wẹ́ẹ̀bù	Web Content
+Fàyè gba àwon fèrèsé ìtasókè	Allow popup windows
+Gbà nígbà gbogbo	Always accept
+Láti inú àwọn gbàgede tí o bẹ̀wò nìkanOnly from sites you visit	Only from sites you visit
+Kò gbà rárá	Never accept
+Àwọn Fáìlì Ìgbà Díẹ̀	Temporary Files
+Ààyè fọ́nrán:	Disk space:
+MB	MB
+Parẹ́	Clear
+Ibi-ìkọ̀kọ̀	Privacy
+Àwọn ìyítumọ̀	Encodings
+Ìpéwọ̀n:	Default:
+Èdè	Language
+Ṣàfikún Èdè	Add Language
+Yan èdè kan:	Choose a language:
+Àwọn àyọkà ìsàlẹ̀-ilà	Frames
+Ṣí àmì-ìwé tí a yàn nínú táàbù tuntun	Only the selected frame
+Àwọn àgbéwọlé	Background
+Àwọn àyọkà ìsàlẹ̀-ilà	Footers
+Àwọn nọ́ńbà ojú-ìwé	Page numbers
+Déètì	Date
+Àwon àyọkà òkè-ilà	Headers
+Àkọ́lé ojú-ìwé	Page title
+Àdírẹ̀sì ojú-ìwé	Page address
+Fi Àwọn Àgbéwọlé Hàn	Show Downloads
+u:02u.02u	u:02u.02u
+02u.02u	02u.02u
+Dúró díẹ̀	Pause
+Tun bẹ̀rẹ̀	Resume
+Àìmọ̀	Unknown
+A kò rí fáìlì “<UNK>”.	The file “<UNK>” has been downloaded.
+Ṣàgbéwọlé Líǹkì<UNK> of <UNK>	Download finished
+<UNK> <UNK> of <UNK>	<UNK> <UNK> of <UNK>
+Fáìlì “<UNK>” wà. Jọ̀wọ́ gbé kúrò lọ́nà.	The file “<UNK>” has been added to the downloads queue.
+Ó kùnà	Download started
+Igbéwọlé Kùnàdownload status	Failed
+Fá́ìlì	File
+	
+Tó ṣẹ́kù	Remaining
+Fi pamọ́	Save
+Ṣàgbéwọlé fáìlì tó ní agbára láti léwu yìí?	Download this potentially unsafe file?
+Irúfẹ́ Fáìlì: “<UNK>”. Ó léwú láti ṣí “<UNK>” bó ti jẹ́ wí pé ó ní agbára láti ba àwọn àkọsílẹ̀ rẹ jẹ́ tàbí kó já wọ ibi-ìkọ̀kọ̀ rẹ. Dípò èyí o lè ṣàgbéwọlé rẹ̀.	File Type: “<UNK>”. It is unsafe to open “<UNK>” as it could potentially damage your documents or invade your privacy. You can download it instead.
+Ṣí fáìlì yìí?	Open this file?
+Irúfẹ́ Fáìlì: “<UNK>”. O lè ṣí “<UNK>” nípa lílo “<UNK>” tàbí kí o fi pamọ́.	File Type: “<UNK>”. You can open “<UNK>” using “<UNK>” or save it.
+Ṣàgbéwọlé fáìlì yìí?	Download this file?
+Irúfẹ́ Fáìlì: “<UNK>”. O kò ní ìṣàmúlò-ètò láti ṣí “<UNK>”. O lè ṣàgbéwọlé rẹ̀ dípò.	File Type: “<UNK>”. You have no application able to open “<UNK>”. You can download it instead.
+Fi Pamọ́ Lórúkọ...	Save As...
+A kò lè lo Epiphany báyìí. Ìmúbẹ̀rẹ̀ Mozilla kùnà.	Epiphany can't be used now. Initialization failed.
+Fi lẹ́tà kọ̀ǹpútà ránṣẹ́ sí àdírẹ̀sì “<UNK>”	Send an email message to “<UNK>”
+Arabic (IBM-864)	Arabic (IBM-864)
+Arabic (ISO-8859-6)	Arabic (ISO-8859-6)
+Arabic (MacArabic)	Arabic (MacArabic)
+Arabic (Windows-1256)	Arabic (Windows-1256)
+Baltic (ISO-8859-13)	Baltic (ISO-8859-13)
+Baltic (ISO-8859-4)	Baltic (ISO-8859-4)
+Baltic (Windows-1257)	Baltic (Windows-1257)
+Armenian (ARMSCII-8)	Armenian (ARMSCII-8)
+Georgian (GEOSTD8)	Georgian (GEOSTD8)
+Central European (IBM-852)	Central European (IBM-852)
+Central European (ISO-8859-2)	Central European (ISO-8859-2)
+Central European (MacCE)	Central European (MacCE)
+Central European (Windows-1250)	Central European (Windows-1250)
+Chinese Simplified (GB18030)	Chinese Simplified (GB18030)
+Chinese Simplified (GB2312)	Chinese Simplified (GB2312)
+Chinese Simplified (GBK)	Chinese Simplified (GBK)
+Chinese Simplified (HZ)	Chinese Simplified (HZ)
+Chinese Simplified (ISO-2022-CN)	Chinese Simplified (ISO-2022-CN)
+Chinese Traditional (Big5)	Chinese Traditional (Big5)
+Chinese Traditional (Big5-HKSCS)	Chinese Traditional (Big5-HKSCS)
+Chinese Traditional (EUC-TW)	Chinese Traditional (EUC-TW)
+Cyrillic (IBM-855)	Cyrillic (IBM-855)
+Cyrillic (ISO-8859-5)	Cyrillic (ISO-8859-5)
+Cyrillic (ISO-IR-111)	Cyrillic (ISO-IR-111)
+Cyrillic (KOI8-R)	Cyrillic (KOI8-R)
+Cyrillic (MacCyrillic)	Cyrillic (MacCyrillic)
+Cyrillic (Windows-1251)	Cyrillic (Windows-1251)
+Cyrillic/Russian (IBM-866)	Cyrillic/Russian (IBM-866)
+Greek (ISO-8859-7)	Greek (ISO-8859-7)
+Greek (MacGreek)	Greek (MacGreek)
+Greek (Windows-1253)	Greek (Windows-1253)
+Gujarati (MacGujarati)	Gujarati (MacGujarati)
+Gurmukhi (MacGurmukhi)	Gurmukhi (MacGurmukhi)
+Hindi (MacDevanagari)	Hindi (MacDevanagari)
+Hebrew (IBM-862)	Hebrew (IBM-862)
+Hebrew (ISO-8859-8-I)	Hebrew (ISO-8859-8-I)
+Hebrew (MacHebrew)	Hebrew (MacHebrew)
+Hebrew (Windows-1255)	Hebrew (Windows-1255)
+Visual Hebrew (ISO-8859-8)	Visual Hebrew (ISO-8859-8)
+Japanese (EUC-JP)	Japanese (EUC-JP)
+Japanese (ISO-2022-JP)	Japanese (ISO-2022-JP)
+Japanese (Shift-JIS)	Japanese (Shift-JIS)
+Korean (EUC-KR)	Korean (EUC-KR)
+Korean (ISO-2022-KR)	Korean (ISO-2022-KR)
+Korean (JOHAB)	Korean (JOHAB)
+Korean (UHC)	Korean (UHC)
+Celtic (ISO-8859-14)	Celtic (ISO-8859-14)
+Icelandic (MacIcelandic)	Icelandic (MacIcelandic)
+Nordic (ISO-8859-10)	Nordic (ISO-8859-10)
+Persian (MacFarsi)	Persian (MacFarsi)
+Croatian (MacCroatian)	Croatian (MacCroatian)
+Romanian (MacRomanian)	Romanian (MacRomanian)
+Romanian (ISO-8859-16)	Romanian (ISO-8859-16)
+South European (ISO-8859-3)	South European (ISO-8859-3)
+Thai (TIS-620)	Thai (TIS-620)
+Thai (ISO-8859-11)	Thai (ISO-8859-11)
+Thai (Windows-874)	Thai (Windows-874)
+Turkish (IBM-857)	Turkish (IBM-857)
+Turkish (ISO-8859-9)	Turkish (ISO-8859-9)
+Turkish (MacTurkish)	Turkish (MacTurkish)
+Turkish (Windows-1254)	Turkish (Windows-1254)
+Kóòdù gbogbogbò (UTF-8)	Unicode (UTF-8)
+Cyrillic/Ukrainian (KOI8-U)	Cyrillic/Ukrainian (KOI8-U)
+Cyrillic/Ukrainian (MacUkrainian)	Cyrillic/Ukrainian (MacUkrainian)
+Vietnamese (TCVN)	Vietnamese (TCVN)
+Vietnamese (VISCII)	Vietnamese (VISCII)
+Vietnamese (VPS)	Vietnamese (VPS)
+Vietnamese (Windows-1258)	Vietnamese (Windows-1258)
+Western (IBM-850)	Western (IBM-850)
+Western (ISO-8859-1)	Western (ISO-8859-1)
+Western (ISO-8859-15)	Western (ISO-8859-15)
+Western (MacRoman)	Western (MacRoman)
+Western (Windows-1252)related	Western (Windows-1252)
+Gẹ́ẹ̀sì(US-ASCII)	English (US-ASCII)
+Kóòdù gbogbogbò (UTF-16 BE)	Unicode (UTF-16 BE)
+Kóòdù gbogbogbò (UTF-16 LE)	Unicode (UTF-16 LE)
+Kóòdù gbogbogbò (UTF-32 BE)	Unicode (UTF-32 BE)
+Kóòdù gbogbogbò (UTF-32 LE)	Unicode (UTF-32 LE)
+Àìmọ̀ (<UNK>)	Unknown (<UNK>)
+Gbogbo wọn	All
+Àwọn Mìíràn	Others
+Àwọn fáìlì agbègbè	Local files
+Ojú-ìwé òfìfo	Blank page
+http://www.google.com/search?q=<UNK>ie=UTF-8oe=UTF-8	http://www.google.com/search?q=<UNK>ie=UTF-8oe=UTF-8
+Ìtúndarí sí “<UNK>”...	Redirecting to “<UNK>”…
+Ìgbé àkójọpọ̀-ẹ̀rí láti “<UNK>”...	Transferring data from “<UNK>”…
+Dídúró fún ìgbàṣẹ láti “<UNK>”...	Waiting for authorization from “<UNK>”…
+Kíki “<UNK>”...	Loading “<UNK>”…
+Kíki...	Loading…
+Àwọn fáìlì	<UNK> Files
+Àṣìṣe GConf: <UNK>	GConf error: <UNK>
+FÁÌLÌ	FILE
+Fi <UNK> hàn	Show “<UNK>”
+Gbé lórí Àká-irinṣẹ́	Move on Toolbar
+Gbé wúnrẹ̀n tí a yàn lọ lórí àká-irinṣẹ́	Move the selected item on the toolbar
+Yọọ́kúrò nínú Àká-irinṣẹ́	Remove from Toolbar
+Yọ wúnrẹ̀n tí a yàn náà kúrò nínu àká-irinṣẹ́ náà	Remove the selected item from the toolbar
+Pa Àká-irinṣẹ́ Jẹ	Delete Toolbar
+Yọ àká-irinṣẹ́ tí a yàn náà	Remove the selected toolbar
+Aṣàpínyà	Separator
+Gbogbo àwọn irúfẹ́ tí a ṣàtílẹ́yìn	All supported types
+Àwọn ojú-ìwé wẹ́ẹ̀bù	Web pages
+Àwọn àwòrán	Images
+Gbogbo àwọn fáìlì	All files
+Kò lè ṣẹ̀dá atọ́nà ìgbà díẹ̀ nínú “<UNK>”.	Could not create a temporary directory in “<UNK>”.
+Fáìlì “<UNK>” wà. Jọ̀wọ́ gbé kúrò lọ́nà.	The file “<UNK>” exists. Please move it out of the way.
+Ó kùnà láti ṣẹ̀dá “<UNK>”.	Failed to create directory “<UNK>”.
+Atọ́nà “<UNK>” kò ṣeé kọ	Directory “<UNK>” is not writable
+O kò ní ìyànda láti ṣẹ̀dá àwọn fáìlì nínú atọ́nà yìí.	You do not have permission to create files in this directory.
+Atọ́nà Tí kò Ṣeé Kọ	Directory not Writable
+Kò lè ṣẹ̀dà lórí fáìlì tó wà nílẹ̀“<UNK>”	Cannot overwrite existing file “<UNK>”
+Fáìlì tó ń jẹ́ orúkọ yìí ti wà nílẹ̀ tẹ́lẹ̀, o kò sì ní ìyànda láti ṣẹ̀dà le lórí.	A file with this name already exists and you don't have permission to overwrite it.
+Kò Lè Ṣẹ̀dà Lórí Fáìlì	Cannot Overwrite File
+Kò lè ṣàfihàn ìrànwọ́: <UNK>	Could not display help: <UNK>
+Àwọn Fèrèsé Ìtasókè	Popup Windows
+Ìtàn	History
+Àmì-ìwé	Bookmark
+Àwọn Àmì-ìwé	Bookmarks
+Àmúwọlé Àdírẹ̀sì	Address Entry
+"Ṣàgbéwọléfriendly time"" string for the current day, strftime format. like ""Today 12:34 am"	Download
+friendly timeYesterday 12:34 am	Today I:M p
+friendly timeWed 12:34 am	Yesterday I:M p
+a d b Yfriendly timeFeb 12 12:34 am	a I:M p
+a d b Yfriendly timeFeb 12 1997	b d I:M p
+a d b Y	b d Y
+50	50
+75	75
+100	100
+125	125
+150	150
+175	175
+200	200
+300	300
+400	400
+Wọ, kí o sì ju áíkànnù yìí sílẹ̀ láti ṣẹ̀dá líǹkì sí ojú-ìwé yìí	Drag and drop this icon to create a link to this page
+<UNK>:	<UNK>:
+Ṣẹ̀dá àkọ́lé “<UNK>”	Executes the script “<UNK>”
+Fi “<UNK>” hàn	Show “<UNK>”
+“<UNK>” Àwọn àbùdá	“<UNK>” Properties
+Àkọ́lé:	Title:
+Awọn àkọlé:	Topics:
+Fi gbogbo àwọn àkọlé hàn	Show all topics
+Ìgbádùn	Entertainment
+Ìròyìn	News
+Ìnọ́jà	Shopping
+Eré-ìdárayá	Sports
+Ìrìn-àjò	Travel
+Iṣẹ́	Work
+Ṣàfikún àmì-ìwé “<UNK>”?	Update bookmark “<UNK>”?
+A ti gbé ojú-ìwé tí a sàmì rẹ̀ lọ sí “<UNK>”.	The bookmarked page has moved to “<UNK>”.
+Má Ṣàfikún	Don't Update
+Ṣàfikún	Update
+Ṣàfikún Àmì-ìwé?	Update Bookmark?
+Tí A Bẹ̀wò Jù	Most Visited
+Kò Sí Ní Ọ̀wọ́bookmarks	Not Categorized
+Àwọn Gbàgede Agbègbè	Nearby Sites
+Kò ní àkọ́lé	Untitled
+Epiphany (RDF)	Epiphany (RDF)
+Mozilla (HTML)	Mozilla (HTML)
+Yọọ́kúrò láti inú àkọlé yìí	Remove from this topic
+Fáìlì	File
+À̀yẹ̀wò	Edit
+Òye	View
+Ìrànwọ́	Help
+Àkọlé Tuntun	New Topic
+Ṣẹ̀dá àkọlé tuntun	Create a new topic
+Ṣí àmì-ìwé tí a yàn nínú fèrèsé tuntun	Open the selected bookmark in a new window
+Ṣí àmì-ìwé tí a yàn nínú táàbù tuntun	Open the selected bookmark in a new tab
+Tún orúkọ sọ...	Rename…
+Tún orúkọ àmì-ìwé tàbí àkọlé tí a yàn sọ	Rename the selected bookmark or topic
+Àwọn àbùdá	Properties
+Wòye tàbí kí o tún àwọn àbùdá àmì-ìwé tí a yàn tò	View or modify the properties of the selected bookmark
+Gbé Àwọn Àmì-ìwé Wọlé	Import Bookmarks…
+Gbé àwọn àmì-ìwé láti inú awáròyìn mìíràn tàbí fáìlì àwọn àmì-ìwé	Import bookmarks from another browser or a bookmarks file
+Gbé Àwọn Àmì-ìwé Jáde	Export Bookmarks…
+Gbé àwọn àmì-ìwé lọ sínú fáìlì	Export bookmarks to a file
+Ti	Close
+Ti fèrèsé àwọn àmì-ìwé	Close the bookmarks window
+Gé	Cut
+Gé ẹ̀yàn náà	Cut the selection
+Ṣẹ̀dà	Copy
+Ṣẹ̀dà ẹ̀yàn náà	Copy the selection
+Lẹ	Paste
+Lẹ agbàròyìn dúró náà	Paste the clipboard
+Pajẹ	Delete
+Pa àmì-ìwé tàbí àkọlé tí a yàn jẹ	Delete the selected bookmark or topic
+Yan Gbogbo Wọn	Select All
+Yan gbogbo àwọn àmì-ìwé tàbí àyọkà	Select all bookmarks or text
+Àwọn àkóónú	Contents
+Ṣàfihàn ìrànwọ́ àwọn àmì-ìwé	Display bookmarks help
+Nípa	About
+Ṣàfihàn ìgbóríyìn fún àwọn olùdásílẹ̀ awáròyìn wẹ́èbù náà	Display credits for the web browser creators
+Fihàn lórí Àká-irinṣẹ́	Show on Toolbar
+Fi àmì-ìwé tí a yàn hàn lórí àká-irinṣẹ́	Show the selected bookmark on a toolbar
+Àkọ́lé	Title
+Kọ́lọ̀mù àkọ́lé nìkan ni kí o fihàn	Show only the title column
+Àkọ́lé àtiÀdírẹ̀sì	Title and Address
+Fi àwọn kọ́lọ̀mù àkọ́lé àti àdírẹ̀sì méjèèjì hàn	Show both the title and address columns
+Tẹ àkọlé	Type a topic
+Pa àkọlé jẹ “<UNK>”?	Delete topic “<UNK>”?
+Pa àkọlé yìí jẹ?	Delete this topic?
+Pípa àkọlé yìí jẹ, yóò fa kí gbogbo àwọn àmì-ìwé rẹ̀ má sìí ní ọ̀wọ́ mọ́ àyàfi tí wọ́n bá jẹ́ ti àwọn àkọlé mìíràn. A óò pa àwọn àmì-ìwé náà jẹ.	Deleting this topic will cause all its bookmarks to become uncategorized, unless they also belong to other topics. The bookmarks will not be deleted.
+Pa Àkọlé Jẹ	Delete Topic
+Firefox	Firefox
+Firebird	Firebird
+Àkópọ̀-ìròyìn Mozilla “<UNK>”	Mozilla “<UNK>” profile
+Galeon	Galeon
+Konqueror	Konqueror
+Ìgbéwọlé kùnà	Import failed
+Igbéwọlé Kùnà	Import Failed
+A kò lè gbé àwọn àmì-ìwé tí a gbé láti inú “<UNK>” wọlé nítorí pé fáìlì náà ti bàjẹ́ tàbí kó jẹ̀ irúfẹ́ tí kò ní àtìlẹ́yìn.	The bookmarks from “<UNK>” could not be imported because the file is corrupted or of an unsupported type.
+Gbé àwọn àmì-ìwé wọlé láti inú fáìlì	Import Bookmarks from File
+Àwọn àmì-ìwé Firefox/Mozilla	Firefox/Mozilla bookmarks
+Àwọn àmì-ìwé Galeon/Konqueror	Galeon/Konqueror bookmarks
+Àwọn àmì-ìwé Epiphany	Epiphany bookmarks
+Gbé Àwọn Àmì-ìwé Jáde	Export Bookmarks
+Ìgúnrégé fáilì:	File format:
+Gbé Àwọn Àmì-ìwé Wọlé	Import Bookmarks
+Ìgbéwọlé	Import
+Gbé àwọn àmì-ìwé wọlé láti:	Import bookmarks from:
+Ṣẹ̀dà Àdírẹ̀sì	Copy Address
+Wádìí:	Search:
+Àwọn àkọlé	Topics
+Àdírẹ̀sì	Address
+Fi àwọn àbùdá fún àmì-ìwé yìí hàn	Show properties for this bookmark
+Ṣí àmì-ìwé yìí nínú táàbù wẹ́ẹ̀bù	Open this bookmark in a new tab
+Ṣí àmì-ìwé yìí nínú fèrèsé tuntun	Open this bookmark in a new window
+Ṣi nínú Àwọn Táàbù Tuntun	Open in New Tabs
+Ṣí àwọn àmì-ìwé inú àkọlé yìí nínú àwọn táàbù tuntun	Open the bookmarks in this topic in new tabs
+Jọra	Related
+Àwọn àkọlé	Topic
+Ṣẹ̀dá àkọ́lé “<UNK>”	Create topic “<UNK>”
+Àwọn Mìíràn	Other…
+Àwọn ìyítumọ̀ mìíràn	Other encodings
+A kò ri	Not found
+Yípọ̀	Wrapped
+Wá Àwọn líǹkì:	Find links:
+Wa:	Find:
+Wá Tílẹ̀	Find Previous
+Wá ìṣẹ̀lẹ̀ ìwádìí fọ́nrán tilẹ̀	Find previous occurrence of the search string
+Wá Èyí Tókàn	Find Next
+Wá ìṣẹ̀lẹ̀ ìwádìí fọ́nrán tókàn	Find next occurrence of the search string
+Fi Ojú Kọ̀ǹpútà Kíkún Sílẹ̀	Leave Fullscreen
+Lọ	Go
+Ṣí líǹkì ìtàn tí a yàn nínú fèrèsé tuntun	Open the selected history link in a new window
+Ṣí líǹkì ìtàn tí a yàn nínú táàbù tuntun	Open the selected history link in a new tab
+Ṣàfikún Àmì-ìwé...	Add Bookmark…
+Sàmì ìwé sí líǹkì ìtàn tí a yàn	Bookmark the selected history link
+Ti fèrèsé ìtàn náà	Close the history window
+Pa líǹkì ìtàn tí a yàn jẹ	Delete the selected history link
+Yan gbogbo àwọn líǹkì ìtàn tàbí àyọkà	Select all history links or text
+Pa Ìtàn Rẹ́	Clear History
+Pa ìtàn ìwáròyìn rẹ rẹ́	Clear your browsing history
+Ṣàfihàn ìrànwọ́ ìtàn	Display history help
+Kọ́lọ̀mù àkọ́lé nìkan ni kí o fihàn	Show the title column
+Fi kọ́lọ̀mù àdírẹ̀sì nìkan hàn	Show the address column
+Fi àwọn kọ́lọ̀mù àkọ́lé àti àdírẹ̀sì méjèèjì hàn	Show the date and time column
+́Pa ìtàn ìwáròyìn rẹ́?	Clear browsing history?
+Pípa ìtàn ìwáròyìn náà rẹ́ yóò mú ìpajẹ bá gbogbo àwọn líǹkì ìtàn ráúráú.	Clearing the browsing history will cause all history links to be permanently deleted.
+Ní ọgbọ̀n ìṣẹ̀jú sẹ́yìn	Last 30 minutes
+Lónìí	Today
+Àwọn gbàgede	Sites
+Awáròyìn Wẹ́ẹ̀bù GNOME	GNOME Web Browser
+Ṣí táàbù tuntun nínú fèrèsé awáròyìn tó wà nílẹ̀	Open a new tab in an existing browser window
+Ṣí fèrèsé awáròyìn tuntun	Open a new browser window
+Fi olótùú àwọn àmì-ìwé náà lọ́lẹ̀	Launch the bookmarks editor
+Gbé àwọn àmì-ìwé wọlé láti inú fáìlì náà	Import bookmarks from the given file
+Kí fáìlì sáà náà	Load the given session file
+Ṣàfikún àmì-ìwé	Add a bookmark
+URL	URL
+Bẹ̀rẹ̀ àpẹẹrẹ aládàáni	Start a private instance
+Atọ́nà àkójọpọ̀-ìròyìn tí a óó lò nínú àpẹẹrẹ aládàáni	Profile directory to use in the private instance
+DIR	DIR
+URL	URL …
+Kò lè bẹ̀rẹ̀ Awáròyìn Wẹ́ẹ̀bù GNOME	Could not start GNOME Web Browser
+Ìbẹ̀rẹ̀ iṣẹ́ kọ̀ǹpútà kùnà nítorí àṣìṣe wọ̀nyí: <UNK>	Startup failed because of the following error: <UNK>
+Àwọn ẹ̀yàn Awáròyìn Wẹ́ẹ̀bù GNOME	GNOME Web Browser options
+Ti táàbù	Close tab
+Á̀mì-àṣírí Òǹlò	Master password needed
+Dènà àwọn àgbéwọlé tó kù díẹ̀?	Abort pending downloads?
+Àwọn àgbéwọlé kan ṣì ku díẹ̀. Tí o bá parí iṣẹ́ a ó dènà wọn, a óò sì sọ wọ́n nù.	There are still downloads pending. If you log out, they will be aborted and lost.
+Pa Parí iṣẹ́ Rẹ́	Cancel Logout
+Dènà Àwọn Àgbéwọlé	Abort Downloads
+Gba àwọn fèrèsé awáròyìn àti àwọn táàbù tilẹ̀ padà?	Recover previous browser windows and tabs?
+Ó jọ wí pé Epiphany ti jáde láìrò tẹ́lẹ̀ nígbà tí a rọ́ọ̀nù rẹ̀ lẹ́ẹ̀kan. O lè rí àwọn fèrèsé àti táàbù tí o ṣí.	Epiphany appears to have exited unexpectedly the last time it was run. You can recover the opened windows and tabs.
+Má Gbàá Padà	Don't Recover
+Gbà Padà	Recover
+Ìgbà Padà Ìdàrú	Crash Recovery
+Ìbéèrè fún amúgbálẹ̀gbẹ́ àká-ẹ̀gbẹ́	Sidebar extension required
+Ìbéèrè Fún Amúgbálẹ̀gbẹ́ Àká-ẹ̀gbẹ́	Sidebar Extension Required
+Líǹkì tí o tẹ̀, nílò ká fi amúgbálẹ̀gbẹ́ àká-ẹ̀gbẹ́ sípò fún.	The link you clicked needs the sidebar extension to be installed.
+CaretCaret	Caret
+Ní móòdù ẹ̀yàn kííbọọ̀dù, tẹ F7 láti jáde	In keyboard selection mode, press F7 to exit
+Sún sí táàbù yìí	Switch to this tab
+Padà	Back
+Lọ sí Ojú-ìwé tí a bẹ̀ wò tẹ́lẹ̀	Go to the previous visited page
+Ìtàn ẹ̀yìn	Back history
+Iwájú	Forward
+Lọ sí ojú-ìwé tókàn tí a óò bẹ̀ wò	Go to the next visited page
+Ìtàn iwájú	Forward history
+Òkè	Up
+Lọ sókè ní ìpele kan	Go up one level
+Àtojọ àwọn ìpele gíga	List of upper levels
+Tẹ àdírẹ̀sì wẹ́èbù wọlé láti ṣi tàbí àpólà láti wá	Enter a web address to open, or a phrase to search for
+Fẹ̀ẹ́	Zoom
+Tún ìwọ̀n àyọkà náà ṣe	Adjust the text size
+Lọ sí àdírẹ̀sì tí a tẹ̀ wọlé nínú àmúwọlé àdírẹ̀sì	Go to the address entered in the address entry
+Ilé	Home
+Lọ sí ojú-ìwé ilé	Go to the home page
+Táàbù Tuntun	New Tab
+Ṣí táàbù tuntun	Open a new tab
+Fèrèsé Tuntun	New Window
+Ṣí fèrèsé tuntun	Open a new window
+Ìpéwọ̀ntoolbar style	Default
+toolbar style	Text below icons
+toolbar style	Text beside icons
+toolbar style	Icons only
+Ìyítumọ̀ Àyọkà	Text only
+Olótùú Àká-irinṣẹ́	Toolbar Editor
+Àwọn ìwé-ìsàmì bọ́tìnì àká-irinṣẹ́:	Toolbar button labels:
+Ṣàfikún Àká-irinṣẹ́ Tuntun	Add a New Toolbar
+Àwọn Irinṣẹ́	Tools
+À̀wọn táàbù	Tabs
+Àwọn àká-irinṣẹ́	Toolbars
+Ṣí	Open…
+Ṣí fáìlì	Open a file
+Fi pamọ́ Lórúkọ	Save As…
+Fi ojú-ìwé lọ́wọ́lọ́wọ́ pamọ́	Save the current page
+Àgbékalẹ̀-ètò Píríǹtì	Page Setup
+Ṣàgbékalẹ̀ ètò àwọn ààtò fún píríǹtì	Setup the page settings for printing
+Àkọ́gbéyẹ̀wò Píríǹtì	Print Preview
+Àkọ́gbéyẹ̀wò píríǹtì	Print preview
+Píríǹtì	Print…
+Píríǹtì ojú-ìwé lọ́wọ́lọ́wọ́	Print the current page
+Fi Líǹkì Ránṣẹ́ láti Lẹ́tà Kọ̀ǹpútà...	Send Link by Email…
+Fi líǹkì ojú-ìwé lọ́wọ́lọ́wọ́ ránṣẹ́	Send a link of the current page
+Ti táàbù yìí	Close this tab
+Padà sípò	Undo
+Dá iṣẹ́ tó kẹ́yìn padà sípò	Undo the last action
+Túnṣe	Redo
+Tún iṣẹ́ tí a dá padà sípò ṣe	Redo the last undone action
+Lẹ agbàròyìn dúró	Paste clipboard
+Pajẹ	Delete text
+Yan gbogbo ojú-ìwé náà	Select the entire page
+Wá	Find…
+Wá ọ̀rọ̀ tàbí àpólà ní ojú-ìwé náà	Find a word or phrase in the page
+Wá ìṣẹ̀lẹ̀ ọ̀rọ̀ tàbí àpólà tókàn	Find next occurrence of the word or phrase
+Wá Tilẹ̀	Find Previous
+Wá ìṣẹ̀lẹ̀ ọ̀rọ̀ tàbí àpólà tilẹ̀	Find previous occurrence of the word or phrase
+Àkójọpọ̀-ẹ̀rí Ara-ẹ̀ni	Personal Data
+Wòye kí o sì yọ àwọn kúkì àti àwọn àmì-àṣírí kúrò	View and remove cookies and passwords
+ÀwọnÌwé-ẹ̀rí	Certificates
+Ṣàbójútó Àwọn Ìwé-ẹ̀rí	Manage Certificates
+Awọn Ìkúndùn	Preferences
+Ṣàtòpọ̀ awáròyìn wẹ́ẹ̀bù	Configure the web browser
+Àwọn Àká-irinṣẹ́ Tó Ṣe Rẹ́gí...	Customize Toolbars…
+Àwọn àká-irinṣẹ́ tó ṣe rẹ́gí	Customize toolbars
+Dúró	Stop
+Dá gbígbé àkójọpọ̀-ẹ̀rí lọ́wọ́lọ́wọ́ dúró	Stop current data transfer
+Túnkì	Reload
+Ṣàfihàn àkóónú ìwòyí ojú-ìwé lọ́wọ́lọ́wọ́	Display the latest content of the current page
+Àyọkà Ńlá	Larger Text
+Fikún ìwọ̀n àyọkà náà	Increase the text size
+Àyọkà Kekeré si	Smaller Text
+Dín ìwọ̀n àyọkà náà kù	Decrease the text size
+Ìwọ̀n Déédéé	Normal Size
+Lo ìwọ̀n àyọkà déédéé náà	Use the normal text size
+Ìyítumọ Àyọkà	Text Encoding
+Yí ìyítumọ̀ àyọkà náà padà	Change the text encoding
+Orísun Ojú-ìwé	Page Source
+Wòye kóòdù orísun ojú-ìwé náà	View the source code of the page
+Gba ìròyìn àabò tó parí iṣẹ́	Page Security Information
+Fọkàn tán ìròyìn ààbò yìí láti ìsìnyí lọ	Display security information for the web page
+Ṣàfikún àmì-ìwé fún ojú-ìwé lọ́wọ́lọ́wọ́	Add a bookmark for the current page
+Ṣàyẹ̀wò Àwọn Àmì-ìwé	Edit Bookmarks
+Ṣí fèrèsé àwọn àmì-ìwé náà	Open the bookmarks window
+Àyè...	Location…
+Lọ sí àyè kan ní pàtó	Go to a specified location
+Ṣí fèrèsé ìtàn	Open the history window
+Táàbù Tilẹ̀	Previous Tab
+Mú táàbù tilẹ̀ ṣiṣẹ́	Activate previous tab
+Táàbù Tókàn	Next Tab
+Mú táàbù tókàn ṣiṣẹ́	Activate next tab
+Gbé Táàbù Sósì	Move Tab Left
+Gbé táàbù lọ́wọ́lọ́wọ́ lọ sí òsì	Move current tab to left
+Gbé Táàbù -Ọtún	Move Tab Right
+Gbé táàbù lọ́wọ́lọ́wọ́ lọ sí ọ̀tún	Move current tab to right
+Yọ Táàbù	Detach Tab
+Yọ táàbù lọ́wọ́lọ́wọ́	Detach current tab
+Ṣàfihàn ìrànwọ́ awáròyìn wẹ́ẹ̀bù	Display web browser help
+Ṣiṣẹ́ Láìsí Lórí Wáyà	Work Offline
+Sún sí móòdù àìsí lórí wáyà	Switch to offline mode
+Fi Àwọn Àká-irinṣẹ́ Pamọ́	Hide Toolbars
+Fi àká̀-irinṣẹ́ hàn tàbí kí o fi pamọ́	Show or hide toolbar
+Àká-ipò	Statusbar
+Fi àká-ipò hàn tàbí kí o fi pamọ́	Show or hide statusbar
+Ojú kọ̀ǹpùtà kíkún	Fullscreen
+Wáròyìn ní ojú kọ̀ǹpútà kíkún	Browse at full screen
+Fi àwọn fèrèsé ìtasókè tí a kò bèrè fún láti inú gbàgede yìí hàn tàbí pamọ́	Show or hide unrequested popup windows from this site
+Caret Ẹ̀yàn	Selection Caret
+Ṣàfikún Àmììwé...	Add Bookmark…
+Fi Férémù Yìí Nìkan Hàn	Show Only This Frame
+Férémù yìí nìkan ni ko fihàn nínú fèrèsé yìí	Show only this frame in this window
+Ṣí Líǹkì	Open Link
+Ṣí líǹkì nínú fèrèsé yìí	Open link in this window
+Ṣí Líǹkì nínú Fèrèsé Tuntun	Open Link in New Window
+Ṣí líǹkì nínú fèrèsé tuntun	Open link in a new window
+Ṣí Líǹkì nínú Táàbù Tuntun	Open Link in New Tab
+Ṣí líǹkì nínú táàbù tuntun	Open link in a new tab
+Ṣàgbéwọlé líǹkì	Download Link
+Fi Líǹkì Pamọ́ Gẹ́gẹ́ Bíi	Save Link As…
+Fi líǹkì pamọ́ pẹ̀lú orúkọ mìíràn	Save link with a different name
+Líǹkì Àmì-ìwé...	Bookmark Link…
+Ṣẹ̀dà Àdírẹ̀sì Líǹkì	Copy Link Address
+Fi Lẹ́tà Kọ̀ǹpútà Ránṣẹ́...	Send Email…
+Ṣẹ̀dà Àdírẹ̀sì Lẹ́tà Kọ̀ǹpútà	Copy Email Address
+Ṣí Àwòrán	Open Image
+Fi Àwòrán Pamọ́ Gẹ́gẹ́ bíi	Save Image As…
+Lo Àwòrán Gẹ́gẹ́ Bíi Ẹ̀yìn	Use Image As Background
+Ṣẹ̀dà Àdírẹ̀sì Àwòrán	Copy Image Address
+Bẹ̀rẹ̀ Ìṣàfarawé Kọ̀ǹpútà	Start Animation
+Da Ìṣàfarawé Kọ̀ǹpútà Dúró	Stop Animation
+Àwọn ìyípadà tí a lò láti dá àwọn fọ́nrán tí a kò tíì fi lélẹ̀ wà	There are unsubmitted changes to form elements
+Tí o bá ti àkọsílẹ̀ náà ní ọ̀nàkọ́nà, wàá sọ ìròyìn náà nù.	If you close the document anyway, you will lose that information.
+Ti Àkọsílẹ̀	Close Document
+Ṣí	Open
+Fi pamọ́ Lórúkọ	Save As
+Píríǹtì	Print
+Wá	Find
+Tóbi sí	Larger
+Kéré sí	Smaller
+Àìfìdímúlẹ̀	Insecure
+Dàrú	Broken
+Kéré	Low
+Ga	High
+Ìpele ààbò: <UNK>	Security level: <UNK>
+Ṣí àwòrán “<UNK>”	Open image “<UNK>”
+Lòó gẹ́gẹ́ bíi ẹ̀yìn ojú-iṣẹ́ “<UNK>”	Use as desktop background “<UNK>”
+Fi àwòrán pamọ́ “<UNK>”	Save image “<UNK>”
+Ṣẹ̀dà àdírẹ̀sì àwòrán “<UNK>”	Copy image address “<UNK>”
+Fi lẹ́tà kọ̀ǹpútà ránṣẹ́ sí àdírẹ̀sì “<UNK>”	Send email to address “<UNK>”
+Ṣẹ̀dà àdírẹ̀sì lẹ́tà kọ̀ǹpútà “<UNK>”	Copy email address “<UNK>”
+Fi líǹkì pamọ́ “<UNK>”	Save link “<UNK>”
+Líǹkì àmì-ìwé “<UNK>”	Bookmark link “<UNK>”
+Ṣẹ̀dà àdírẹ̀sì líǹkì “<UNK>”	Copy link's address “<UNK>”
+Àkójọpọ̀-ẹ̀rì Ara-ẹni	Clear All Personal Data
+Yan àmì-àṣírí.	Saved passwords
+Àwọn Fáìlì Ìgbà Díẹ̀	Temporary files
+Àwọn Àbùdá Kúkì	Cookie Properties
+Àkóónú	Content:
+Ipa:	Path:
+Ránṣẹ́ fún:	Send for:
+Àwọn ìdarapọ̀ ìyídà nìkan	Encrypted connections only
+Ìdarapọ̀ èyíkèyí	Any type of connection
+Parí iṣẹ́:	Expires:
+Ìparí sáà lọ́wọ́lọ́wọ́	End of current session
+Agbègbè	Domain
+Orúkọ	Name
+Agbàlejò	Host
+Orúkọ Òǹlò	User Name
+Á̀mì-àṣírí Òǹlò	User Password
+Ṣàgbéwọlé Líǹkì	Download Link
+Fi Líǹkì Pamọ́ Gẹ́gẹ́ Bíi	Save Link As
+Fi Àwòrán Pamọ́ Gẹ́gẹ́ bíi	Save Image As
+Àkọ́kọ́	First
+Lọ sí ojú-ìwé àkọ́kọ́	Go to the first page
+Ìgbẹ̀yìn	Last
+Lọ sí ojú-ìwé tó gbẹ̀yìn	Go to the last page
+Tilẹ̀	Previous
+Lọ sí ojú-ìwé tilẹ̀	Go to the previous page
+Tókàn	Next
+Lọ sí ojú-ìwé tókàn	Go to next page
+Ti àkọ́gbéyẹ̀wò píríǹtìFrench (France)	Close print preview
+<UNK> (<UNK>)	<UNK> (<UNK>)
+A sọ oríkì òǹlò (<UNK>)	User defined (<UNK>)
+Yan Atọ́nà	Select a Directory
+Ẹ̀yà-ara kọ̀ǹpútà àìfojúrí ọ̀fẹ́ ni Awáròyìn Wẹ́ẹ̀bù GNOME; o lè tun pín kí o/tàbí tuntò lábẹ́ àwọn ìwọ̀fún Ìwé-àṣẹ Gbogbogbò ti GNU gẹ́gẹ́ bí a ṣe tẹ̀ẹ́ láti ọwọ́ Àjọ Ẹ̀yà-ara kọ̀ǹpútà Ọ̀fẹ́; yálà ẹ̀yà kejì ti Ìwé-àṣẹ, tàbí (ti ẹ̀yàn rẹ) ẹ̀yà mìíràn tó lè jáde lọ́jọ́ iwájú.	The GNOME Web Browser is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+A pín Awáròyìn Wẹ́ẹ̀bù GNOME pẹ̀lú ìrètí pé yóò wúlò ṣùgbọ́n a pin LÁÌ SÍ WÁRÁǸTÌ, kódà wáráǹ̀tì ITAJA tàbí ÌWÚLÒ FÚN ÌLÒ PÀTÀKÌ KAN. Wo Àṣẹ Gbogbogbò GNU fún àlàyé lẹ́kùnrẹ́rẹ́.	The GNOME Web Browser is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+Ó yẹ kí o ti gba ẹ̀dà Ìwé-àṣẹ Gbogbo ti GNU pẹ̀lú Awáròyìn Wẹ́ẹ̀bù GNOME; tí kò bá rí bẹ́ẹ̀ kọ̀wé sí Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA	You should have received a copy of the GNU General Public License along with the GNOME Web Browser; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+Kàn si wá ní:	Contact us at:
+Àwọn tó dá si:	Contributors:
+Àwọn oníṣẹ́-ọ̀nà tẹ́lẹ̀:	Past developers:
+Fajuyitan, Sunday Ayo ayo@wazobialinux,sunnytai@37.com	translator-credits
+Gbàgede-wẹ́ẹ̀bù Awáròyìn Wẹ́ẹ̀bù GNOME	GNOME Web Browser Website
+Wádìí:	URL Search
+Orúkọ Òǹlò	User agent
+Wòye Ìwé-ẹ̀rí	View Certificate#x2026;
+Ṣàyẹ̀wò Sítàì-ṣiìtì...	Edit Stylesheet#x2026;
+A kò ri	Not now
+Fi àmì-àṣírí hàn	Store password
+Fi Àwòrán Pamọ́ Gẹ́gẹ́ bíiFrench (France)	Save Image As
+Àwọn àyọkà ìsàlẹ̀-ilà	Fonts
+Lo àwọn ìrísí-lẹ́tà rẹ	Use system fonts
+Àwọn àyọkà ìsàlẹ̀-ilà	Style
+Pa Parí iṣẹ́ Rẹ́	Cancel
+Fihàn lórí Àká-irinṣẹ́	Show in folder
+Kíki...	Starting…
+Má Gbàá Padà	Don't recover
+Gbà Padà	Recover session
+Gba àwọn fèrèsé awáròyìn àti àwọn táàbù tilẹ̀ padà?	Do you want to recover the previous browser windows and tabs?
+Àwon àgbéwọlé	Downloads Bar
+Férémù yìí nìkan ni ko fihàn nínú fèrèsé yìí	Show the active downloads for this window
+́Pa ìtàn ìwáròyìn rẹ́?	Enable caret browsing mode?
+Fún Java lágbára iṣẹ́	Enable
+Wá wẹ́ẹ̀bù náà	Search the web
+Wáròyìn wẹ́ẹ̀bù náà	Browse with caret
+Ṣàgbéwọlé àwọn fáìlì náà láládàáṣe kí o sì ṣí wọn	Automatic downloads
+Àwọn àká-irinṣẹ́	Toolbar style
+Lo àwọn ìrísí-lẹ́tà rẹ	Use GNOME fonts
+Ìyítumọ̀ Àyọkà	Default encoding
+Kò gbà rárá	Cookie accept
+Fàyè gba àwon fèrèsé ìtasókè	Allow popups
+Fún Java lágbára iṣẹ́	Enable WebGL
+Fún Java lágbára iṣẹ́	Enable WebAudio
+Fún Java lágbára iṣẹ́	Enable Adblock
+Ṣàgbéwọlé fódà:	The downloads folder
+Fún Java lágbára iṣẹ́	Enabled
+Ṣẹ̀dá àkọlé tuntun	Applications
+Wáròyìn ní ojú kọ̀ǹpútà kíkún	Press <UNK> to exit fullscreen
+Awáròyìn Wẹ́ẹ̀bù Epiphany	Epiphany profile migrator
+"friendly time"" string for the current day, strftime format. like ""Today 12:34 am"	Epiphany profile migrator options
+Àwon Ààyè Wúnrẹ̀nÌwé-ẹ̀rí	The certificate has expired
+Gbogbo àwọn fáìlì	All sites
+Àdírẹ̀sì	Add
+Iṣẹ́bookmarks	Work
+Fèrèsé Tuntun	New Incognito Window
+Àwọn Àbùdá Kúkì	Cookie properties
+Ṣàgbéwọlé àwọn fáìlì náà láládàáṣe kí o sì ṣí wọn	Automatically open downloaded files
+Àwọn Ìrísí-lẹ́tà	Fonts
+A kò ri	Text not found
+Ìtàn ẹ̀yìn	All history
+Bẹ̀rẹ̀ àpẹẹrẹ aládàáni	Start an instance in netbank mode
+Kò lè bẹ̀rẹ̀ Awáròyìn Wẹ́ẹ̀bù GNOME	Could not start Web
+Àkóónú Wẹ́ẹ̀bù	Web options
+Wá wẹ́ẹ̀bù náà	Search the Web for <UNK>
+Fẹ̀ẹ́	Zoom In
+Fẹ̀ẹ́	Zoom Out
+Ṣẹ̀dà Àdírẹ̀sì Lẹ́tà Kọ̀ǹpútà	Copy E-mail Address
+Lọ sí ojú-ìwé tókàn tí a óò bẹ̀ wò	Go to most visited
+Fi Àwòrán Pamọ́ Gẹ́gẹ́ bíiFrench (France)language	Save Image As
+<UNK> (<UNK>)language	<UNK> (<UNK>)
+Fáìlì tó ń jẹ́ orúkọ yìí ti wà nílẹ̀ tẹ́lẹ̀, o kò sì ní ìyànda láti ṣẹ̀dà le lórí.	An application with the same name already exists. Replacing it will overwrite it.
+Ṣẹ̀dá àkọlé tuntun	Create Web Application
+Ẹ̀yà-ara kọ̀ǹpútà àìfojúrí ọ̀fẹ́ ni Awáròyìn Wẹ́ẹ̀bù GNOME; o lè tun pín kí o/tàbí tuntò lábẹ́ àwọn ìwọ̀fún Ìwé-àṣẹ Gbogbogbò ti GNU gẹ́gẹ́ bí a ṣe tẹ̀ẹ́ láti ọwọ́ Àjọ Ẹ̀yà-ara kọ̀ǹpútà Ọ̀fẹ́; yálà ẹ̀yà kejì ti Ìwé-àṣẹ, tàbí (ti ẹ̀yàn rẹ) ẹ̀yà mìíràn tó lè jáde lọ́jọ́ iwájú.	Web is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+Gbàgede-wẹ́ẹ̀bù Awáròyìn Wẹ́ẹ̀bù GNOME	Web Website
+http://www.google.com/search?ie=UTF-8oe=UTF-8q=	http://www.google.com
+Nípa	About Web
+Yọọ́kúrò nínú Àká-irinṣẹ́	Remove from overview
+Kíki “<UNK>”...	Problem loading “<UNK>”
+Túnkì	Reload Anyway
+Fi líǹkì pamọ́ “<UNK>”	Problem displaying “<UNK>”
+"Àwọn ẹ̀yàn Awáròyìn Wẹ́ẹ̀bù GNOMEfriendly time"" string for the current day, strftime format. like ""Today 12:34 am"	Web profile migrator options
+Àwọn Àmì-ìwé Wẹ́ẹ̀bù	Web bookmarks
+Àkójọpọ̀-ẹ̀rì Ara-ẹni	Clear Personal Data
+Àwọn Fáìlì Ìgbà Díẹ̀	Cache and temporary files
+́Pa ìtàn ìwáròyìn rẹ́?	Browsing history
+Àwọn gbàgede	Site
+Ìtàn ẹ̀yìn	Search history
+Àyè...	Location
+Àyè...	Copy Location
+Ṣàfikún Àmì-ìwé...	Add Bookmark
+Fi àmì-àṣírí hàn	Search passwords
+Àwọn Àmì-àṣírí	Password
+Àmì-àṣírí:	Copy Password
+Orúkọ Òǹlò	Copy Username
+Wádìí:	Search
+Ṣàbójútó Àwọn Ìwé-ẹ̀rí	Manage Cookies
+Àwọn Àmì-àṣírí	Manage Passwords
+Ṣàgbéwọlé	Down
+Ṣí Àwòrán	View Image
+http://www.google.com/search?q=<UNK>ie=UTF-8oe=UTF-8	https://google.com/search?q=<UNK>
+http://www.google.com/search?q=<UNK>ie=UTF-8oe=UTF-8	http://www.bing.com/search?q=<UNK>
+Ìpínfúnni Ní:	Issued To
+Ìpínfúnni Ní:	Issued By
+Ìtẹ̀-ìka ọwọ́ MD5:	Fingerprints
+Àdírẹ̀sì ojú-ìwéfile type	Page address
+Gbogbo wọnbookmarks	All
+Ṣàfikún Àmì-ìwé?bookmarks	Update Bookmark?
+Tí A Bẹ̀wò Jùbookmarks	Most Visited
+Ṣí fèrèsé tuntuntoolbar style	Open a new window
+Fi ojú-ìwé lọ́wọ́lọ́wọ́ pamọ́	Save the current page as a Web Application
+Èdèfile type	Language
+"friendly time"" string for the current day, strftime format. like ""Today 12:34 am"	Failed to copy cookies file from Mozilla.
+Awáròyìn Wẹ́ẹ̀bù	Web browser for GNOME
+Nípa GNOME	About GNOME
+Nípa GNOME	Learn more about GNOME
+Làbárè	News
+Abánirẹ GNOME	Friends of GNOME
+Ìbẹwò	Contact
+Àràmàdà GEGL	The Mysterious GEGL
+Rọbà Gnome tíó-dárapúpọ	The Squeaky Rubber GNOME
+Wanda ẹja GNOME	Wanda The GNOME Fish
+Nípa ojú ìdarí kọmpútà GNOME	About the GNOME Desktop
+Ẹkú àbọ sí orí ètò ìdarí kọmpútà GNOME	Welcome to the GNOME Desktop
+Nípasẹ	Brought to you by:
+Ìfihàn	Version
+Aṣojú	Distributor
+ẹyajợ àkójọ	Build Date
+GNOME Jẹ oun tí ò gbààyè, tì o ṣé lò, tí o fẹsẹ múlẹ, abánirẹ àyíká ìlànà kọmpútà fún ojúlùmọ Unix ti ìdarí kọmpútà	GNOME is a Free, usable, stable, accessible desktop environment for the Unix-like family of operating systems.
+GNOME pẹlúu ọpọ àwọn ohun tí ó yọ lójú kọmpútà, tí ò pẹlú páálí ìwéolùdarí, ìbojúwo ìwunpọ, ètò, àti ọpọlọpọ ìdarí kọmpútà.	GNOME includes most of what you see on your computer, including the file manager, web browser, menus, and many applications.
+GNOME tún ní àpapọ ète ìdàgbàsókè fún ìdarí kọmpútà	GNOME also includes a complete development platform for applications programmers, allowing the creation of powerful and complex applications.
+Ìfojúsí GNOME Lórí lílò àti ìbánirẹ , ìlọ-dédé, àti àtìlẹyìn ìgbóra àjọṣepọ mú kí ó ní ìyàtọ láàrin ojú ìdarí kọmpútà	GNOME's focus on usability and accessibility, regular release cycle, and strong corporate backing make it unique among Free Software desktops.
+Ipa pàtàkì GNOME Jẹ ìgbóra àgbèègbè wa. Ódàbì pé ẹnikẹni tí ó ní ìmọ ojútùú tàbí tí kò ní, lè sapa àti mú GNOME dára si.	GNOME's greatest strength is our strong community. Virtually anyone, with or without coding skills, can contribute to making GNOME better.
+Àṣìṣe kíkà ìwé <UNK>: <UNK>	Error reading file <UNK>: <UNK>
+Àṣìṣe ìyípadà ìwé <UNK>: <UNK>	Error rewinding file <UNK>: <UNK>
+kò sí orúkọ	No name
+páálí ìwé <UNK> kì ṣè nkan déédé tàbí amọnà	File <UNK> is not a regular file or directory.
+Àṣìṣe kíkà ìwé <UNK>: <UNK>	Error cannot find file id <UNK>
+ko sì orúkọ páálí ìwé láti fi nkan ránṣẹ sí	No filename to save to
+Ìbẹrẹ <UNK>	Starting <UNK>
+kò sí URL láti pilẹ síwájú	No URL to launch
+kìí ṣe irú nkan láti fi bẹrẹ	Not a launchable item
+kò sí àṣẹ láti fi bẹrẹ	No command (Exec) to launch
+Àṣẹ búburú láti fi bẹrẹ	Bad command (Exec) to launch
+Àìrí ojútu fún: <UNK>	Unknown encoding of: <UNK>
+"position"", ""size"", and ""maximum"	could not get information about output d
+"requested"", ""minimummaximum"	none of the saved display configurations matched the active configuration
+"MirrorPantallas en Espejo"", *not* ""Espejar Pantallas"	could not find a suitable configuration of screens
+UnknownMonitor vendor	Hundreds of people have contributed code to GNOME since it was started in 1997; many more have contributed in other important ways, including translations, documentation, and quality assurance.
+Àṣìṣe ìyípadà ìwé <UNK>: <UNK>namename	Error rewinding file <UNK>: <UNK>
+Àṣìṣe kíkà ìwé <UNK>: <UNK>	Cannot find file <UNK>
+"requested"", ""minimummaximum"	none of the selected modes were compatible with the possible modes: <UNK>
+"MirrorPantallas en Espejo"", *not* ""Espejar Pantallas"	required virtual size does not fit available size: requested=(d, d), minimum=(d, d), maximum=(d, d)
+"requested"", ""minimummaximum"	"requested"", ""minimummaximum"
+MirroredPantallas en Espejo	required virtual size does not fit available size: requested=(d, d), minimum=(d, d), maximum=(d, d)
+"position"", ""size"", and ""maximum"	Unknown Display
+Ìró & Fídíò	Sound & Video
+Àtòjọ-ẹ̀yàn agbé-ọ̀pọ̀-ìròyìn-jáde	Multimedia menu
+Ìṣàtòjọ-ètò	Programming
+Àwọn irinṣẹ́ fún ìdàgbàsókè ẹ̀yà-ará kọ̀ǹpútà àìfojúrí	Tools for software development
+Ẹ̀kọ́	Education
+Àwọn Ayò	Games
+Àwọn ayò àti àwọn eré-àṣenọjú	Games and amusements
+Gíráfíìsì	Graphics
+Àwọn ìṣàmúlò-ètò gíráfíìsì	Graphics applications
+Ítánẹ́̀ẹ̀tì	Internet
+Àwọn àtòjọ-ètò fún ìráyè ítánẹ́ẹ̀tì bíi wẹ́ẹ̀bù àti lẹ́tà kọ̀ǹpútà	Programs for Internet access such as web and email
+Ọ́fíìsì	Office
+Àwọn Ìṣàmúlò-ètò Ọ́fíìsì	Office Applications
+Àwọn ààtò àti àwọn ìkúndùn aládàáni	Personal settings
+Ìṣàkóso	Administration
+Yí àwọn ààtò ìfẹ̀sí-ètò kọ̀ǹpútà padà (ó kan gbogbo òǹlò)	Change system-wide settings (affects all users)
+Àwọn ìkúndùn	Preferences
+Àwọn ìkúndùn aládàáni	Personal preferences
+Àwọn Irinṣẹ́ Ètò Kọ̀ǹpútà	System
+Àwọn Irinṣẹ́ Ètò Kọ̀ǹpútà	System Tools
+Ìṣàmójútó àti àtòpọ̀ ètò kọ̀ǹpútà	System configuration and monitoring
+Àwọn Ààtò Ìráyè	Universal Access Settings
+Àwọn Àsẹ́sírì	Accessories
+Àwọn àsẹ́sírì ojù-iṣẹ́	Desktop accessories
+Àwọn Ìṣàmúlò-ètò	Applications
+Àwọn ààtò ìṣàkóso àti àwọn ìkúndùn aládàáni	Personal preferences and administration settings
+Òmíràn	Other
+Àwọn ìsàmúlò-ètò tí kò bá àwọn ọ̀wọ́ mìíràn mu	Applications that did not fit in other categories
+Olótùú Àtòjọ-ẹ̀yàn	Menu Editor
+Ṣàyẹ̀wò Àwọn Àtòjọ-ẹ̀yàn	Edit Menus
+Àwọn ìpéwọ̀n	Defaults
+Àwọn Àtòjọ-ẹ̀yàn:	Menus:
+Àwọn Ìṣàmúlò-ètò:	Applications:
+Olótùú Àtòjọ-ẹ̀yàn	Simple Menu Editor <UNK>
+Fihàn	Show
+Kò lè wá atọ́nà ilé: kò sí àgbékalẹ̀ rẹ̀ ní /etc/passwd kò sí oye fún $HOME ní àyíká	Cannot find home directory: not set in /etc/passwd and no value for $HOME in environment
+Fáìlì àtòjọ-ẹ̀yàn	Menu file
+FÁÌLÌÀTÒJỌ-Ẹ̀YÀN	MENUFILE
+Àpótí ìṣàfihàn fún àwọn ìyípadà àtòjọ-ẹ̀yàn	Monitor for menu changes
+Fi àwọn àmúwọlé si	Include <Exclude>d entries
+Fi àwọn àmúwọlé si	Include NoDisplay=true entries
+ID fáìlì ojú-iṣẹ́ àìfẹsẹmúlẹ̀	Invalid desktop file ID
+̀̀̀̀̀̀̀̀[Orúkọ-fáìlì Àìfẹsẹ̀múlẹ̀]	[Invalid Filename]
+==== Àtúnkì àtòjọ-ẹ̀yàn tó yípadà ====	==== Menu changed, reloading ====
+Igi àtòjọ-ẹ̀yàn ṣófo	Menu tree is empty
+- yẹ ìpilẹ̀ Ojúùwọ̀n Àtòjọ-ẹ̀yàn Ojú-iṣẹ́ GNOME wò	- test GNOME's implementation of the Desktop Menu Specification
+Àwọn Ìṣàmúlò-ètò Ọ́fíìsìPersonal settings	Office Applications
+Àwọn Ìṣàmúlò-ètò	Web Applications
+Ṣẹ̀dàÀkókò	Copy Time
+ṢèdàDéètì	Copy Date
+Àtúnṣe Déètì & Àkókò	Adjust Date & Time
+Àwọn ìkúndùǹ	Preferences
+Fátìrì Ápúlẹ́ètì Aago	Clock Applet Factory
+Fátìrì fún ìṣẹ̀dá àwọn ápúlẹ́ẹ̀tì aago.	Factory for creating clock applets.
+Aago	Clock
+Ri pé o ní àkókò àti déètì lọ́wọ́lọ́wọ́	Get the current time and date
+l:M p	l:M p
+H:M	H:M
+b d	b d
+Àwọn iṣẹ́	Tasks
+Gbogbo Ọjọ́	All Day
+Àwọn Àdéhùn-ìpàdé	Appointments
+Ààyè Aṣàfilọ́lẹ̀	Weather Information
+Àwọn Ìṣàmúlò-ètò	Locations
+Kàlẹ́ńdà	Calendar
+l:M:S p	l:M:S p
+H:M:SMay 01May 1	H:M:S
+a b e	a b e
+1$s 2$s	1$s 2$s
+1$s, 2$s<UNK>	1$s, 2$s
+A, B d Y	A B d (<UNK>)
+Tẹ̀ láti wo àwọn àdéhùn-ìpàdé àti àwọn iṣẹ́ rẹ	Click to hide your appointments and tasks
+Tẹ̀ láti wo àwọn àdéhùn-ìpàdé àti àwọn iṣẹ́ rẹ	Click to view your appointments and tasks
+Tẹ̀ láti wo kàlẹ́ńdà oṣù	Click to hide month calendar
+Tẹ̀ láti wo kàlẹ́ńdà oṣù	Click to view month calendar
+Aago Kọ̀ǹpútà	Computer Clock
+I:M:S p	I:M:S p
+I:M p	I:M p
+A, B d Y	A, B d Y
+Ìgúnrégé àkànṣe	Custom format
+Ààyè Aṣàfilọ́lẹ̀	Choose Location
+Ààyè Aṣàfilọ́lẹ̀	Edit Location
+Fi àwòrán sí pánẹ́ẹ̀lì	City Time Zone
+Wákàtí mẹ́rìnlélógún	24 hour
+Àkókò UNIX	UNIX time
+Àkókò ítánẹ́ẹ̀tì	Internet time
+Ìgúnrégéàkànṣe:	Custom format:
+Aago náà ń ṣàfihàn àkókò àti déètì lọ́wọ́lọ́wọ́	The Clock displays the current time and date
+"ìgbóríyìn òǹgbufọ̀state"" or ""province"" should use that instead of ""region"	translator-credits
+Táìlì̀	Timezone:
+Áíkànnù:	Location Name:
+Táìlì̀	Time:
+Kò sí (lo kókó ètò kọ̀ǹpútà)	Set System Time
+Àwọn ìkúndùǹ Aago	Clock Preferences
+Ìgúnrégé àkànṣe	Clock Format
+Ìgúnrégé wákàtí	12 hour format
+Ìgúnrégé wákàtí	24 hour format
+Àtòjọ ID pánẹ́́ẹ̀lì	Panel Display
+Fidéètì hàn	Show the date
+Fiàwọn ìṣísẹ̀ hàn	Show seconds
+Fidéètì hàn	Show weather
+Fidéètì hàn	Show temperature
+Àwọn ààyè-iṣẹ́	Display
+Prefs Dir:	Pressure unit:
+"24-hour12-hour"". If your locale uses 24 hour time notation, translate this to ""24-hour12-hour24-hour"" or ""12-hour24 sata"" or anything else that isn't ""24-hour12-hour"	Time Settings
+wákàtí mẹ́rìnlélógún	24-hour
+Ìgúnrégé wákàtí	Hour format
+"Bọ́tìnì yìí ń sọ ní pàtó ìgúnrégé wákàtí tí ápúlẹ́ẹ̀tì aago náà lò. Àwọn fálù tó lèjẹ́ ni ""wákàtí méjìlá"",""wákàtí mẹ́rinlélógún"", ""ítánẹ́ẹ̀tì"", ""unix"" àti ""àkànṣe"". Tía bá ṣàgbékalẹ̀ rẹ̀ sí ""ítánẹ́ẹ̀tì"", àkókò ítánẹ́ẹ̀tì ni aago máa ṣàfihàn. Ẹgbẹ̀rún niètò aago ítánẹ́ẹ̀tì pín ọjọ́ sí""beats"". Kò sí àwọn ìhà àkókò nínú ètò yìí, fún ìdí èyíbákan náà ni àkókò rí kárí-ayé. Tí a bá ṣàgbékalẹ̀ rẹ̀ sí ""unix"", ní ìṣísẹ̀ ni aago máa ṣàfihàn àkókòláti ìgbà Epoch tó jẹ́ 1970-01-01. Tí a bá ṣàgbékalẹ̀ rẹ̀ sí ""àkànṣe"", aago náà á ṣàfihàn àkókògẹ́gẹ́ bíi ìgúnrégé tí a sọ ní pàtó nínú bọ́tìnì ìgúnrégéàkànṣe."	"This key specifies the hour format used by the clock applet. Possible values are ""12-hour"", ""24-hour"", ""internet"", ""unix"" and ""custom"". If set to ""internet"", the clock will display Internet time. The Internet time system divides the day into 1000 "".beats"". There are no time zones in this system, so time is the same all over the world. If set to ""unix"", the clock will display time in seconds since Epoch, i.e. 1970-01-01. If set to ""custom"", the clock will display time according to the format specified in the customformat key."
+Ìgúnrégé àkànṣẹ́ fún aago	Custom format of the clock
+"Bọ́tìnì yìí ń sọ ní pàtó ìgúnrégé tí ápúlẹ́ẹ̀tì aago náà lò nígbà tí a gbé bọ́tìnì ìgúnrégé náàkalẹ̀ sí ""àkànṣe"". O lè àwọn asọnípàtó ìpààrọ̀ tí ó yé strftime() láti gba ìgúnrégé ní pàtó."	"This key specifies the format used by the clock applet when the format key is set to ""custom"". You can use conversion specifiers understood by strftime() to obtain a specific format. See the strftime() manual for more information."
+Fi àkókò pẹ̀lú àwọn ìṣísẹ̀ hàn	Show time with seconds
+Tó bá jẹ́ òótọ́,ṣàfihàn àwọn ìṣísẹ̀ nínú àkókò.	If true, display seconds in time.
+Fi déètì hàn nínú aago	Show date in clock
+Tó bá jẹ́ òótọ́, ṣàfihàn déètì nínú aago gẹ́gẹ́ bí àfíkun àkókò	If true, display date in the clock, in addition to time.
+Fi déèti hàn nínú ìtalólobó-irinṣẹ́	Show date in tooltip
+Tó bá jẹ́ òótọ́, fi déètì hàn nínú ìtalólobó-irinṣẹ́ nígbà tí atọ́ka bá wà lórí aago.	If true, show date in a tooltip when the pointer is over the clock.
+Fi déètì hàn nínú aago	Show weather in clock
+Tó bá jẹ́ òótọ́,ṣàfihàn àwọn ìṣísẹ̀ nínú àkókò.	If true, display a weather icon.
+Fi déètì hàn nínú aago	Show temperature in clock
+Tó bá jẹ́ òótọ́, fi àwọn nọ́ńbà ọ̀sẹ̀ inú kàlẹ́ńdà hàn.	If true, show the temperature next to the weather icon.
+Lo UTC	Use UTC
+Tó bá jẹ́ òótọ́, ṣàfihàn àkókò ínú Ìhà Àkókò Àgbáyé	If true, display time in Universal Coordinated Time zone.
+Irinṣẹ́ àtòpọ̀ àkókò	Time configuration tool
+Ìlò bọ́tìnì yìí nínú GNOME 2.6 ti kúrò láṣà.fún 'ìgúnrégé' bọ́tìnì. A tọ́jú ìtọsẹ̀ náà fún ìbámu pẹ̀lú àwọn ẹ̀yà tó ti pẹ́.	The use of this key was deprecated in GNOME 2.22 with the use of an internal time configuration tool. The schema is retained for compatibility with older versions.
+Fi àwọn nọ́ńbà ọ̀sẹ̀ inú kàlẹ́ńdà hàn	Show week numbers in calendar
+Tó bá jẹ́ òótọ́, fi àwọn nọ́ńbà ọ̀sẹ̀ inú kàlẹ́ńdà hàn.	If true, show week numbers in the calendar.
+Tó bá jẹ́ òótọ́, fi àwọn nọ́ńbà ọ̀sẹ̀ inú kàlẹ́ńdà hàn.	If true, expand the list of appointments in the calendar window.
+Tó bá jẹ́ òótọ́, fi àwọn nọ́ńbà ọ̀sẹ̀ inú kàlẹ́ńdà hàn.	If true, expand the list of birthdays in the calendar window.
+Tó bá jẹ́ òótọ́, fi àwọn nọ́ńbà ọ̀sẹ̀ inú kàlẹ́ńdà hàn.	If true, expand the list of tasks in the calendar window.
+Tó bá jẹ́ òótọ́, fi àwọn nọ́ńbà ọ̀sẹ̀ inú kàlẹ́ńdà hàn.	If true, expand the list of weather information in the calendar window.
+Fi àtòjọ àwọn ìṣàmúlò-ètò mímọ̀ hàn	Expand list of locations
+Ìlò bọ́tìnì yìí nínú GNOME 2.6 ti kúrò láṣà.fún 'ìgúnrégé' bọ́tìnì. A tọ́jú ìtọsẹ̀ náà fún ìbámu pẹ̀lú àwọn ẹ̀yà tó ti pẹ́.	The use of this key was deprecated in GNOME 2.6 in favour of the 'format' key. The schema is retained for compatibility with older versions.
+Lo àkókò UNIX	Use UNIX time
+Lo àkókò Ítánẹ́ẹ̀tì	Use Internet time
+Àtòjọ àwọn ìṣàmúlò-ètò àìmọ̀	List of locations
+Dí	Set...
+Dí	Set
+Dí	l:M p (A)
+Dí	H:M (A)
+Dí	l:M p
+1$s, 2$s	<UNK>, <UNK>
+Kò lè ṣàfihàn àkọsílẹ̀ ìrànwọ́	Could not display help document <UNK>
+Kò lè ṣàfihàn àkọsílẹ̀ ìrànwọ́	Error displaying help document
+Kò sí (lo kókó ètò kọ̀ǹpútà)	Change system time
+Fátìrì Wanda	Wanda Factory
+Níbo Ni Ẹja Ọ̀dẹ̀ Yẹn Tiwá	From Whence That Stupid Fish Came
+Ẹja	Fish
+Ṣàfihàn ẹja tó ń wẹ̀ tàbí ẹ̀dá ẹrankó mìíràn	Display a swimming fish or another animated creature
+"Ìkìlọ̀: Ó jọ wí pé àṣẹ náà máa wúlò. Níwọ̀n ìgbà tí ápúlẹ́ẹ̀tì yìí kò wúlò, o lè má fẹ́ ṣe èyí. A gbà ẹ́ nímọ̀ràn gidi kí o má lo <UNK> fún ohunkóhun tí yóò mú ápúlẹ́ẹ̀tì náà ""jẹ́ ṣíṣe"" tàbí wúlò."	"Warning: The command appears to be something actually useful. Since this is a useless applet, you may not want to do this. We strongly advise you against using <UNK> for anything which would make the applet ""practical"" or useful."
+Àwọn Àwòrán	Images
+<UNK> Ẹja náà	<UNK> the Fish
+<UNK> kò ní ìwúlò kankan rárá. Ṣe ni ó kàn gba ààyè inú fọ́nrán àti àkókò ìṣàmúpòtí a bá sì tún kìí ṣe ni yóò kàn gba ààyè pánẹ́ẹ̀lì àti ọpọlọ kọ̀ǹpútà. Tí a bá rí ẹnikẹ́ni tó ń lò óṣe ni ká gbé ẹni náà lọ sí ilé-ìwòsàn àrùn ọpọlọ fúnàyẹ̀wò.	<UNK> has no use what-so-ever. It only takes up disk space and compilation time, and if loaded it also takes up precious panel space and memory. Anybody found using it should be promptly sent for a psychiatric evaluation.
+(pẹ̀lú ìrànwọ́ kékeré láti ọ̀dọ́ George)	(with minor help from George)
+<UNK> Ẹja, awo ọgbọgba	<UNK> the Fish, a contemporary oracle
+Kò lè rí àṣẹ tó fẹ́ mú siṣẹ́	Unable to locate the command to execute
+<UNK> Ẹja náà Sọ pé:	<UNK> the Fish Says:
+Kò lè ka ìmújáde láti inú àṣẹ Àwọn Àlàyé: <UNK>	Unable to read output from command Details: <UNK>
+Sọ̀rọ̀ lẹ́ẹ̀kan si	Speak again
+Àṣẹ tí a topọ̀ náà kò ṣiṣẹ́ a sì ti pààrọ rẹ̀ pẹ̀lú: <UNK>	The configured command is not working and has been replaced by: <UNK>
+Kò lè mú siṣẹ́ <UNK> Àwọn Àlàyé: <UNK>	Unable to execute <UNK> Details: <UNK>
+Kò lè kà látio inú <UNK> Àwọn Àlàyé: <UNK>	Unable to read from <UNK> Details: <UNK>
+A ní láti pààrọ̀ omi náà! (Wo déètì òní)	The water needs changing
+<UNK> Ẹja náà, aríran	<UNK> the Fish, the fortune teller
+Àwọn ìkúndùn Ẹja	Fish Preferences
+Orúkọ ẹja:	Name of fish:
+Àṣẹ tí a fẹ́ rọ́ọ̀nù tí a bá tẹ:	Command to run when clicked:
+Ìyárasí àfarawé Kọ̀ǹpútà	Animation
+Fáìlì:	File:
+Fún àwọn ìṣàfarawé kọ̀ǹpútà lágbára	Select an animation
+Gbogbo àwọn férèmù nínú ìṣàfarawé kọ̀ǹpútà:	Total frames in animation:
+Ìdẹsẹ̀dúró fún férémù kọ̀ọ̀kan:	Pause per frame:
+àwọn férémù	frames
+àwọn ìṣísẹ̀	seconds
+Yipo lórí àwọn pánẹ́ẹ̀lì òòró	Rotate on vertical panels
+Orúkọ ẹja náà	The fish's name
+Òmùgọ̀ ẹja ní kò ní lórúkọ. Sọ eja dí alàyè nípa fífun lórúkọ.	A fish without a name is a pretty dull fish. Bring your fish to life by naming him.
+Pixmap ìṣàfarawé kọ̀ǹpútà ẹja	The fish's animation pixmap
+Bọ́tìnì yìí sọ ní pàtó orúkọ-fáìlì pixmap tí a óò lò fún ìṣàfarawé kọ̀ǹpútà tí aṣàfihàn nínú ápúlẹ́ẹ̀tì ẹja tó jọ atọ́nà pixmap.	This key specifies the filename of the pixmap which will be used for the animation displayed in the fish applet relative to the pixmap directory.
+Àṣẹ láti mu ṣiṣẹ́ lórí ìtẹ̀	Command to execute on click
+Bọ́tìnì yìí ń sọ ní pàtó àṣẹ tí a óò gbìyànjú láti mú ṣiṣẹ́ nígbà tí a bá tẹ̀ lórí ẹja.	This key specifies the command that will be tried to execute when the fish is clicked.
+Àwọn férémù inú ìṣàfarawé kọ̀ǹpútà ẹja	Frames in fish's animation
+Bọ́tìnì yìí ń sọ ní pàtó iye férémù tí a óò ṣàfihàn wọn nínú ìṣàfarawé kọ̀ǹpútàẹja.	This key specifies the number of frames that will be displayed in the fish's animation.
+Ìdẹsẹ̀dúró fún férémù kọ̀ọ̀kan	Pause per frame
+Bọ́tìnì yìí ń sọ ní pàtó iye àwọn ìṣísẹ̀ tí férémù kọ̀ọ̀kan á ṣàfihàn.	This key specifies the number of seconds each frame will be displayed.
+Yípo lórí àwọn pánẹ́ẹ̀lì òòró	Rotate on vertical panels
+Tó bá jẹ́ òótọ́, a óò ṣàfihàn ìṣàfarawé kọ̀ǹpútà ẹja tí ó yípo lórí àwọn pánẹ́ẹ̀lì òòró.	If true, the fish's animation will be displayed rotated on vertical panels.
+Fátìrì Agbègbè Ìkéde	Notification Area Factory
+Agbègbè Ìkéde	Notification Area
+Agbègbè tí àwọn àwòrán-áíkànnù ìkéde á farahàn	Area where notification icons appear
+Agbègbè Ìkéde Pánẹ́ẹ̀lì	Panel Notification Area
+Fátìrì Ápúlẹ́ẹ̀tì Ìtọpa Fèrèsé	Window Navigation Applet Factory
+Fátìrì fún àwọn ápúlẹ́ẹ̀tì ajẹmọ́ ìtọpa fèrèsé	Factory for the window navigation related applets
+Aṣàyàn Fèrèsé	Window Selector
+Sún láàrin àwọn fèrèsé ṣiṣí nípa lílo àtòjọ-ẹ̀yàn	Switch between open windows using a menu
+Ìjánu-ìsún Àà̀yè-iṣẹ́	Workspace Switcher
+Sún láàrin àwọn ààyè-iṣẹ́	Switch between workspaces
+Àtòjọ Fèrèsé	Window List
+Sún láàrin àwọn fèrèsé ṣíṣí nípa lílo àwọn bọ́tìnì	Switch between open windows using buttons
+Fi Ojú-iṣẹ́ Hàn	Show Desktop
+Fi àwọn fèrèsé ìṣàmúlò-ètò pamọ́, kí o sì fi ojú-iṣẹ́ hàn	Hide application windows and show the desktop
+Ó kùnà láti ki <UNK>: <UNK>	Failed to load <UNK>: <UNK>
+A kò rí áíkànnù	Icon not found
+Tẹ ibí láti dá àwọn fèrèsé tó farasin padà sípò.	Click here to restore hidden windows.
+Tẹ ibí láti lè fi gbogbo àwọn fèrèsé pamọ́, kí o sì fi ojú-iṣẹ́ hàn.	Click here to hide all windows and show the desktop.
+Fi Bọ́tìnì Ojú-iṣẹ́ Hàn	Show Desktop Button
+Bọ́tìnì yìí á jẹ́ kí o fi gbogbo àwọn fèrèsé pamọ́, kí o sì fi ojú-iṣẹ́ hàn.	This button lets you hide all windows and show the desktop.
+Alábòójútó fèrèsé rẹ kò ṣàtìlẹ́yìn bọ́tìnì ojú-iṣẹ́ ìfihàn tàbí o kò rọ́ọ̀nùalábòójútó fèrèsé ni.	Your window manager does not support the show desktop button, or you are not running a window manager.
+Àtòjọ Fèrèsé náà ń fi àtòjọ gbogbo àwọn fèrèsé inú ìjọ àwọn bọ́tìnì hàn, ó sì ńjẹ́ kí o wáròyìn wọn.	The Window List shows a list of all windows in a set of buttons and lets you browse them.
+Àwọn ìkúndùǹ Àtòjọ Fèrèsé	Window List Preferences
+Àkóónú Àtòjọ Fèrèsé	Window List Content
+Fi àwọn fèrèsé láti inú ààyè-iṣẹ́ lọ́wọ́lọ́wọ́ hàn	Show windows from current workspace
+Fi àwọn fèrèsé láti inú gbogbo àwọn àyè-iṣẹ́ hàn	Show windows from all workspaces
+Ìpín Fèrèsé	Window Grouping
+Má pín àwọn fèrèsé rárá	Never group windows
+Pín àwọn fèrèsé nígbàtí ààyè bá kéré	Group windows when space is limited
+Pín àwọn fèrèsé nígbà gbogbo	Always group windows
+Dídá Àwọn Fèrèsé Tó Pajúdé Padà Sípò	Restoring Minimized Windows
+Da padà sí ààyè-iṣẹ́lọ́wọ́lọ́wọ́	Restore to current workspace
+Da padà sí àyè-iṣẹ́ ìbílẹ̀	Restore to native workspace
+Fi àwọn fèrèsé láti gbogbo àwọn ààyè-iṣẹ́ hàn	Show windows from all workspaces
+Tó bá jẹ́ òótọ́, àtòjọ fèrèsé á fi àwọn fèrèsé láti inú gbogbo àwọn ààyè-iṣẹ́ hàn. Láì jẹ́ bẹ́ẹ̀,yóò kàn ṣàfihàn àwọn fèrèsé láti inú ààyè-iṣẹ́ lọ́wọ́lọ́wọ́ ni.	If true, the window list will show windows from all workspaces. Otherwise it will only display windows from the current workspace.
+Ìgbà tó yẹ ká pín àwọn fèrèsé	When to group windows
+"Ń sọ ìgbà tí a óò pín àwọn fèrèsé láti inú ìṣàmúlò-ètò kan náà lórí àtòjọ fèrèsé.Àwọn fálù tó lè jẹ́ ni ""rárá"", ""aládàáṣe"" àti ""ìgbà gbogbo""."	"Decides when to group windows from the same application on the window list. Possible values are ""never"", ""auto"" and ""always""."
+Gbé àwọn fèrèsé lọ sí ààyè-iṣẹ́ lọ́wọ́lọ́wọ́ tí a kò bá fẹ̀ẹ́lójú mọ́	Move windows to current workspace when unminimized
+Tó bá jẹ́ òótọ́, tí o bá ti ń fe ojú fèrèsé gbe lọ sí ààyè-iṣẹ́ lọ́wọ́lọ́wọ́.Láì jẹ́ bẹ́ẹ̀,sún sí ààyè-iṣẹ́ fèrèsé náà.	If true, then when unminimizing a window, move it to the current workspace. Otherwise, switch to the workspace of the window.
+Ìwọ̀n àtòjọ fèrèsé tó kéré jù	Minimum window list size
+Ìlò bọ́tìnì yìí nínú GNOME 2.6 ti kúrò láṣà.fún 'ìgúnrégé' bọ́tìnì. A tọ́jú ìtọsẹ̀ náà fún ìbámu pẹ̀lú àwọn ẹ̀yà tó ti pẹ́.	The use of this key was deprecated in GNOME 2.20. The schema is retained for compatibility with older versions.
+Ìwọ̀n àtòjọ fèrèsé tó ga jù	Maximum window list size
+Aṣàyàn Fèrèsé ń fi àtòjọ gbogbo àwọn fèrèsé inú àtòjọ-ẹ̀yàn hàn, yóò sì jẹ́ kí́o wá wọn.	The Window Selector shows a list of all windows in a menu and lets you browse them.
+àwọn róòlù	rows
+àwọn kọ́lọ̀mù	columns
+Àṣìṣe kíki fálù àwọn róòlù-num fún Ìjánu-ìsún Ààyè-iṣẹ́: <UNK>	Error loading numrows value for Workspace Switcher: <UNK>
+Àṣìṣe kíki fálù àwọn orúkọààyè-iṣẹ́ìṣàfihàn fún Ìjánu-ìsún Ààyè-iṣẹ́: <UNK>	Error loading displayworkspacenames value for Workspace Switcher: <UNK>
+Àṣìṣe kíki fálù àwọn orúkọààyè-iṣẹ́gbogboìṣàfihàn fún Ìjánu-ìsún Ààyè-iṣẹ́: <UNK>	Error loading displayallworkspaces value for Workspace Switcher: <UNK>
+Ìjánu-ìsún Ààyè-iṣẹ́ náà ń fi hàn ẹ̀̀yà àwọn ààyè-iṣẹ́ kékeré rẹ tí yóò jẹ́ kí o lè mójútó àwọn fèrèsé rẹ.	The Workspace Switcher shows you a small version of your workspaces that lets you manage your windows.
+Àwọn ìkúndùǹ Ìjánu-ìsún Ààyè-iṣẹ́	Workspace Switcher Preferences
+Fi ààyè-iṣẹ́ lọ́wọ́lọ́wọ́ nìkan hàn	Show only the current workspace
+Fi gbogbo àwọn ààyè-iṣẹ́ hàn:	Show all workspaces in:
+Ìjánu-ìsún	Switcher
+Iye àwọnààyè-iṣẹ́	Number of workspaces:
+Àwọn orúkọ àyè-iṣẹ́:	Workspace names:
+Àwọn Orúkọ Àwọn Ààyè-iṣẹ́	Workspace Names
+Fi àwọn orúkọ ààyè-iṣẹ́ hàn nínú ìjánu-ìsún	Show workspace names in switcher
+Àwọn Orúkọ Àwọn Ààyè-iṣẹ́	Workspaces
+Ṣàfihàn àwọn orúkọ ààyè-iṣẹ́	Display workspace names
+Tó bá jẹ́ òótọ́, àwọn ààyè-iṣẹ́ nínú ì̀jánu-ìsún ààyè-iṣẹ́ yóò ṣàfihàn àwọn orúkọ àwọnààyè-iṣẹ́. Láì jẹ́ bẹ́ẹ̀ wọn yóò ṣàfihàn àwọn fèrèsé lórí ààyè-iṣẹ́ náà.	If true, the workspaces in the workspace switcher will display the names of the workspaces. Otherwise they will display the windows on the workspace. This setting only works when the window manager is Metacity.
+Ṣàfihàn gbogbo àwọn ààyè-iṣẹ́	Display all workspaces
+Tó bá jẹ́ òótọ́, ìjánu-ìsún ààyè-iṣẹ́ náà á fi gbogbo àwọn ààyè-iṣẹ́ hàn. Láì jẹ́ bẹ́ẹ̀ yóò kàn fi ààyè-iṣẹ́ lọ́wọ́lọ́wọ́ náà hàn.	If true, the workspace switcher will show all workspaces. Otherwise it will only show the current workspace.
+Àwọn róòlù nínú ìjánu-ìsún ààyè-iṣẹ́	Rows in workspace switcher
+Bọ́́tìnì yìí ń sọ ní pàtó iye àwọn róòlù (fún ìlàálẹ̀ ìbú) tàbí àwọṅ kọ́lọ̀mù (fún ìlàálẹ̀òòró) tí ìjánu-ìsún ààyè-iṣẹ́ ń fihàn àwọn ààyè-iṣẹ́ náà. Bọ́tìnì yìí kàn sì wúlòtí bọ́tìnì àwọn ààyè-iṣẹ́gbogboìṣàfihàn bá jẹ́ òótọ́.	This key specifies how many rows (for horizontal layout) or columns (for vertical layout) the workspace switcher shows the workspaces in. This key is only relevant if the displayallworkspaces key is true.
+kò lè fi àṣẹ lọ́lẹ̀ <UNK>	Could not launch <UNK>
+Kò lè fi àíkànnù lọ́lẹ̀	Could not launch application
+Kò lè ṣàfihàn ààyè <UNK>	Could not open location <UNK>
+Yọkúrò Nínú Pánẹ́ẹ̀lì	Remove From Panel
+Gbe	Move
+Lọ́ọ̀kì Sí Pánẹ́ẹ̀lì	Lock To Panel
+???	???
+Kò rí sípọ̀tì òfìfo	Cannot find an empty spot
+Dúrọ́wà	Drawer
+Fikún Dúrọ́wà...	Add to Drawer...
+Àwọn Àbùdá	Properties
+Ṣẹ̀dá fáìlì tuntun nínú atọ́nà náà	Create new file in the given directory
+Ṣẹ̀dá Àṣàfilọ́lẹ̀	Create Launcher
+Àwọn Àbùdá Aṣàfilọ́lẹ̀	Directory Properties
+Àwọn Àbùdá Aṣàfilọ́lẹ̀	Launcher Properties
+Fi Pánẹ́ẹ̀lì Pamọ́	Panel
+A kò pèsè URI fún fáìlì ojú-iṣẹ́ aṣàfilọ́lẹ̀ pánẹ́ẹ̀lì	No URI provided for panel launcher desktop file
+Kò lè ṣí fáìlì ojú-iṣẹ́ <UNK> fún aṣàfilọ́lẹ̀ pánẹ́ẹ̀lì <UNK><UNK>	Unable to open desktop file <UNK> for panel launcher<UNK><UNK>
+Fi Lọ́lẹ̀	Launch
+A kò ṣègbékalẹ̀ bọ́tìnì <UNK>, kò lè ki aṣàfilọ̀lẹ̀	Key <UNK> is not set, cannot load launcher
+Kò lè ṣẹ̀dá aṣàfilọ́lẹ̀	Could not save launcher
+Fi aṣàfilọ́lẹ̀ yìí kún pánẹ́ẹ̀lì	Add this launcher to panel
+Fi aṣàfilọ́lẹ̀ yìí kún ojú-iṣẹ́	Add this launcher to desktop
+Àtòjọ-ẹ̀yàn Pátá	Entire menu
+Ṣàfikún èyí gẹ́gẹ́ bíi dúrọ́wà sí pánẹ́ẹ̀lì	Add this as drawer to panel
+Ṣàfikún èyí gẹ́gẹ́ bíi àtòjọ-ẹ̀yàn sí pánẹ́ẹ̀lì	Add this as menu to panel
+1$s, 2$s	1$s 2$s 3$s
+1$s 2$s	1$s\t2$s
+Mú Ìdáàdòdò ojú kọ̀ǹpútà ṣiṣẹ́	Activate Screensaver
+Ti Ojú Kọ̀ǹpútà	Lock Screen
+Kò lè darapọ̀ mọ́ sáfà	Could not connect to server
+"Dáàbòbò kọ̀ǹpútà rẹ lọ́wọ́ ìlò tí kò tọ̀nà1"" (msgctxt: ""panel:showusername"	Protect your computer from unauthorized use
+Parí Iṣẹ́	Log Out...
+Parí iṣẹ́ sáà yìí láti bẹ̀rẹ̀ gẹ́gẹ́ bíi òǹlò mìíràn tàbí kí o pa kọ̀ǹpútà náà	Log out of this session to log in as a different user
+Rọ́ọ̀nù Ìṣàmúlò-ètò...	Run Application...
+Rọ́ọ̀nù Ìṣàmúlò-ètò nípa títẹ àṣẹ	Run an application by typing a command or choosing from a list
+Wá Àwọn Fáìlì...	Search for Files...
+Ìjáde Ipá	Force Quit
+Mú ìṣàmúlò-ètò tó ń ṣe ségesège jáde pẹ̀lú ipá	Force a misbehaving application to quit
+Darapọ̀ mọ́ Sáfà...	Connect to Server...
+Darapọ̀ mọ́ sáfà tó jìn	Connect to a remote computer or shared disk
+Aṣàfilọ́lẹ̀ Ìṣàmúlò-ètò Àkànṣe	Custom Application Launcher
+Ṣẹ̀dá aṣàfilọ́lẹ̀ tuntun	Create a new launcher
+Aṣàfilọ́lẹ̀ Ìṣàmúlò-ètò...	Application Launcher...
+Àtòjọ-ẹ̀yàn Gangan	Main Menu
+Àtòjọ-ẹ̀yàn GNOME gangan	The main GNOME menu
+Àká Àtòjọ-ẹ̀yàn	Menu Bar
+Àká àtòjọ-ẹ̀yàn àkànṣe	A custom menu bar
+Dúrọ́wà tó ta síta láti fi àwọn wúnrẹ̀n mìíràn pamọ́	A pop out drawer to store other items in
+(òfìfo)	(empty)
+ìbéèrè dá ọ̀tọ̀ padà<UNK>	query returned exception <UNK>
+Yan wúnrẹ̀nkan láti fikún <UNK>:	Find an item to add to <UNK>:
+Fikún Dúrọ́wà	Add to Drawer
+Yan wúnrẹ̀nkan láti fikún dúrọ́wà:	Find an item to add to the drawer:
+Fikún Pánẹ́ẹ̀lì	Add to Panel
+Yan wúnrẹ̀nkan láti fikún pánẹ́ẹ̀lì:	Find an item to add to the panel:
+Ọ̀tọ̀ láti inú àtòjọ-ẹ̀yànìtasókè '<UNK>	Exception from popupmenu <UNK>
+<UNK> jáde láìròtẹ́lẹ̀	<UNK> has quit unexpectedly
+nǹkan pánẹ́ẹ̀lì ti kúrò láìròtẹ́lẹ̀	Panel object has quit unexpectedly
+Tí o bá tún nǹkan pánẹ́ẹ̀lì kì, yóò ṣàfikún ara rẹ̀ padà sípánẹ́ẹ̀lì náà.	If you reload a panel object, it will automatically be added back to the panel.
+Má Tunkì	Don't Reload
+Tunkì	Reload
+Pánẹ́ẹ̀lì náà bá ìṣòro pàdé nígbà tó ń ki <UNK>.	The panel encountered a problem while loading <UNK>.
+Ṣe o fẹ́ pa ápúlẹ́ẹ̀tì náà jẹ kúrò nínú àtòpọ̀ rẹ?	Do you want to delete the applet from your configuration?
+Kò lè gba ààlà AppletShell kúrò nínú ìdarí	Unable to obtain AppletShell interface from control
+Àti bẹ́ẹ̀ bẹ́ẹ̀ lọ...	And many, many others...
+Pánẹ́ẹ̀lì GNOME	The GNOME Panel
+Ojúṣe àtòjọ-ètò yìí ni láti fi àwọn ìṣàmúlò-ètò mìíràn lọ́lẹ̀ kí o sìmáa ṣe àfibọ̀ àwọn ápúlẹ́ẹ̀tì kékeré sínú ara wọn.	This program is responsible for launching other applications and provides useful utilities.
+Pánẹ́ẹ̀lì GNOME	About the GNOME Panel
+Pa pánẹ́ẹ̀lì yìí jẹ?	Cannot delete this panel
+Fikún Pánẹ́ẹ̀lì...	Add to Panel...
+Pa Pánẹ́ẹ̀lì Yìí Jẹ	Delete This Panel
+Pánẹ́ẹ̀lì Tuntun	New Panel
+Nípa Àwọn Pánẹ́ẹ̀lì	About Panels
+Àwọn Ìṣàmúlò-ètò	Application
+Aṣàfilọ́lẹ̀ Ìṣàmúlò-ètò...	Application in Terminal
+Ààyè Aṣàfilọ́lẹ̀	Location
+Sítà̀ì:	Type:
+Orúkọ ẹja:	Name:
+Wáròyìn	Browse icons
+Wáròyìn	Browse...
+Àmúwọlé àṣẹ	Comment:
+Rọ́ọ̀nù Ìṣàmúlò-ètò...	Choose an application...
+Áíkànnù àṣẹ	Command:
+Áíkànnù:	Location:
+Áíkànnù àṣẹ tí a fẹ́ rọ́ọ̀nù.	The command of the launcher is not set.
+Kò lè ṣàfihàn àkọsílẹ̀ ìrànwọ́	Could not display help document
+Tẹ̀ lórí fèrèsé láti mú ìṣàmúlò-ètò náà jáde pẹ̀lú ipá. Tẹ <ESC> láti yọkúrò.	Click on a window to force the application to quit. To cancel press <ESC>.
+Mú ìṣàmúlò-ètò tó ń ṣe ségesège jáde pẹ̀lú ipá	Force this application to exit?
+Mú kí ìṣàmúlò-ètò yìí jáde pẹ̀lú ipá? (Àwọn àkọsílẹ̀ èyíkèyí tó wà ní ṣíṣí ní yóò sọnù.)	If you choose to force an application to exit, unsaved changes in any open documents in it might get lost.
+"Mú àtòjọ àtòjọ-ètò inú onísọ̀rọ̀gbèsì ""Rọ́ọ̀nù Ìsàmúlò-ètò"" ṣíṣẹ"	"Enable program list in ""Run Application"" dialog"
+"Tó bá jẹ́ òótọ́, ""Àwọn Ìṣàmúlò-ètò Mímọ̀"" tía tòjọ nínú onísọ̀rọ̀gbèsì ""Rọ́ọ̀nù Ìsàmúlò-ètò""wà nílẹ̀. Bóyá a fẹ ìṣàtòjọ náà tàbí a kò fẹ̀ẹ́, nígbà tí onísọ̀rọ̀gbèsì náà bá ti farahàn bọ́tìnì àtòjọàtòjọ-ètòìfihàn ló ń darí rẹ̀."	"If true, the ""Known Applications"" listing in the ""Run Application"" dialog is made available. Whether or not the listing is expanded when the dialog is shown is controlled by the showprogramlist key."
+"Fẹ àtòjọ àtòjọ-ètò inú onísọ̀rọ̀gbèsì ""Rọ́ọ̀nù Ìṣàmúlò-ètò"""	"Expand program list in ""Run Application"" dialog"
+"Tó bá jẹ́ òótọ́, ""Àwọn Ìṣàmúlò-ètò Mímọ̀"" tí a tòjọ nínú onísọ̀rọ̀gbèsì ""Rọ́ọ̀nù Ìṣàmúlò-ètò""á fẹ̀ nígbà tí a bá ṣí onísọ̀rọ̀gbèsì. Bọ́tìnì yìí kàn wúlò tí bọ́tìnì àtòjọàtòjọ-ètò bá jẹ́ òótọ́."	"If true, the ""Known Applications"" listing in the ""Run Application"" dialog is expanded when the dialog is opened. This key is only relevant if the enableprogramlist key is true."
+"Mú ìkádìí-aládàáṣe nínú onísọ̀rọ̀gbèsì ""Rọ́ọ̀nù Ìṣàmúlò-ètò"" ṣiṣẹ́"	"Enable autocompletion in ""Run Application"" dialog"
+"Tó bá jẹ́ òótọ́, ìkádìí-aládàáṣe inú onísọ̀rọ̀gbèsì ""Rọ́ọnù Ìṣàmúlò-ètò"" wà nílẹ̀."	"If true, autocompletion in the ""Run Application"" dialog is made available."
+Àtòjọ ID pánẹ́́ẹ̀lì	Panel ID list
+Àtòjọ àwọn ID pánẹ́ẹ̀lì. ID kọ̀ọ̀kan ló n tọ́ka sí pánẹ́ẹ̀lì ìpele-òkè kọ̀ọ̀kan. A fi àwọnà̀àtò̀ fún àwọn pánẹ́ẹ̀lì kọ̀ọ̀kan pamọ́ sínú /apps/panel/toplevels/$(id).	A list of panel IDs. Each ID identifies an individual toplevel panel. The settings for each of these panels are stored in /apps/panel/toplevels/$(id).
+Àtòjọ ID ápúlẹ́ẹ̀tì pánẹ́ẹ̀lì	Panel applet ID list
+Àtòjọ àwọn ID ápúlẹ́ẹ̀tì pánẹ́ẹ̀lì. ID kọ̀ọ̀kan ń tọ́ka sí ápúlẹ́ẹ̀tì pánẹ́ẹ̀lì.A fi àwọn ààtò fún àwọn ápúlẹ́ẹ̀tì kọ̀ọ̀kan pamọ́ sínú /apps/panel/applets/$(id).	A list of panel applet IDs. Each ID identifies an individual panel applet. The settings for each of these applets are stored in /apps/panel/applets/$(id).
+Àtójọ ID nǹkan pánẹ́ẹ̀lì	Panel object ID list
+Àtòjọ àwọn ID ápúlẹ́ẹ̀tì pánẹ́ẹ̀lì. ID kọ̀ọ̀kan ń tọ́ka sí nǹkan pánẹ́ẹ̀lì kọ̀ọ̀kan (b.a.aṣàfilọ́lẹ̀, bọ́tìnì iṣẹ́ tàbí àká/bọ́tìnì àtòjọ-ẹ̀yàn). A fi àwọn ààtò fún àwọn nǹkankọ̀ọ̀kan pamọ́ sínú /apps/panel/objects/$(id).	A list of panel object IDs. Each ID identifies an individual panel object (e.g. a launcher, action button or menu button/bar). The settings for each of these objects are stored in /apps/panel/objects/$(id).
+Àtòpọ̀ àkópọ̀ ìròyìn àtijọ́ ti ṣí kúrò	Old profiles configuration migrated
+Àsíá boolean ń fihàn bóyá a ti ṣẹ̀dà àtòpọ̀ òǹlò ilẹ̀ inú /appa/panel/profiles/default sínú ààyè tuntun nínúpánẹ́ẹ̀lì /apps/.	A boolean flag to indicate whether the user's previous configuration in /apps/panel/profiles/default has been copied to the new location in /apps/panel.
+Fún àwọn ìtalólobó-irinṣẹ́ lágbára	Enable tooltips
+Tó bá jẹ́ òótọ́, a fi àwọn ìtalólobó-irinṣẹ́ hàn fún àwọn nǹkan inú àwọn pánẹ́ẹ̀lì.	If true, tooltips are shown for objects in panels.
+Ó ti kúrò láṣà	Deprecated
+Fún àwọn ìṣàfarawé kọ̀ǹpútà lágbára	Enable animations
+Dúrọ́wà Aládàátì	Autoclose drawer
+Tó bá jẹ́ òótọ́, dúrọ́wà á tì fún ra rẹ̀ nígbà tí òǹlò bá ti tẹaṣàfilọ̀lẹ̀ nínú ẹ̀.	If true, a drawer will automatically be closed when the user clicks a launcher in it.
+Àrídájú ìyọkúrò pánẹ́ẹ̀lì	Confirm panel removal
+Tó bá jẹ́ òótọ́,onísọ̀rọ̀gbèsì kàn ti farahàn tó ń bèrè fún àrídájú tó bá jẹ́ pé òǹlò fẹ́ yọ Pánẹ́ẹ̀lì kúrò.	If true, a dialog is shown asking for confirmation if the user wants to remove a panel.
+Gbé àwon aṣàfilọ́lẹ̀ yọ lórí ohun-èlò aṣèkúté	Highlight launchers on mouseover
+Tó bá jẹ́ òótọ́, aṣàfilọ́lẹ̀ kan á yọ nígbà tí òǹlò náà bá gbé atọ́ka náà gba orí ẹ̀.	If true, a launcher is highlighted when the user moves the pointer over it.
+Lọ́ọ̀kì pánẹ́ẹ̀lì ìkádìí	Complete panel lockdown
+Tó bá jẹ́ òótọ́, pánẹ́ẹ̀lì náà kò ní fàyè gba àwọn ìyípadà kankan sí àtòpọ̀ pánẹ́ẹ̀lì náà.Ṣùgbọ́n a sì ní láti ti àwọn ápúlẹ́ẹ̀tì kọ̀ọ̀kan ná. A gbọ́dọ̀tún pánẹ́ẹ̀lì náà bẹ̀rẹ̀ kí èyí tó lè wáyé.	If true, the panel will not allow any changes to the configuration of the panel. Individual applets may need to be locked down separately however. The panel must be restarted for this to take effect.
+Àwọn IID ápúlẹ́ẹ̀tì tí a kò jẹ́ kí wọn kì	Applet IIDs to disable from loading
+Àtòjọ àwọn IID ápúlẹ́ẹ̀tì tí pánẹ́ẹ̀lì máa patì. Lọ́nà yìí o lè gba agbára àwọn ápúlẹ́ẹ̀tì kan láti má ma ki àtòjọ-ẹ̀yàn tàbí fihàn nínú àtòjọ-ẹ̀yàn náà. Bí àpẹẹrẹ, láti lè gbaagbára ápúlẹ́ẹ̀tì aláṣẹ́-kékeré ṣàfikún 'OAFIID:GNOMEMiniCommanderApplet' sí àtòjọ yìí. A gbọ́dọ̀ tún pánẹ́ẹ̀lì náà bẹ̀rẹ̀ kí èyí tó lè wáyé.	A list of applet IIDs that the panel will ignore. This way you can disable certain applets from loading or showing up in the menu. For example to disable the mini-commander applet add 'OAFIID:GNOMEMiniCommanderApplet' to this list. The panel must be restarted for this to take effect.
+Gba agbára Píparí Iṣẹ́	Disable Logging Out
+Tó bá jẹ́ òótọ́, pánẹ́ẹ̀lì náà kò ní fàyè gba òǹlò láti parí iṣẹ́ nípa yíyọ ààyèsí àwọn àmúwọlé àtòjọ-ẹ̀yàn ìparí iṣẹ́ kúrò.	If true, the panel will not allow a user to log out, by removing access to the log out menu entries.
+Gba agbára lọ́wọ́ Ìjáde Ipá	Disable Force Quit
+Tó bá jẹ́ òótọ́, pánẹ́ẹ̀lì náà kò ní fàyè gba òǹlò láti mú ìṣàmúlò-ètò jáde pẹ̀lú ipánípa yíyọ ààyè sí bọ́tìnì ìjáde ipá kúrò.	If true, the panel will not allow a user to force an application to quit by removing access to the force quit button.
+Kò rí ìṣàmúlò-ètò tó yẹ	Browse and run installed applications
+Ṣí <UNK>	Open <UNK>
+Fún àwọn ìtalólobó-irinṣẹ́ lágbára	Unable to mount <UNK>
+Agbéròyìn Jáde Tó Ṣeé Yọ	Removable Media
+Àwọn Ibi Alátagbà	Network Places
+Ṣí ojú-iṣẹ́ náà gẹ́gẹ́ bíi fódàDesktop FolderDesktop Folder	Open your personal folder
+Fi Ojú-iṣẹ́ Hàn	Desktop
+Ṣí ojú-iṣẹ́ náà gẹ́gẹ́ bíi fódà	Open the contents of your desktop in a folder
+Àwọn Ibi	Places
+"1"" (msgctxt: ""panel:showusername1"" if ""Log Out <UNK>panel:showusername"	System
+"Parí Iṣẹ́1"" (msgctxt: ""panel:showusername"") to ""1"	Log Out <UNK>...
+Parí iṣẹ́ sáà yìí láti bẹ̀rẹ̀ gẹ́gẹ́ bíi òǹlò mìíràn tàbí kí o pa kọ̀ǹpútà náà	Log out <UNK> of this session to log in as a different user
+Irúfẹ́ nǹkan pánẹ́ẹ̀lì	Panel object type
+"Irúfẹ́ nǹkan pánẹ́ẹ̀lì yìí. Àwọn fálù tó lè jẹ́ ni ""nǹkan-dúrọ́wà"",""nǹkan-àtòjọ-ẹ̀yàn"",""nǹkan-aṣàfilọ́lẹ̀"",""ápúlẹ́ẹ̀tì bonobo"",""ápúlẹ́ẹ̀tì-iṣẹ́""àti ""àká-àtòjọ-ẹ̀yàn""."	"The type of this panel object. Possible values are ""drawer-object"", ""menu-object"", ""launcher-object"", ""bonobo-applet"", ""action-applet"" and ""menu-bar""."
+Pánẹ́ẹ̀lì ìpele-òkè tó ní nǹkan nínú	Toplevel panel containing object
+Ohun ìdánimọ̀ pánẹ́ẹ̀lì ìpele-òkè tó ní nǹkan yìí nínú.	The identifier of the toplevel panel which contains this object.
+Ipò nǹkan lórí pánẹ́ẹ̀lì	Object's position on the panel
+Ipò nǹkan pánẹ́ẹ̀lì yìí. Oye nọ́ńbà àwọn písẹ́́ẹ̀lì tó wà láti igun pánẹ́ẹ̀lì apá òsì (tàbí òkè òòró) ni yóò sọ ipò náà ní pàtó.	The position of this panel object. The position is specified by the number of pixels from the left (or top if vertical) panel edge.
+Sọ ìtumọ̀ ipo ajemọ́ igun ìsàlẹ̀/ọ̀tún	Interpret position relative to bottom/right edge
+Tó bá jẹ́ òótọ́, a óò sọ ìtumọ̀ nǹkan náà ní àjẹmọ́ apá ọ̀tún igun pánẹ́ẹ̀lì (tàbí ìsàlẹ̀ tó bá jẹ́ òòró) náà.	If true, the position of the object is interpreted relative to the right (or bottom if vertical) edge of the panel.
+Ti nǹkan sínú pánẹ́ẹ̀lì	Lock the object to the panel
+"Tó bá jẹ́ òótọ́, òǹlò náà lè má gbé ápúlẹ́ẹ̀tì láì jẹ́ pé ó kọ́kọ́ ṣí nǹkan tó ń lo ""Má tìí"" wùnrẹ̀n-àtòjọ-ẹ̀yàn."	"If true, the user may not move the applet without first unlocking the object using the ""Unlock"" menuitem."
+Ápúlẹ́ẹ̀tì Bonobo IID	Applet Bonobo IID
+"ID ì̀pilẹ̀ Bonobo ti ápúlẹ́ẹ̀tì náà - b.a ""OAFIID:GNOMEClockApplet"".Bọ́tìnì yìí kàn wúlò tí bọ́tìnì irúfẹ́nǹkan bá jẹ́ ""ápúlẹ́ẹ̀tì-bonobo""."	"The Bonobo implementation ID of the applet - e.g. ""OAFIID:GNOMEClockApplet"". This key is only relevant if the objecttype key is ""bonobo-applet""."
+Pánẹ́ẹ̀lì tí a so mọ́ dúrọ́wà	Panel attached to drawer
+"Ohun ìdánimọ̀ pánẹ́ẹ̀lì tí a somọ́ dúrọ́wà yìí. Bọ́tìnì yìí kàn wúlò tí bọ́tìnì irúfẹ́nǹkan bá jẹ́ ""nǹkan-dúrọ́wà""."	"The identifier of the panel attached to this drawer. This key is only relevant if the objecttype key is ""drawer-object""."
+Ìtalólobó tí a ṣàfihàn fún dúrọ́wà tàbí àtòjọ-ẹ̀yàn	Tooltip displayed for drawer or menu
+"Àyọkà tí a fẹ́ ṣàfihàn rẹ̀ nínú ìtalólobó-irinṣẹ́ fún dúrọ́wà yìí tàbí àtòjọ-ẹ̀yàn yìí. Bọ́tìnìyìí kàn wúlò tí bọ́tìnì irúfẹ́nǹkan bájẹ́""nǹkan-dúrọwà"" tàbí ""nǹkan-àtòjọ-ẹ̀yàn""."	"The text to display in a tooltip for this drawer or this menu. This key is only relevant if the objecttype key is ""drawer-object"" or ""menu-object""."
+Lo áíkànnù àkànṣe fún bọ́tìnì nǹkan	Use custom icon for object's button
+"Tó bá jẹ́ òótọ́, bọ́tìnì áíkànnùàkànṣe la lò gẹ́gẹ́ bíi áíkànnù àkànṣe fún bọ́tìnì náà. Tó bajẹ́ irọ́ a óò pa bọ́tìnì áíkànnùàkànṣe tì. Bọ́tìnì yìí kàn wúlò tó bá jẹ́ bọ́tìnì irúfẹ́nǹkan jẹ́ ""nǹkan-àtòjọ-ẹ̀yàn"" tàbí ""nǹkan-dúrọ́wà""."	"If true, the customicon key is used as a custom icon for the button. If false, the customicon key is ignored. This key is only relevant if the objecttype key is ""menu-object"" or ""drawer-object""."
+Áíkànnù tí a lò fún bọ́tìnì nǹkan	Icon used for object's button
+"Ààyè fáìlì àwòrán tí a lò gẹ́gẹ́ bíi áíkànnù fún bọ́tìnì nǹkan náà. bọ́tìnì yìí kàn wúlò tí bọ́tìnì irúfẹ́nǹkan bá jẹ́ ""nǹkan-dúrọ́wà"" tàbí ""nǹkan àtòjọ-ẹ̀yàn"" tí bọ́tìnì áíkànnùàkànṣeìlò jẹ́ òótọ́."	"The location of the image file used as the icon for the object's button. This key is only relevant if the objecttype key is ""drawer-object"" or ""menu-object"" and the usecustomicon key is true."
+Lo ipa àkànṣe fún àwọn àkóónú àtòjọ-ẹ̀yàn	Use custom path for menu contents
+"Tó bá jẹ́ òótọ́, a lo bọ́tìnì ipa àtòjọ-ẹ̀yàn gẹ́gẹ́ bíi ipa ti a ti lè̀ kọ́ àwọn àkóónú àtòjọ-ẹ̀yàn.Tó bá jẹ́ irọ́, a máa pa bọ́tìnì ipaàtòjọ-ẹ̀yàn tì. Bọ́tìnì yìí kàn wúlò tí bọ́tìnì irúfẹ́nǹkan bá jẹ́ ""nǹkanàtòjọ-ẹ̀yàn""."	"If true, the menupath key is used as the path from which the menu contents should be constructed. If false, the menupath key is ignored. This key is only relevant if the objecttype key is ""menu-object""."
+Ipa àkóónú àtòjọ-ẹ̀yàn	Menu content path
+"Ipa tí a ti kọ́ àwọn àkóónú àtòjọ-ẹ̀yàn. Bọ́tìnì yìí kàn wúlò tí bọ́tìnìipaàtòjọ-ẹ̀yànìlò sì jẹ́ òótọ́ tí bọ́tìnìnǹkan jẹ́""nǹkan-àtòjọ-ẹ̀yàn"""	"The path from which the menu contents is contructed. This key is only relevant if the usemenupath key is true and the objecttype key is ""menu-object""."
+Ààyè Aṣàfilọ́lẹ̀	Launcher location
+"Ààyè fáìlì ojú-iṣẹ́ tó ń ṣàpèjúwe aṣàfilọ́lẹ̀. Bọ́tìnì yìí kàn wúlò tí bọ́tìnì irúfẹ́nǹkan bá jẹ́ ""nǹkan-aṣàfilọ́lẹ̀""."	"The location of the .desktop file describing the launcher. This key is only relevant if the objecttype key is ""launcher-object""."
+Irúfẹ́ bọ́tìnì iṣẹ́	Action button type
+"Irúfẹ́ iṣẹ́ tí bọ́tìnì yìí dúró fún. Àwọn fálù tó lè jẹ́ ni""lọ́ọ̀kì"",""parí iṣẹ́"",""rọ́ọ̀nù"",""wádìí""àti ""ìmáwòrán"". Bọ́tìnì yìí kàn wúlòtí bọ́tìnì irúfẹ́nǹkan bá jẹ́ ""ápúlẹ́ẹ̀tì-iṣẹ́""."	"The action type this button represents. Possible values are ""lock"", ""logout"", ""run"", ""search"" and ""screenshot"". This key is only relevant if the objecttype key is ""action-applet""."
+Àṣìṣe kíka oye fọ́nrán GConf <UNK>: <UNK>	Error reading GConf string value <UNK>: <UNK>
+Àṣìṣe kíka oye Ítíjà GConf <UNK>: <UNK>	Error reading GConf integer value <UNK>: <UNK>
+A gbé pánẹ́ẹ̀lì <UNK> kalẹ̀ láti ṣàfihàn lórí ojú kọ̀ǹpútà d tí kò sínílẹ̀ lọ́wọlọ́wọ́. Kò ki pánẹ́ẹ̀lì yìí.	Panel <UNK> is set to be displayed on screen d which is not currently available. Not loading this panel.
+Àṣìṣe kíka fálù boolean GConf <UNK>: <UNK>Orientation	Error reading GConf boolean value <UNK>: <UNK>
+ÒkèOrientation	Top
+Ìsàlẹ̀Orientation	Bottom
+ÒsìOrientation	Left
+Ọ̀tún	Right
+Àwọn Àbùdá Pánẹ́ẹ̀lì	Drawer Properties
+Ó kùnà láti ki àwòrán <UNK>	Unable to load file <UNK>: <UNK>.
+Àwọn Àbùdá Pánẹ́ẹ̀lì	Panel Properties
+Ọ̀pọ̀ àwọn àbùdá yìí lati tì sí sàlẹ̀	Some of these properties are locked down
+Áíkànnù:	Icon:
+àwọn písẹ́ẹ̀lì	pixels
+Ìwọ̀n:	Size:
+Ìṣàlàyé:	Orientation:
+Fẹ̀	Expand
+Ìpamọ́-aládàáṣe	Autohide
+Fi àwọn bọ́tìnì ìpamọ́ hàn	Show hide buttons
+Atọ́ka árò lórí àwọn bọ́tìnì ìpamọ́	Arrows on hide buttons
+Kò sí (lo kókó ètò kọ̀ǹpútà)	None (use system theme)
+Àwọ̀ líle	Solid color
+Mú Àwọ̀ kan	Pick a color
+Sítà̀ì:	Style:
+Àwọ̀:	Color:
+Kedere	Transparent
+Dí	Opaque
+Àwòránẹ̀yìn:	Background image:
+Yan ẹ̀yìn	Select background
+Ẹ̀yìn	Background
+Àwọn Àlàyé Ẹ̀yìn Àwòrán	Image Background Details
+Táìlì̀	Tile
+Òṣùwọ̀n	Scale
+Nàá	Stretch
+Yí àwòrán po tí pánéẹ̀lì bá wà ní òòró	Rotate image when panel is vertical
+Kò lè ṣí àkọsílẹ̀ tí a lò tán láìpẹ́	Could not open recently used document <UNK>
+Àṣìṣe àìmọ̀ wáyé nígbà tí à ń gbìyànjú láti ṣí <UNK>	An unknown error occurred while trying to open <UNK>.
+Pa àtòjọ Àwọn Àkọsílẹ̀ Àìpẹ́ Rẹ́?	Clear the Recent Documents list?
+Tí o bá pa àtòjọ Àwọn Àkọsílẹ̀ Àìpẹ́ rẹ́, wà á pa àwọn wọ̀nyí rẹ́: • Gbogbo àwọn wúnrẹ̀n láti inú Àwọn Ibìkan → wúnrẹ̀n àtòjọ-ẹ̀yàn Àwọn Àkọsílẹ̀ Àìpẹ́. • Gbogbo àwọn wúnrẹ̀n láti inú àtòjọ àwọn àkọsílẹ̀ nínú gbogbo àwọn ìṣàmúlò-ètò.	If you clear the Recent Documents list, you clear the following: • All items from the Places → Recent Documents menu item. • All items from the recent documents list in all applications.
+Pa Àwọn Àkọsílẹ̀ Àìpẹ̀ Rẹ́	Clear Recent Documents
+Àwọn Àkọsílẹ̀ Àìpẹ̀	Recent Documents
+Pa Àwọn Àkọsílẹ̀ Àìpẹ̀ Rẹ́	Clear Recent Documents...
+Pa gbogbo àwọn wúnrẹ̀n láti inú àtòjọ àwọn àkọsílẹ̀ àìpẹ́ rẹ́	Clear all items from the recent documents list
+kò lè fi àṣẹ lọ́lẹ̀ <UNK>	Could not run command <UNK>
+Kò lè yí <UNK> padà láti UTF-8	Could not convert <UNK> from UTF-8
+Yan fáìlì láti ṣàfikún àṣẹ náà...	Choose a file to append to the command...
+Yan ìṣàmúlò-ètò láti wòye àpèjúwe rẹ̀.	Select an application to view its description.
+Yóò rọ́ọ̀nù àṣẹ: <UNK>	Will run command: <UNK>
+Àtòjọ URL tí sọ̀ kalẹ̀ lórí rọ́ọ̀nù onísọ̀rọ̀gbèsì ní ìgúnrégé tí kò tọ̀nà (d) tàbí ìgùnsí (d)	URI list dropped on run dialog had wrong format (d) or length (d)
+Rọ́ọ̀nù Ìṣàmúlò-ètò	Run Application
+Áíkànnù àṣẹ	Command icon
+Áíkànnù àṣẹ tí a fẹ́ rọ́ọ̀nù.	The icon of the command to be run.
+Rọ́ọ̀nù nínú támínà	Run in terminal
+Yan àpótí yìí láti rọ́ọ̀nù àṣẹ nínú fèrè̀̀̀̀̀̀sé támínà.	Select this box to run the command in a terminal window.
+Rọ́ọ̀nù pẹ̀lú fáìlì...	Run with file...
+Tẹ bọ́tìnì yìí láti wáròyìn fún fáìlì tí a óò ṣàfikún orúkọ rẹ̀ sí fọ́nránàṣẹ.	Click this button to browse for a file whose name to append to the command string.
+Àtòjọ àwọn ìṣàmúlò-ètò àìmọ̀	List of known applications
+Fi àtòjọ àwọn ìṣàmúlò-ètò mímọ̀ hàn	Show list of known applications
+Rọ́ọ̀nù	Run
+Tẹ bọ́tìnì yìí láti rọ́ọ̀nù ìṣàmúlò-ètò tí a yàn tàbí àṣẹ inúààyè wúnrẹ̀n àmúwọlé àṣẹ.	Click this button to run the selected application or the command in the command entry field.
+Ìjáde ipá	Force quit
+Má Pajẹ	Don't Delete
+Fi Pánẹ́ẹ̀lì Pamọ́	Hide Panel
+Pánẹ́ẹ̀lì Igun Òkè Tí a Fẹ̀	Top Expanded Edge Panel
+Pánẹ́ẹ̀lì Àárín Òkè	Top Centered Panel
+Pánẹ́ẹ̀lì Ìléfòó Òkè	Top Floating Panel
+Pánẹ́ẹ̀lì Igun Òkè	Top Edge Panel
+Pánẹ́ẹ̀lì Igun Ìsàlẹ̀ Tí a Fẹ̀	Bottom Expanded Edge Panel
+Pánẹ́ẹ̀lì Àárín Ìsàlẹ̀	Bottom Centered Panel
+Pánẹ́ẹ̀lì Ìléfòó Ìsàlẹ́	Bottom Floating Panel
+Pánẹ́ẹ̀lì Ìgun Ìsàlẹ̀	Bottom Edge Panel
+Pánẹ́ẹ̀lì Igun Òsì Tí A Fẹ̀	Left Expanded Edge Panel
+Pánẹ́ẹ̀lì Àárín Òsì	Left Centered Panel
+Pánẹ́ẹ̀lì Ìléfòó Òsì	Left Floating Panel
+Pánẹ́ẹ̀lì Igun Òsì	Left Edge Panel
+Pánẹ́ẹ̀lì Igun Ọ̀tún Tí A Fẹ̀	Right Expanded Edge Panel
+Pánẹ́ẹ̀lì Àárín Tí Ọ̀tún	Right Centered Panel
+Pánẹ́ẹ̀lì Ìléfòó Ọ̀tún	Right Floating Panel
+Pánẹ́ẹ̀lì Igun Ọ̀tún	Right Edge Panel
+Orúkọ láti dá pánẹ́ẹ̀lì mọ̀	Name to identify panel
+Orúkọ èèyàn tí a lè kà ni èyí, tí o sì lè lò láti tọ́ka sí pánẹ́ẹ̀lì. Ìdí pàtàkì rẹ̀ ni láti ṣe iṣẹ́ gẹ́gẹ́ bíi àkọ́lé fèrèsé pánẹ́ẹ̀lì tí ó wúlò nígbà tí à ń tọpa láàrin àwọn pánẹ́ẹ̀lì.	This is a human readable name which you can use to identify a panel. Its main purpose is to serve as the panel's window title which is useful when navigating between panels.
+Ojú kọ̀ǹpútà X níbi tí a ti ṣàfihàn pánẹ́ẹ̀lì náà	X screen where the panel is displayed
+Pẹ̀lú àgbékalẹ̀-ètò ojú kọ̀ǹpútà ọlọ́pọ̀, o lè ní àwọn pánẹ́ẹ̀lì lórí ojú kọ̀ǹpútà kọ̀ọ̀kan. Bọ́tìnì yìí ń tọ́ka sí ojú kọ̀ǹpútà lọ́wọ́lọ́wọ́ tí a ti ṣàfihàn pánẹ́èlì náà.	With a multi-screen setup, you may have panels on each individual screen. This key identifies the current screen the panel is displayed on.
+Àpótí ìṣàfihàn Xinerama níbi tí a ti ṣàfihàn pánẹ́ẹ̀lì náà	Xinerama monitor where the panel is displayed
+Nínú àgbékalẹ̀-ètò Xinerama, o lè ní àwọn pánẹ́ẹ̀lì lórí àpótí ìṣàfihàn kọ̀ọ̀kan. Bọ́tìnì yìí ń tọ́ka sí àpótí ìṣàfihàn lọ́wọ́lọ́wọ́ tí a ti ṣàfihàn pánẹ́ẹ̀lì náà lé lórí.	In a Xinerama setup, you may have panels on each individual monitor. This key identifies the current monitor the panel is displayed on.
+Fẹ̀ẹ́ láti lè gba gbogbo ìfẹ̀sí ojú kọ̀ǹpútà	Expand to occupy entire screen width
+Tó bá jẹ́ òótọ́, pánẹ́ẹ̀lì náà á gba gbogbo ìfẹ̀sí ojú kọ̀ǹpútà náà (ìgasí tí o bá jẹ́ pánẹ́ẹ̀lì olóòró). Nínú móòdù yìí, pánẹ́ẹ̀lì a kàn lè gbé pánẹ́ẹ̀lì sígun ojú kọ̀ǹpútà ni. Tó bá jẹ́ irọ́, pánẹ́ẹ̀lì náà á kàn tóbi láti gba gbogbo àwọn ápúlẹ́ẹ̀tì náà, àwọn aṣàfilọ́lẹ̀ àti àwọn bọ́tìnì lórí pánẹ́ẹ̀lì náà.	If true, the panel will occupy the entire screen width (height if this is a vertical panel). In this mode the panel can only be placed at a screen edge. If false, the panel will only be large enough to accommodate the applets, launchers and buttons on the panel.
+Ìṣàlàyé pánẹ́ẹ̀lì	Panel orientation
+"Ìṣàlàyé pánẹ́ẹ̀lì yìí. Àwọn fálù tó lè jẹ́ ni ""òkè"", ""ìsàlẹ̀"", ""òsì"", ""ọ̀tún"". Ní móòdù tí a fẹ̀, bọ́tìnì náà ń sọ ní pàtó igun ojú kọ̀ǹpútà tí pánẹ́ẹ̀lì náà wà lórí ẹ. Nínú móòdù tí a kò fẹ̀ ìyàtọ̀ tó wà láàrin ""òkè"" àti ""ìsàlẹ̀"" pàtàkì díẹ̀ - méjéèjì fihàn pé èyí ni pánẹ́ẹ̀lì oníbùú - ṣùgbọ́n ó ṣì ń ṣòfófói bí ó ṣe yẹ kí àwọn nǹkan pánẹ́ẹ̀lì ṣe rí Bí àpẹẹrẹ, lórí pánẹ́ẹ̀lì ""òkè"" bọ́tìnì àòjọ-ẹ̀yan á ta àtòjọ-ẹ̀yàn rẹ̀ sókè nísàlẹ̀ pánẹ́ẹ̀lì náà. Bẹ́ẹ̀, lórí pánẹ́ẹ̀lì ""ìsàlẹ̀"" a óò ta àtòjọ-ẹ̀yàn náà sókè pánẹ́ẹ̀lì náà.."	"The orientation of the panel. Possible values are ""top"", ""bottom"", ""left"", ""right"". In expanded mode the key specifies which screen edge the panel is on. In un-expanded mode the difference between ""top"" and ""bottom"" is less important - both indicate that this is a horizontal panel - but still give a useful hint as to how some panel objects should behave. For example, on a ""top"" panel a menu button will pop up its menu below the panel, whereas on a ""bottom"" panel the menu will be popped up above the panel."
+Ìwọ̀n pánẹ́ẹ̀lì	Panel size
+Ìgasí (ìfẹ̀sí fún pánẹ́ẹ̀lì òòró) pánẹ́ẹ̀lì náà. Pánẹ́ẹ̀lì náà ló máa sọ ní àkókò láti rọ́ọ̀nù ìwọ̀n tó kéré jù, tó sì dálé ìwọ̀n ìrísí-lẹ́tà àti àwọn atọ́ka mìíràn. A ti fi ìwọ̀n tó ga jù sí ìdá-mẹ́rin ìgasí ojú kọ̀ǹpútà (tàbí ìfẹ̀sí).	The height (width for a vertical panel) of the panel. The panel will determine at runtime a minimum size based on the font size and other indicators. The maximum size is fixed at one quarter of the screen height (or width).
+Kọ́dínéètì X pánẹ́ẹ̀lì	X co-ordinate of panel
+Ààyè pánẹ́ẹ̀lì lórí ásìsì x. Bọ́tìnì yìí kàn wúlò nínú móòdù tí a kò fẹ̀. Nínú móòdù tí a fẹ̀, ṣe ni a pa bọ́tìnì yìí tì ni, a sì gbesí igun ojú kọ̀ǹpútà tí bọ́tìnì ìṣàlàyé sọ ní pàtó	The location of the panel along the x-axis. This key is only relevant in un-expanded mode. In expanded mode this key is ignored and the panel is placed at the screen edge specified by the orientation key.
+Kọ́dínéètì Y pánẹ́èlì	Y co-ordinate of panel
+Ààyè pánẹ́ẹ̀lì lórí ásìsì y. Bọ́tìnì yìí kàn wúlò nínú móòdù tí a kò fẹ̀. Nínú móòdù tí a fẹ̀, ṣe ni a pa bọ́tìnì yìí tì ni, a sì gbesí igun ojú kọ̀ǹpútà tí bọ́tìnì ìṣàlàyé sọ ní pàtó.	The location of the panel along the y-axis. This key is only relevant in un-expanded mode. In expanded mode this key is ignored and the panel is placed at the screen edge specified by the orientation key.
+Ààyè pánẹ́ẹ̀lì lórí ásìsì x. Bọ́tìnì yìí kàn wúlò nínú móòdù tí a kò fẹ̀. Nínú móòdù tí a fẹ̀, ṣe ni a pa bọ́tìnì yìí tì ni, a sì gbesí igun ojú kọ̀ǹpútà tí bọ́tìnì ìṣàlàyé sọ ní pàtó	The location of the panel along the x-axis, starting from the right of the screen. If set to -1, the value is ignored and the value of the x key is used. If the value is greater than 0, then the value of the x key is ignored. This key is only relevant in un-expanded mode. In expanded mode this key is ignored and the panel is placed at the screen edge specified by the orientation key.
+Ààyè pánẹ́ẹ̀lì lórí ásìsì y. Bọ́tìnì yìí kàn wúlò nínú móòdù tí a kò fẹ̀. Nínú móòdù tí a fẹ̀, ṣe ni a pa bọ́tìnì yìí tì ni, a sì gbesí igun ojú kọ̀ǹpútà tí bọ́tìnì ìṣàlàyé sọ ní pàtó.	The location of the panel along the y-axis, starting from the bottom of the screen. If set to -1, the value is ignored and the value of the y key is used. If the value is greater than 0, then the value of the y key is ignored. This key is only relevant in un-expanded mode. In expanded mode this key is ignored and the panel is placed at the screen edge specified by the orientation key.
+Pánẹ́ẹ̀lì àárín orí ásìsì x	Center panel on x-axis
+Tó bá jẹ́ òótọ́,a óò pa bọ́tìnì x náà tì, àá sì gbé pánẹ́ẹ̀lì náà sí àárín ásìsì x ojú kọ̀ǹpútà náà. Tí a bá ṣe ìṣòdíwọ̀n pánẹ́ẹ̀lì náà á wà nípò yẹn - tó túmọ̀ pé,pánẹ́ẹ̀lì náà á wá sókè ní àwọn ẹ̀gb́ẹ́ méjéèjì. Tó bá jẹ́ irọ́, bọ́tìnì x náà máa sọ ní pàtó ààyè pánẹ́ẹ̀lì náà.	If true, the x and xright keys are ignored and the panel is placed at the center of the x-axis of the screen. If the panel is resized it will remain at that position - i.e. the panel will grow on both sides. If false, the x and xright keys specify the location of the panel.
+Pánẹ́ẹ̀lì àárín orí ásìsì y	Center panel on y-axis
+Tó bá jẹ́ òótọ́,a óò pa bọ́tìnì y náà tì, àá sì gbé pánẹ́ẹ̀lì náà sí àárín ásìsì y ojú kọ̀ǹpútà náà. Tí a bá ṣe ìṣòdíwọ̀n pánẹ́ẹ̀lì náà á wà nípò yẹn - tó túmọ̀ pé,pánẹ́ẹ̀lì náà á wá sókè ní àwọn ẹ̀gb́ẹ́ méjéèjì. Tó bá jẹ́ irọ́, bọ́tìnì y náà máa sọ ní pàtó ààyè pánẹ́ẹ̀lì náà.	If true, the y and ybottom keys are ignored and the panel is placed at the center of the y-axis of the screen. If the panel is resized it will remain at that position - i.e. the panel will grow on both sides. If false, the y and ybottom keys specify the location of the panel.
+Ó fi pánẹ́ẹ̀lì pamọ́ sí igun	Automatically hide panel into corner
+Tó bá jẹ́ òótọ́, a óò fi pánẹ́ẹ̀lì náà pamọ́ fún ra rẹ̀ sínú igun ojú kọ̀ǹpútà náà nígbà tí atọ́ka náà bá fi agbègbè pánẹ́ẹ̀lì náà sílẹ̀. Gbígbé atọ́ka náà lọ sí igun yẹn lẹ́ẹ̀kan si á fa kí pánẹ́ẹ̀lì náà tún farahàn.	If true, the panel is automatically hidden into a corner of the screen when the pointer leaves the panel area. Moving the pointer to that corner again will cause the panel to re-appear.
+Tó bá jẹ́ òótọ́, ìfipamọ́ àti àìfipamọ́ pánẹ́ẹ̀lì yìí á jẹ́ ìṣàfarawé kọ̀ǹpútà. ní èyí tí kò bá fi ṣẹlẹ̀ lẹ́sẹ̀kẹsẹ̀.	If true, hiding and un-hiding of this panel will be animated rather than happening instantly.
+Mú àwọn bọ́tìnì ìpamọ́ ṣiṣẹ́	Enable hide buttons
+Tó bá jẹ́ ò̀ótọ́,a óò gbé àwọn bọ́tìnì sí ẹ̀̀̀gbẹ́ pánẹ́ẹ̀lì kọ̀ọ̀kan tí a lè lò láti gbé pánẹ́ẹ̀lìnáà lọ sí igun ojú kọ̀ǹpútà náà. Yóò sì fi bọ́tìnì kan tó ń ṣàfihàn sílẹ̀	If true, buttons will be placed on each side of the panel which may be used to move the panel to edge of the screen, leaving only a button showing.
+Fún àwon atọ́ka-árò lágbára lórí àwọn bọ́tìnì ìpamọ́	Enable arrows on hide buttons
+Tó bá jẹ́ ò̀ótọ́,a óò gbé àwọn atọ́ka-árò sórí àwọn bọ́tìnì ìpamọ́. Bọ́tìnì yìíkàn wúlò tí àwọn bọ́tìnìtí a fún lágbára bá jẹ́ òótọ́.	If true, arrows will be placed on the hide buttons. This key is only relevant if the enablebuttons key is true.
+Ìdádúró ìpamọ́-aládàaṣe pánẹ́ẹ̀lì	Panel autohide delay
+Ń sọ ní pàtó oye ìdádúró ọ̀kẹ́-ìṣísẹ̀ lẹ́yìn tí atọ́ka náà ti jáde lágbègbè náà kí pánẹ́ẹ̀lì tó di pípamọ́. Ìgbà tí bọ́tìnì ìpamọ́aládàáṣe bá jẹ́ òótọ́ nìkan ni bọ́tìnì yìí wúlò.	Specifies the number of milliseconds delay after the pointer leaves the panel area before the panel is automatically hidden. This key is only relevant if the autohide key is true.
+Ìdádúró àìfipamọ́-aládàáṣe pánẹ́èlì	Panel autounhide delay
+Ń sọ ní pàtó oye ìdádúró ọ̀kẹ́-ìṣísẹ̀ lẹ́yìn tí atọ́ka náà ti wọ agbègbè náà kí pánẹ́ẹ̀lì tó dá farahàn. Ìgbà tí bọ́tìnì ìpamọ́aládàáṣe bá jẹ́ òótọ́ nìkan ni bọ́tìnì yìí wúlò.	Specifies the number of milliseconds delay after the pointer enters the panel area before the panel is automatically re-shown. This key is only relevant if the autohide key is true.
+Àwọn písẹ́ẹ̀lì ta lè rí nígbà ìpamọ́	Visible pixels when hidden
+Ń sọ ní pàtó iye àwọn písẹ́ẹ̀lì tó fojúhàn nígbà tí a fi páńẹ̀ẹlì náà pamọ́ sí igun kan. Bọ́tìnì yìí kàn wúlò tí bọ́tìnì ìpamọ́aládàáṣe bá jẹ́ òótọ́.	Specifies the number of pixels visible when the panel is automatically hidden into a corner. This key is only relevant if the autohide key is true.
+Ìyárasí àfarawé Kọ̀ǹpútà	Animation speed
+"Ìyárasí tó yẹ kí àwọn ìṣàfarawé kọ̀ǹpútà ó ti yọ. Àwọn fálù tó lè jẹ́ ni ""falẹ̀"", ""àárín"" àti ""ìyára"". Bọ́tìnì yìí kàn wúlò tí bọ́tìnì àwọn mú ìṣàfarawé kọ̀ǹpútàṣiṣẹ́ bá jẹ́ òótọ́."	"The speed in which panel animations should occur. Possible values are ""slow"", ""medium"" and ""fast"". This key is only relevant if the enableanimations key is true."
+Irúfẹ́ ẹ̀yìn	Background type
+"Irúfẹ́ ẹ̀yìn wo la ó lò fún pánẹ́ẹ̀lì yìí. Àwọn fálù tó lè jẹ́ ni ""gtk"" - a óò lo ẹ̀yìn wíjẹ́ẹ̀tì ìpéwọ̀n GTK+, ""àwọ̀"" a óò lo bọ́tìnì àwọ̀ gẹ́gẹ́ bíi àwọ̀ ẹ̀yìn tàbí ""àwòrán"" - àwòrán tí bọ́tìnì àwòrán sọ la ó lò gẹ́gẹ́ bíi ẹ̀yìn."	"Which type of background should be used for this panel. Possible values are ""gtk"" - the default GTK+ widget background will be used, ""color"" - the color key will be used as background color or ""image"" - the image specified by the image key will be used as background."
+Àwọ̀ ẹ̀yìn	Background color
+Ń sọ níp pàtó àwọ̀ ẹ̀yìn fún pánẹ́ẹ̀lì inú ìgúnrégé #RGB.	Specifies the background color for the panel in #RGB format.
+Dídí àwọ̀ ẹ̀yìn	Background color opacity
+Ń sọ ní pàtó dídí ìgúnrégé àwọ̀ ẹ̀yìn . Tí àwọ̀ náà kò bá dí pátá (fálù tó kéré sí 65535) a óò to àwọ̀ náà pọ̀ sórí àwòrán ẹ̀yìn ojú-iṣẹ́.	Specifies the opacity of the background color format. If the color is not completely opaque (a value of less than 65535), the color will be composited onto the desktop background image.
+Àwòrán ẹ̀yìn	Background image
+Ń sọ fáìlì tí a óò lò ní pàtó fún ẹ̀yìn àwòrán. Tí àwòrán náà bá ní ṣánẹ́ẹ̀lì alpha a óò tòójọ sórí àwòrán ẹ̀yìn ojú-iṣẹ́.	Specifies the file to be used for the background image. If the image contains an alpha channel it will be composited onto the desktop background image.
+Fi àwòrán sí pánẹ́ẹ̀lì	Fit image to panel
+Tó bá jẹ́ òótọ́, a óò ṣe ìgbéléwọ̀n àwòrán (	If true, the image will be scaled (retaining the aspect ratio of the image) to the panel height (if horizontal).
+Na àwòrán sí pánẹ́ẹ̀lì	Stretch image to panel
+Tí ó bá jẹ́ òótọ́, a óò gbé àwòrán léwọ̀n àwọn ojúùwọ̀n pánẹ́ẹ̀lì. Réṣíò aspect àwòrán áwà bó ṣe wà.	If true, the image will be scaled to the panel dimensions. The aspect ratio of the image will not be maintained.
+Yí àwòrán po lórí àwọn pánẹ́ẹ̀lì òòró	Rotate image on vertical panels
+Tó bá jẹ́ òótọ́, a óò yí àwòrán ẹ̀yìn po tí pánẹ́ẹ̀lì náà bá jẹ́ olóòró.	If true, the background image will be rotated when the panel is oriented vertically.
+A kò rí áíkànnù	Icon <UNK> not found
+Kò lè mu <UNK> ṣiṣẹ́	Could not execute <UNK>
+Táìlì̀	file
+Trash: some-directorysome-directory	Search
+1$s, 2$s	1$s: 2$s
+Ṣí URL: <UNK>	Open URL: <UNK>
+Pa dúrọ́wà yìí je?	Delete this drawer?
+Nígbà tí a bá ti pa dórọ́wà jẹ, àti dúrọ́wà àti àwọn ààtò rẹ̀ máa sọnù.	When a drawer is deleted, the drawer and its settings are lost.
+Pa pánẹ́ẹ̀lì yìí jẹ?	Delete this panel?
+Nígbà tí a bá ti pa pánẹ́ẹ̀lì jẹ, àti pánẹ́ẹ̀lì àti àwọn ààtò rẹ̀ máa sọnù.	When a panel is deleted, the panel and its settings are lost.
+Yẹ Fátìrì Ápúlẹ́ẹ̀tì Bonobo Wo	Test Bonobo Applet Factory
+Yẹ Ápúlẹ́ẹ̀tì Bonobo Wò	Test Bonobo Applet
+Ápúlẹ́ẹ̀tì alábọ̀dé kan fún ìyẹ̀wò pánẹ́ẹ̀lì GNOME-2.0	A simple applet for testing the GNOME-2.0 panel
+Sọ ní pàtó IID ápúlẹ́ẹ̀tì tí a fẹ́ kì	Specify an applet IID to load
+Sọ ní pàtó ààyè gconf tí a fẹ́ fi àwọn ìkúndùn ápúlẹ́ẹ̀tì pamọ́ sí	Specify a gconf location in which the applet preferences should be stored
+Sọ́ ní pàtó ìwọ̀n ápúlẹ́ẹ̀̀tì gan níbẹ̀rẹ̀ (kékeré, àárín, ńlá-púpọ̀ abbl.)	Specify the initial size of the applet (xx-small, medium, large etc.)
+Sọ ní pàtó ìṣàlàyé ìbẹ̀rẹ̀ ápúlẹ́ẹ̀tì (òkè, ìsàlẹ̀, òsì tàbí ọ̀tún)Size	Specify the initial orientation of the applet (top, bottom, left or right)
+Kékeré púpọ̀Size	XX Small
+Kékeré díẹ̀Size	X Small
+KékeréSize	Small
+ÀárínSize	Medium
+ŃláSize	Large
+Ńlá Díẹ̀Size	X Large
+Ńlá Púpọ̀	XX Large
+Ó kùnà láti ki àwòrán <UNK>	Failed to load applet <UNK>
+Yẹ ohun-èlò ápúlẹ́ẹ̀tì wò	Test applet utility
+Ápúlẹ́ẹ̀tì	Applet:
+Prefs Dir:	Prefs Dir:
+Ìlò bọ́tìnì yìí nínú GNOME 2.6 ti kúrò láṣà.fún 'ìgúnrégé' bọ́tìnì. A tọ́jú ìtọsẹ̀ náà fún ìbámu pẹ̀lú àwọn ẹ̀yà tó ti pẹ́.	The use of this key was deprecated in GNOME 2.28 in favour of the use of timezones. The schema is retained for compatibility with older versions.
+Ápúlẹ́ẹ̀tì tó ní ìṣàlàyé pánẹ́ẹ̀lì nínú	Specify file containing saved configuration
+Rọ́ọ̀nù Ìṣàmúlò-ètò...	Choose an icon
+Sọ ní pàtó ìṣàlàyé ìbẹ̀rẹ̀ ápúlẹ́ẹ̀tì (òkè, ìsàlẹ̀, òsì tàbí ọ̀tún)Orientation	Specify the initial orientation of the applet (top, bottom, left or right)
+Ọ̀túnSize	Right
+"Irúfẹ́ nǹkan pánẹ́ẹ̀lì yìí. Àwọn fálù tó lè jẹ́ ni ""nǹkan-dúrọ́wà"",""nǹkan-àtòjọ-ẹ̀yàn"",""nǹkan-aṣàfilọ́lẹ̀"",""ápúlẹ́ẹ̀tì bonobo"",""ápúlẹ́ẹ̀tì-iṣẹ́""àti ""àká-àtòjọ-ẹ̀yàn""."	"The type of this panel object. Possible values are ""drawer-object"", ""menu-object"", ""launcher-object"", ""external-applet"", ""action-applet"", ""menu-bar"" and ""separator""."
+"ID ì̀pilẹ̀ Bonobo ti ápúlẹ́ẹ̀tì náà - b.a ""OAFIID:GNOMEClockApplet"".Bọ́tìnì yìí kàn wúlò tí bọ́tìnì irúfẹ́nǹkan bá jẹ́ ""ápúlẹ́ẹ̀tì-bonobo""."	"This key is deprecated, following the migration to a new library for applets. The Bonobo implementation ID of the applet - e.g. ""OAFIID:GNOMEClockApplet"". This key is only relevant if the objecttype key is ""bonobo-applet""."
+Ápúlẹ́ẹ̀tì Bonobo IID	Applet IID
+"ID ì̀pilẹ̀ Bonobo ti ápúlẹ́ẹ̀tì náà - b.a ""OAFIID:GNOMEClockApplet"".Bọ́tìnì yìí kàn wúlò tí bọ́tìnì irúfẹ́nǹkan bá jẹ́ ""ápúlẹ́ẹ̀tì-bonobo""."	"The implementation ID of the applet - e.g. ""ClockAppletFactory::ClockApplet"". This key is only relevant if the objecttype key is ""external-applet"" (or the deprecated ""bonobo-applet"")."
+Àṣìṣe kíka fálù boolean GConf <UNK>: <UNK>	Error reading GConf boolean value <UNK>: <UNK>
+Ó kùnà láti rí pixmap <UNK>	Failed to open the time settings
+"Ìgúnrégéàkànṣe:state"" or ""province"" should use that instead of ""region"	Custom format:
+Fátìrì fún ìṣẹ̀dá àwọn ápúlẹ́ẹ̀tì aago.	Factory for clock applet
+Agbègbè Ìkéde Pánẹ́ẹ̀lì	Factory for notification area
+Àtòjọ àwọn ID ápúlẹ́ẹ̀tì pánẹ́ẹ̀lì. ID kọ̀ọ̀kan ń tọ́ka sí nǹkan pánẹ́ẹ̀lì kọ̀ọ̀kan (b.a.aṣàfilọ́lẹ̀, bọ́tìnì iṣẹ́ tàbí àká/bọ́tìnì àtòjọ-ẹ̀yàn). A fi àwọn ààtò fún àwọn nǹkankọ̀ọ̀kan pamọ́ sínú /apps/panel/objects/$(id).	A list of panel object IDs. Each ID identifies an individual panel object (e.g. an applet, launcher, action button or menu button/bar). The settings for each of these objects are stored in /apps/panel/objects/$(id).
+"Mú àtòjọ àtòjọ-ètò inú onísọ̀rọ̀gbèsì ""Rọ́ọ̀nù Ìsàmúlò-ètò"" ṣíṣẹ"	"History of ""Run Application"" dialog"
+"Mú ìkádìí-aládàáṣe nínú onísọ̀rọ̀gbèsì ""Rọ́ọ̀nù Ìṣàmúlò-ètò"" ṣiṣẹ́"	"The list of commands used in the past in the ""Run Application"" dialog."
+Ìtalólobó tí a ṣàfihàn fún dúrọ́wà tàbí àtòjọ-ẹ̀yàn	Tooltip displayed for menu
+Áíkànnù tí a lò fún bọ́tìnì nǹkan	Icon used for button
+"Ààyè fáìlì àwòrán tí a lò gẹ́gẹ́ bíi áíkànnù fún bọ́tìnì nǹkan náà. bọ́tìnì yìí kàn wúlò tí bọ́tìnì irúfẹ́nǹkan bá jẹ́ ""nǹkan-dúrọ́wà"" tàbí ""nǹkan àtòjọ-ẹ̀yàn"" tí bọ́tìnì áíkànnùàkànṣeìlò jẹ́ òótọ́."	The location of the image file used as the icon for the object's button. If empty, the default icon for the menu will be used.
+"Ipa tí a ti kọ́ àwọn àkóónú àtòjọ-ẹ̀yàn. Bọ́tìnì yìí kàn wúlò tí bọ́tìnìipaàtòjọ-ẹ̀yànìlò sì jẹ́ òótọ́ tí bọ́tìnìnǹkan jẹ́""nǹkan-àtòjọ-ẹ̀yàn"""	The path from which the menu contents is contructed. If empty, the menu will be the default applications menu.
+Tó bá jẹ́ òótọ́, a óò sọ ìtumọ̀ nǹkan náà ní àjẹmọ́ apá ọ̀tún igun pánẹ́ẹ̀lì (tàbí ìsàlẹ̀ tó bá jẹ́ òòró) náà.	If set to 'end', the position of the object is interpreted relative to the right (or bottom if vertical) edge of the panel.
+"Irúfẹ́ ẹ̀yìn wo la ó lò fún pánẹ́ẹ̀lì yìí. Àwọn fálù tó lè jẹ́ ni ""gtk"" - a óò lo ẹ̀yìn wíjẹ́ẹ̀tì ìpéwọ̀n GTK+, ""àwọ̀"" a óò lo bọ́tìnì àwọ̀ gẹ́gẹ́ bíi àwọ̀ ẹ̀yìn tàbí ""àwòrán"" - àwòrán tí bọ́tìnì àwòrán sọ la ó lò gẹ́gẹ́ bíi ẹ̀yìn."	"Which type of background should be used for this panel. Possible values are ""none"" - the default GTK+ widget background will be used, ""color"" - the color key will be used as background color or ""image"" - the image specified by the image key will be used as background."
+Àwọn Àwòrán	Image options
+A kò ṣègbékalẹ̀ bọ́tìnì <UNK>, kò lè ki aṣàfilọ̀lẹ̀	Launcher location is not set, cannot load launcher
+Darapọ̀ mọ́ Sáfà...	Connect to server
+Àtòjọ-ẹ̀yàn	User Menu
+Pa pánẹ́ẹ̀lì yìí jẹ?	Cannot create initial panel layout.
+Ìjánu-ìsún	Switch User
+Aago Kọ̀ǹpútà	Computer
+Àwọn Ibi Alátagbà	Network
+Àwọn IbiOrientation	Places
+Yẹ Fátìrì Ápúlẹ́ẹ̀tì Bonobo Wo	Test DBus Applet Factory
+Fátìrì fún ìṣẹ̀dá àwọn ápúlẹ́ẹ̀tì aago.	Factory for Test DBus Applet
+Yẹ Ápúlẹ́ẹ̀tì Bonobo Wò	Test DBus Applet
+Ápúlẹ́ẹ̀tì alábọ̀dé kan fún ìyẹ̀wò pánẹ́ẹ̀lì GNOME-2.0	A simple applet for testing the GNOME panel
+Kàlẹ́ńdà<UNK>	Calendar
+Ṣẹ̀dàÀkókò	Copy Date and Time
+Parí Iṣẹ́	Log Out
+Ṣí ojú-iṣẹ́ náà gẹ́gẹ́ bíi fódà	Open your personal folder
+Àwọn Ibi AlátagbàDesktop FolderDesktop Folder	Network Places
+Má Pajẹ	Delete
+Àṣe Fún Ìbẹ̀rẹ̀	Select Command
+Ṣàfikún Àtòjọ-ètò Fún Ìbẹ̀rẹ̀	Add Startup Program
+Ṣàyẹ̀wò Àtòjọ-ètò Fún Ìbẹ̀rẹ̀	Edit Startup Program
+Àṣẹ fún ìbẹ̀rẹ̀ kò lè jẹ́ òfìfo	The startup command cannot be empty
+Àṣẹ fún ìbẹ̀rẹ̀ kò lè jẹ́ òfìfo	The startup command is not valid
+Iṣẹ́	Icon
+Àtòjọ-ètò	Program
+Fi ojú kọ̀ǹpútà píláàṣì hàn	Show the splash screen
+Fi ojú kọ̀ǹpútà píláàṣì hàn tí sáà náà bá ti bẹ̀rẹ̀	Show the splash screen when the session starts up
+Fi àwọn sáà pamọ́	Save sessions
+Tí a bá fún lágbára sáà-gnome á dáfi sáà náà pamọ́. Láì jẹ́ bẹ́ẹ̀, onísọ̀rọ̀gbèsì ìparí iṣẹ́ á ní ẹ̀yàn láti fi sáà náà pamọ́.	If enabled, gnome-session will save the session automatically. Otherwise, the logout dialog will have an option to save the session.
+Ìṣílórí ìparí iṣẹ́	Logout prompt
+Tí a bá fún lágbára iṣẹ́ sáà gnome á́ ṣí òǹlò náà lórí kó tó parí sáà kan.	If enabled, gnome-session will prompt the user before ending a session.
+Àwòrán tí a fẹ́ láti lò fún ojú kọ̀ǹpútà píláàṣì	Preferred Image to use for login splash screen
+Fálù tó jẹmọ́ ipa tó dálé atọ́nà $datadir/pixmaps/ ni èyí. Àwọn ẹ̀ka-atọ́nà àti àwọn orúkọ àwòrán jẹ́ àwọn fálù tó fẹsẹ̀múlẹ̀. Ìyípadà fálù yìí á kan ìbẹ̀rẹ̀ iṣẹ́ sáà tókàn.	This is a relative path value based off the $datadir/pixmaps/ directory. Sub-directories and image names are valid values. Changing this value will effect the next session login.
+Pa sáà	Default session
+Ètò tí a ti bẹ̀rẹ̀ àwọn ì̀ṣàmúlò-ètò nínú sáà náà.	List of applications that are part of the default session.
+Alábòójútó Fèrèsé	Window Manager
+Pánẹ́ẹ̀lì Náà	Panel
+Alábòójútó Fèrèsé	File Manager
+Àwọn àtòjọ-ètò fún ìbẹ̀rẹ̀ aláfikún:	Additional startup programs:
+Àwọn Àtòjọ-ètò fún Ìbẹ̀rẹ̀	Startup Programs
+Àwọn Ẹ̀yàn Sáà	Options
+Àṣẹ	Comment:
+Àṣẹ	Command:
+Ń Bẹ̀rẹ̀	Starting <UNK>
+Kò lè darapọ̀ mọ́ alábòójútó sáà	Disable connection to session manager
+Sọ ní pàtò orúkọ sáà tí a ó kì	Specify session management ID
+Àwọn Ẹ̀yàn Sáà	Session management options:
+Aládùrófún Alábòójútó Sá́à	Show session management options
+Bẹ̀rẹ̀ iṣẹ́ Ní Ọ̀nà kán nà	Logout Anyway
+Bẹ̀rẹ̀ iṣẹ́ Ní Ọ̀nà kán nà	Hibernate Anyway
+Bẹ̀rẹ̀ iṣẹ́ Ní Ọ̀nà kán nà	Shutdown Anyway
+Bẹ̀rẹ̀ iṣẹ́ Ní Ọ̀nà kán nà	Reboot Anyway
+Parí iṣẹ́	Log Out
+Tun bẹ̀rẹ̀	Restart
+Paá	Shut Down
+Kò lè darapọ̀ mọ́ alábòójútó sáà	- the GNOME session manager
+Fi ojú kọ̀ǹpútà píláàṣì hàn	- GNOME Splash Screen
+Parí iṣẹ́	Log out
+Lo àwọn àpótí onísọ̀rọ̀gbèsì	Use dialog boxes for errors
+Ṣàgbékalẹ̀ sáà lọ́wọ́lọ́wọ́	Set the current session name
+Pa sáà	Kill session
+Kò lè darapọ̀ mọ́ alábòójútó sáà	Could not connect to the session manager
+Àṣẹ fún ìbẹ̀rẹ̀ kò lè jẹ́ òfìfo	The name of the startup program cannot be empty
+Tí a bá fún lágbára iṣẹ́ sáà gnome á́ ṣí òǹlò náà lórí kó tó parí sáà kan.	If enabled, gnome-session will save the session automatically.
+Bẹ̀rẹ̀ iṣẹ́ Ní Ọ̀nà kán nà	Log Out Anyway
+Bẹ̀rẹ̀ iṣẹ́ Ní Ọ̀nà kán nà	Shut Down Anyway
+Àwọn Sáà	Session to use
+Sáà Lọ́wọ́lọ́wọ́	Custom Session
+Àwọn Sáà:	New Session
+Fi àwọn sáà pamọ́	Remove Session
+Sáà Lọ́wọ́lọ́wọ́	Rename Session
+Bèrè ì́parí iṣẹ́	Allow logout
+Àwọn Sáà	Session d
+Orúkọ sáà náà wà nílẹ̀	A session named ‘<UNK>’ already exists
+Bẹ̀rẹ̀ iṣẹ́ Ní Ọ̀nà kán nà	Reboot
+Bẹ̀rẹ̀ iṣẹ́ Ní Ọ̀nà kán nà	Restart Anyway
+òkè	Desktop
+Alábòójútó fèrèsé:	Window Management
+Ó kùnà láti rí orúkọ-agbàlejò: <UNK>	Failed to get hostname: <UNK>
+Ó kùnà láti ṣí ìṣàfihàn Ètò Fèrèsé X <UNK>	Failed to open X Window System display <UNK>
+Ó sọ ìdarapọ̀ nù fún ìsàfihàn <UNK>; Ó ṣeé ṣe kí a pa sáfà X tàbí o pa/ba alábòójútó fèrèsé náà jẹ́.	Lost connection to the display <UNK>; most likely the X server was shut down or you killed/destroyed the window manager.
+Àṣìṣe IO ńlá d (<UNK>) lórí ìṣàfihàn <UNK>.	Fatal IO error d (<UNK>) on display <UNK>.
+Ọ̀pọ̀lọpọ̀ àtòjọ-ètò mìíràn ló ń ti ń lo bọ́tìnì <UNK> tẹ́lẹ̀ pẹ́lú àwọn aṣàtúntò x gẹ́gẹ́ bíi aṣẹ̀dá-ìtọ́ka	Some other program is already using the key <UNK> with modifiers x as a binding
+Àṣìṣe kan ń rọ́ọ̀nù <UNK>: <UNK>.	There was an error running <UNK>: <UNK>
+A kò tíì soríkì àṣe d kankan.	No command d has been defined.
+A kò tíì soríkì àṣẹ támínà kankan.	No terminal command has been defined.
+metacity <UNK> Àṣẹ lórí-àrà (C) 2001-2002 Havoc Pennington, Red Hat, Inc., àti àwọn mìíràn Ọ̀fẹ́ ni ẹ̀yà-ara kọ̀ǹpútà àìfojúrí yìí; wo orísun fún àwọn ìwọfún ìṣẹ̀dà. Kò sí wáráǹtì; kó dà kò sí fún ITAJA tàbí ÌWÚLÒ FÚN ÌLÒ PÀTÀKÌ KAN.	metacity <UNK> Copyright (C) 2001-<UNK> Havoc Pennington, Red Hat, Inc., and others This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Ó kùnà láti síkáànì atọ́nà àwọn kókó: <UNK>	Failed to scan themes directory: <UNK>
+Kò lè rí kókó! Rí dájú pé <UNK> wà ó sì ní àwọn kókó tó yẹ kó ní.	Could not find a theme! Be sure <UNK> exists and contains the usual themes.
+Ó kùnà láti tún bẹ̀rẹ̀: <UNK>	Failed to restart: <UNK>
+A gbé bọ́tìnì GConf <UNK> kalẹ̀ sí irúfẹ́ tí kò fẹsẹ̀múlẹ̀	GConf key <UNK> is set to an invalid value
+d tí a fi pamọ́ sínú bọ́tìnì GConf <UNK> kò sí ní sàkánì 0 sí d	d stored in GConf key <UNK> is out of range d to d
+A gbé bọ́tìnì GConf <UNK> kalẹ̀ sí irúfẹ́ tí kò fẹsẹ̀múlẹ̀	GConf key <UNK> is set to an invalid type
+Àwọn workaround fún àwọn ìṣàmúlò-ètò tó dàrú kò ṣiṣẹ́. Ọ̀pọ̀lọpọ̀ àwọn ìṣàmúlò-ètò kò hùwà dáadáa.	Workarounds for broken applications disabled. Some applications may not behave properly.
+Kò lè páàsì àpèjúwe ìrísí-lẹ́tà <UNK> láti inú bọ́tìnì GConf <UNK>	Could not parse font description <UNK> from GConf key <UNK>
+<UNK> tí a rí nínú èròjà ìwádìí àtòpọ̀ kìí ṣe fálù tó fẹsẹ̀múlẹ̀ fún aṣàtúntò bọ́tìnì ohun-èlò aṣèkúté	<UNK> found in configuration database is not a valid value for mouse button modifier
+Àṣìṣe ìgbékalẹ̀ oye àwon ààyè-iṣẹ́ sí d: <UNK>	Error setting number of workspaces to d: <UNK>
+Ààyè-iṣẹ́ d	Workspace d
+<UNK> tí a rí nínú èròjà ìwádìí àtòpọ̀ kìí ṣe fálu tó fẹsẹ̀múlẹ̀ fún aṣẹ̀dá-ìtọ́ka <UNK>	<UNK> found in configuration database is not a valid value for keybinding <UNK>
+Àṣìṣe ìgbékalẹ̀ orúkọ fún ààyè-iṣẹ́ d sí <UNK>: <UNK>	Error setting name for workspace d to <UNK>: <UNK>
+Àṣìṣe ìgbékalẹ̀ orúkọ fún ààyè-iṣẹ́ d sí <UNK>: <UNK>	Error setting compositor status: <UNK>
+Ojú kọ̀ǹpútà d tí a ̀ṣàfihàn <UNK> kò fẹsẹ̀múlẹ̀	Screen d on display <UNK> is invalid
+Ojú kọ̀ǹpútà d tí a ṣàfihàn <UNK> ti ní alábòójútó fèrèsé tẹ́lẹ̀; gbìyànjú lílo --ẹ̀yàn ìpààrọ̀ láti pà́àrọ̀ alábòójútó lọ́wọ́lọ́wọ́.	Screen d on display <UNK> already has a window manager; try using the --replace option to replace the current window manager.
+Kò lè gba ẹ̀yàn alábòójútó fèrèsé lórí ojú kọ̀ǹpútà d ìṣàfihàn <UNK>	Could not acquire window manager selection on screen d display <UNK>
+Ojú kọ̀ǹpútà d tí a ̀ṣàfihàn <UNK> ti ní alábòójútó fèrèsé tẹ́lẹ̀	Screen d on display <UNK> already has a window manager
+"Kò lè fi ojú kọ̀ǹpútà d tí a ṣàfihàn sílẹ̀<UNK> Control"", ""Shiftdisabled"	Could not release screen d on display <UNK>
+"Aṣẹ̀dá-ìtọ́ka bọ́tìnì náà máa ń ti àtòjọ-ẹ̀yàn fèrèsé́ . Ìgúnrégé náà jọ ""lt;Ìdarígt;a"" tàbí ""lt;Shiftgt;lt;Altgt;F1"". Pásà náà fanimọ́ra, ó sì ń fàyè gba lẹ́tà kékeré àti gòdògbò àti àwọn ìgékúrú bí i ""lt;Ctlgt;"" àti ""lt;Ctrlgt;"". Tí o bá gbé ẹ̀yàn náà kalẹ̀ sí fọ́nrán àkànṣe ""kò ní agbára mọ́"", a jẹ́ pé kò ní sí aṣẹ̀dá-ìtọ́ka bọ́tìnì fún iṣẹ́ yìí nìyẹn."	"The format looks like ""<Control>a"" or ""<Shift><Alt>F1"". The parser is fairly liberal and allows lower or upper case, and also abbreviations such as ""<Ctl>"" and ""<Ctrl>"". If you set the option to the special string ""disabled"", then there will be no keybinding for this action."
+"Aṣẹ̀dá-ìtọ́ka bọ́tìnì náà máa ń ti àtòjọ-ẹ̀yàn fèrèsé́ . Ìgúnrégé náà jọ ""lt;Ìdarígt;a"" tàbí ""lt;Shiftgt;lt;Altgt;F1"". Pásà náà fanimọ́ra, ó sì ń fàyè gba lẹ́tà kékeré àti gòdògbò àti àwọn ìgékúrú bí i ""lt;Ctlgt;"" àti ""lt;Ctrlgt;"". Tí o bá gbé ẹ̀yàn náà kalẹ̀ sí fọ́nrán àkànṣe ""kò ní agbára mọ́"", a jẹ́ pé kò ní sí aṣẹ̀dá-ìtọ́ka bọ́tìnì fún iṣẹ́ yìí nìyẹn."	"The format looks like ""<Control>a"" or ""<Shift><Alt>F1"". The parser is fairly liberal and allows lower or upper case, and also abbreviations such as ""<Ctl>"" and ""<Ctrl>"". If you set the option to the special string ""disabled"", then there will be no keybinding for this action. This keybinding may be reversed by holding down the ""shift"" key; therefore, ""shift"" cannot be one of the keys it uses."
+Kò lè ṣẹ̀dá atọ́nà <UNK>: <UNK>	Could not create directory <UNK>: <UNK>
+Kò lè ṣí fáìlì sáà <UNK> fún kíkọ: <UNK>	Could not open session file <UNK> for writing: <UNK>
+Àṣìṣe kíkọ fáìlì sáà <UNK>: <UNK>	Error writing session file <UNK>: <UNK>
+Aṣìse títi fáìlì sáà <UNK>: <UNK>	Error closing session file <UNK>: <UNK>
+Ó kùnà láti ka fáìlì sáà tí a fi pamọ́ <UNK>: <UNK>	Failed to read saved session file <UNK>: <UNK>
+Ó kùnà láti páàsì fáìlì sáà tí a fi pamọ́: <UNK>	Failed to parse saved session file: <UNK>
