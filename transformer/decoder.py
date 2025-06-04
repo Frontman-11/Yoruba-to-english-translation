@@ -1,6 +1,6 @@
 import keras
 import tensorflow as tf
-from transformer.eedforward import FeedForward
+from transformer.feedforward import FeedForward
 from transformer.positional_embedding import PositionalEmbedding
 from transformer.attention import CausalSelfAttention, CrossAttention
 
