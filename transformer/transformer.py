@@ -1,5 +1,5 @@
 import keras
-import tensorflow tf
+import tensorflow as tf
 from encoder import Encoder
 from decoder import Decoder
 
