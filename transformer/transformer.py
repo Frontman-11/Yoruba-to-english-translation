@@ -1,7 +1,7 @@
 import keras
 import tensorflow as tf
-from encoder import Encoder
-from decoder import Decoder
+from transformer.encoder import Encoder
+from transformer.decoder import Decoder
 
 
 @keras.saving.register_keras_serializable()
