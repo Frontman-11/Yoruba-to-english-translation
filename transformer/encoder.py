@@ -1,8 +1,8 @@
 import keras
 import tensorflow as tf
-from feedforward import FeedForward
-from attention import GlobalSelfAttention
-from positional_embedding import PositionalEmbedding
+from transformer.feedforward import FeedForward
+from transformer.attention import GlobalSelfAttention
+from transformer.positional_embedding import PositionalEmbedding
 
 
 # # Clear all previously registered custom objects
