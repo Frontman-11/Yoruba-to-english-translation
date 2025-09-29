@@ -96,7 +96,82 @@ class Transformer(tf.keras.Model):
     
         return decoded_sentences  
     
-    def translate(self, sentence, tgt_tokenizer, max_seq_length=128, batch_size=128):
+    # def translate(self, sentence, tgt_tokenizer, max_seq_length=128, batch_size=128):
+    #     assert isinstance(sentence, tf.Tensor), 'Input sentence not instance of tf.Tensor'
+        
+    #     if len(sentence.shape) == 1:
+    #         sentence = sentence[tf.newaxis, :]
+    
+    #     total_samples = tf.shape(sentence)[0].numpy()
+    #     translations = []
+    
+    #     for i in range(0, total_samples, batch_size):
+    #         batch_sentence = sentence[i:i+batch_size]
+    #         translations.extend(self._translate_batch(batch_sentence, tgt_tokenizer, max_seq_length))
+    
+    #     return translations
+
+    def _translate_batch_beam(self, sentence, tgt_tokenizer, max_seq_length, beam_width=5):
+        batch_size = tf.shape(sentence)[0].numpy()
+        bos_id = tgt_tokenizer.piece_to_id('<BOS>')
+        eos_id = tgt_tokenizer.piece_to_id('<EOS>')
+    
+        # Start with BOS token for each item
+        bos_tokens = tf.fill([batch_size, 1], tf.constant(bos_id, dtype=tf.int64))
+    
+        final_sequences = []
+    
+        for b in range(batch_size):
+            # initialize beams: (sequence, score)
+            beams = [(bos_tokens[b:b+1], 0.0)]  # log-prob score
+            completed = []
+    
+            for _ in range(max_seq_length):
+                all_candidates = []
+    
+                for seq, score in beams:
+                    logits = self.call((sentence[b:b+1], seq), training=False)
+                    logits = logits[:, -1, :]  # last timestep
+                    log_probs = tf.nn.log_softmax(logits, axis=-1).numpy().flatten()
+    
+                    # get top-k next tokens
+                    topk_ids = tf.math.top_k(log_probs, k=beam_width).indices.numpy()
+                    topk_scores = tf.math.top_k(log_probs, k=beam_width).values.numpy()
+    
+                    for token, logp in zip(topk_ids, topk_scores):
+                        new_seq = tf.concat([seq, [[token]]], axis=-1)
+                        new_score = score + float(logp)
+    
+                        if token == eos_id:
+                            completed.append((new_seq, new_score))
+                        else:
+                            all_candidates.append((new_seq, new_score))
+    
+                # prune to beam_width best
+                ordered = sorted(all_candidates, key=lambda tup: tup[1], reverse=True)
+                beams = ordered[:beam_width]
+    
+                if not beams:
+                    break
+    
+            # pick best completed if exists, else best unfinished
+            if completed:
+                best_seq = max(completed, key=lambda tup: tup[1])[0]
+            else:
+                best_seq = beams[0][0]
+    
+            final_sequences.append(best_seq.numpy().flatten().tolist())
+    
+        # cut off at EOS
+        decoded_sentences = []
+        for seq in final_sequences:
+            if eos_id in seq:
+                seq = seq[:seq.index(eos_id)]
+            decoded_sentences.append(seq)
+    
+        return decoded_sentences
+
+    def translate(self, sentence, tgt_tokenizer, max_seq_length=128, batch_size=128, method="greedy", beam_width=5):
         assert isinstance(sentence, tf.Tensor), 'Input sentence not instance of tf.Tensor'
         
         if len(sentence.shape) == 1:
@@ -107,6 +182,12 @@ class Transformer(tf.keras.Model):
     
         for i in range(0, total_samples, batch_size):
             batch_sentence = sentence[i:i+batch_size]
-            translations.extend(self._translate_batch(batch_sentence, tgt_tokenizer, max_seq_length))
+            if method == "greedy":
+                translations.extend(self._translate_batch(batch_sentence, tgt_tokenizer, max_seq_length))
+            elif method == "beam":
+                translations.extend(self._translate_batch_beam(batch_sentence, tgt_tokenizer, max_seq_length, beam_width))
+            else:
+                raise ValueError(f"Unknown translation method: {method}")
     
         return translations
+
