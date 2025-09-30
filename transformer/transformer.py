@@ -110,7 +110,7 @@ class Transformer(tf.keras.Model):
     #         translations.extend(self._translate_batch(batch_sentence, tgt_tokenizer, max_seq_length))
     
     #     return translations
-    
+        
     def _translate_batch_beam(
         self, sentence, tgt_tokenizer, max_seq_length, beam_width=5, length_penalty=0.7
     ):
@@ -186,7 +186,7 @@ class Transformer(tf.keras.Model):
             
             # Decompose indices into beam and token
             beam_indices = topk_indices // vocab_size  # [batch, beam]
-            token_indices = topk_indices % vocab_size  # [batch, beam]
+            token_indices = tf.cast(topk_indices % vocab_size, dtype=tf.int64)  # [batch, beam]
             
             # Gather sequences from selected beams
             batch_offsets = tf.range(batch_size, dtype=tf.int32) * beam_width
@@ -242,7 +242,6 @@ class Transformer(tf.keras.Model):
             best_sequences.append(seq)
         
         return best_sequences
-    
     
     def translate(self, sentence, tgt_tokenizer, max_seq_length=128, batch_size=128, method="greedy", beam_width=5):
         assert isinstance(sentence, tf.Tensor), 'Input sentence not instance of tf.Tensor'
