@@ -110,12 +110,12 @@ class Transformer(tf.keras.Model):
     #         translations.extend(self._translate_batch(batch_sentence, tgt_tokenizer, max_seq_length))
     
     #     return translations
-
+    
     def _translate_batch_beam(
         self, sentence, tgt_tokenizer, max_seq_length, beam_width=5, length_penalty=0.7
     ):
         """
-        Beam search translation (vectorized).
+        Improved beam search translation with proper batch processing.
     
         Args:
             sentence: [batch, src_len] int tensor
@@ -125,101 +125,122 @@ class Transformer(tf.keras.Model):
             length_penalty: exponent for length normalization (0 = none, >0 = normalize)
         """
         batch_size = tf.shape(sentence)[0]
-    
-        bos_id = tgt_tokenizer.piece_to_id("<BOS>")
-        eos_id = tgt_tokenizer.piece_to_id("<EOS>")
-    
-        # [batch, beam, seq_len] -> flatten to [batch*beam, seq_len]
-        sequences = tf.fill([batch_size * beam_width, max_seq_length], eos_id)
-        # Put BOS at position 0
-        indices = tf.stack([
-            tf.range(batch_size * beam_width, dtype=tf.int32),
-            tf.zeros([batch_size * beam_width], dtype=tf.int32)
-        ], axis=1)
-        updates = tf.repeat(tf.constant([bos_id], dtype=tf.int64), batch_size * beam_width)
-        sequences = tf.tensor_scatter_nd_update(sequences, indices, updates)
-    
-        # [batch, beam] scores
-        scores = tf.concat(
-            [tf.zeros([batch_size, 1]), -1e9 * tf.ones([batch_size, beam_width - 1])],
-            axis=1,
+        
+        bos_id = tf.constant(tgt_tokenizer.piece_to_id("<BOS>"), dtype=tf.int64)
+        eos_id = tf.constant(tgt_tokenizer.piece_to_id("<EOS>"), dtype=tf.int64)
+        
+        # Initialize sequences: [batch*beam, max_seq_length]
+        # Start with BOS token only, rest will be filled during generation
+        sequences = tf.fill([batch_size * beam_width, max_seq_length], tf.constant(0, dtype=tf.int64))
+        sequences = tf.tensor_scatter_nd_update(
+            sequences,
+            tf.stack([tf.range(batch_size * beam_width, dtype=tf.int32), 
+                      tf.zeros([batch_size * beam_width], dtype=tf.int32)], axis=1),
+            tf.fill([batch_size * beam_width], bos_id)
         )
-        scores = tf.reshape(scores, [-1])  # [batch*beam]
-    
-        # finished flags
-        finished = tf.zeros_like(scores, dtype=tf.bool)
-    
+        
+        # Initialize scores: [batch*beam]
+        # First beam in each batch starts with 0, others with -inf
+        scores = tf.concat([
+            tf.zeros([batch_size, 1], dtype=tf.float32),
+            tf.fill([batch_size, beam_width - 1], -1e9)
+        ], axis=1)
+        scores = tf.reshape(scores, [-1])
+        
+        # Track finished beams: [batch*beam]
+        finished = tf.zeros([batch_size * beam_width], dtype=tf.bool)
+        
+        # Expand source sentence for beam search: [batch*beam, src_len]
+        sentence_expanded = tf.repeat(sentence, repeats=beam_width, axis=0)
+        
         for step in range(1, max_seq_length):
-            # Run decoder on current sequences
-            logits = self.call(
-                (tf.repeat(sentence, repeats=beam_width, axis=0), sequences[:, :step]),
-                training=False,
-            )  # [batch*beam, step, vocab]
-            logits = logits[:, -1, :]  # last step -> [batch*beam, vocab]
-    
+            # Early stopping if all beams are finished
+            if tf.reduce_all(finished):
+                break
+            
+            # Slice current sequence up to current step
+            current_seq = sequences[:, :step]
+            
+            # Get logits from model: [batch*beam, step, vocab]
+            logits = self.call((sentence_expanded, current_seq), training=False)
+            logits = logits[:, -1, :]  # [batch*beam, vocab]
+            
+            # Convert to log probabilities
             log_probs = tf.nn.log_softmax(logits, axis=-1)
-    
-            # Prevent updating finished beams
-            log_probs = tf.where(
-                finished[:, None], tf.constant(-1e9, dtype=log_probs.dtype), log_probs
-            )
-    
-            # Add to running scores
-            total_scores = tf.reshape(scores, [-1, 1]) + log_probs  # [batch*beam, vocab]
-    
-            # Reshape to [batch, beam*vocab]
+            
+            # Mask finished beams: set all their log_probs to -inf except for EOS
+            # This ensures finished beams just keep generating EOS
+            mask = tf.expand_dims(finished, axis=1)  # [batch*beam, 1]
+            eos_mask = tf.one_hot(eos_id, depth=tf.shape(log_probs)[-1], dtype=log_probs.dtype)
+            log_probs = tf.where(mask, eos_mask * 0.0 - 1e9 * (1.0 - eos_mask), log_probs)
+            
+            # Add current scores: [batch*beam, vocab]
+            total_scores = tf.reshape(scores, [-1, 1]) + log_probs
+            
+            # Reshape to [batch, beam*vocab] for top-k selection
             vocab_size = tf.shape(log_probs)[-1]
             total_scores = tf.reshape(total_scores, [batch_size, beam_width * vocab_size])
-    
-            # Select top-k
+            
+            # Select top-k beams: [batch, beam]
             topk_scores, topk_indices = tf.math.top_k(total_scores, k=beam_width)
-    
-            # Compute beam and token indices
-            beam_indices = topk_indices // vocab_size
-            token_indices = topk_indices % vocab_size
-    
-            # Gather previous sequences
+            
+            # Decompose indices into beam and token
+            beam_indices = topk_indices // vocab_size  # [batch, beam]
+            token_indices = topk_indices % vocab_size  # [batch, beam]
+            
+            # Gather sequences from selected beams
             batch_offsets = tf.range(batch_size, dtype=tf.int32) * beam_width
-            flat_beam_indices = tf.reshape(
-                beam_indices + batch_offsets[:, None], [-1]
-            )  # [batch*beam]
-    
-            gathered = tf.gather(sequences, flat_beam_indices)
-    
-            # Update with new tokens at `step`
-            updates = tf.reshape(token_indices, [-1])
-            indices = tf.stack([
+            flat_beam_indices = tf.reshape(beam_indices + batch_offsets[:, None], [-1])
+            
+            gathered_sequences = tf.gather(sequences, flat_beam_indices)
+            gathered_finished = tf.gather(finished, flat_beam_indices)
+            
+            # Update sequences with new tokens at current step
+            step_indices = tf.stack([
                 tf.range(batch_size * beam_width, dtype=tf.int32),
-                tf.fill([batch_size * beam_width], tf.cast(step, tf.int32))
+                tf.fill([batch_size * beam_width], step)
             ], axis=1)
-            sequences = tf.tensor_scatter_nd_update(gathered, indices, updates)
-    
+            sequences = tf.tensor_scatter_nd_update(
+                gathered_sequences,
+                step_indices,
+                tf.cast(tf.reshape(token_indices, [-1]), dtype=tf.int64)
+            )
+            
             # Update scores
             scores = tf.reshape(topk_scores, [-1])
-    
-            # Update finished flags
-            finished = tf.logical_or(finished[flat_beam_indices], updates == eos_id)
-    
-        # Reshape sequences and scores
+            
+            # Update finished flags: beam is finished if it was already finished OR just generated EOS
+            new_tokens = tf.reshape(token_indices, [-1])
+            finished = tf.logical_or(gathered_finished, new_tokens == eos_id)
+        
+        # Reshape to [batch, beam, max_seq_length]
         sequences = tf.reshape(sequences, [batch_size, beam_width, max_seq_length])
         scores = tf.reshape(scores, [batch_size, beam_width])
-    
-        # Length normalization
+        
+        # Apply length normalization
         if length_penalty > 0:
+            # Count actual tokens (exclude padding/BOS, count up to EOS)
             lengths = tf.reduce_sum(
-                tf.cast(tf.not_equal(sequences, eos_id), tf.float32), axis=-1
-            )
+                tf.cast(sequences != 0, tf.float32), axis=-1
+            )  # [batch, beam]
+            # Apply length penalty (Google NMT style)
             scores = scores / tf.pow((5.0 + lengths) / 6.0, length_penalty)
-    
-        # Select best beam
-        best_indices = tf.argmax(scores, axis=1)
+        
+        # Select best beam for each batch
+        best_indices = tf.argmax(scores, axis=1, output_type=tf.int32)
+        
+        # Extract best sequences
         best_sequences = []
         for b in range(batch_size):
             seq = sequences[b, best_indices[b]].numpy().tolist()
-            if eos_id in seq:
-                seq = seq[: seq.index(eos_id)]
+            # Remove BOS at start
+            if seq[0] == bos_id.numpy():
+                seq = seq[1:]
+            # Truncate at EOS
+            if eos_id.numpy() in seq:
+                seq = seq[:seq.index(eos_id.numpy())]
             best_sequences.append(seq)
-    
+        
         return best_sequences
     
     
