@@ -111,7 +111,7 @@ class Transformer(tf.keras.Model):
     
     #     return translations
 
-   def _translate_batch_beam(
+    def _translate_batch_beam(
         self, sentence, tgt_tokenizer, max_seq_length, beam_width=5, length_penalty=0.7):
         """
         Beam search translation (vectorized).
@@ -237,4 +237,3 @@ class Transformer(tf.keras.Model):
                 raise ValueError(f"Unknown translation method: {method}")
     
         return translations
-
