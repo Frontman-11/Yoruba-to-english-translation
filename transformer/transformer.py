@@ -112,7 +112,8 @@ class Transformer(tf.keras.Model):
     #     return translations
 
     def _translate_batch_beam(
-        self, sentence, tgt_tokenizer, max_seq_length, beam_width=5, length_penalty=0.7):
+        self, sentence, tgt_tokenizer, max_seq_length, beam_width=5, length_penalty=0.7
+    ):
         """
         Beam search translation (vectorized).
     
@@ -130,11 +131,13 @@ class Transformer(tf.keras.Model):
     
         # [batch, beam, seq_len] -> flatten to [batch*beam, seq_len]
         sequences = tf.fill([batch_size * beam_width, max_seq_length], eos_id)
-        sequences = tf.tensor_scatter_nd_update(
-            sequences,
-            indices=tf.expand_dims(tf.range(batch_size * beam_width), 1),
-            updates=tf.repeat(tf.constant([bos_id], dtype=tf.int64), batch_size * beam_width),
-        )
+        # Put BOS at position 0
+        indices = tf.stack([
+            tf.range(batch_size * beam_width, dtype=tf.int32),
+            tf.zeros([batch_size * beam_width], dtype=tf.int32)
+        ], axis=1)
+        updates = tf.repeat(tf.constant([bos_id], dtype=tf.int64), batch_size * beam_width)
+        sequences = tf.tensor_scatter_nd_update(sequences, indices, updates)
     
         # [batch, beam] scores
         scores = tf.concat(
@@ -176,7 +179,7 @@ class Transformer(tf.keras.Model):
             token_indices = topk_indices % vocab_size
     
             # Gather previous sequences
-            batch_offsets = tf.range(batch_size) * beam_width
+            batch_offsets = tf.range(batch_size, dtype=tf.int32) * beam_width
             flat_beam_indices = tf.reshape(
                 beam_indices + batch_offsets[:, None], [-1]
             )  # [batch*beam]
@@ -185,9 +188,10 @@ class Transformer(tf.keras.Model):
     
             # Update with new tokens at `step`
             updates = tf.reshape(token_indices, [-1])
-            indices = tf.stack(
-                [tf.range(batch_size * beam_width, dtype=tf.int64), tf.fill([batch_size * beam_width], step)], axis=1
-            )
+            indices = tf.stack([
+                tf.range(batch_size * beam_width, dtype=tf.int32),
+                tf.fill([batch_size * beam_width], tf.cast(step, tf.int32))
+            ], axis=1)
             sequences = tf.tensor_scatter_nd_update(gathered, indices, updates)
     
             # Update scores
@@ -217,7 +221,8 @@ class Transformer(tf.keras.Model):
             best_sequences.append(seq)
     
         return best_sequences
-
+    
+    
     def translate(self, sentence, tgt_tokenizer, max_seq_length=128, batch_size=128, method="greedy", beam_width=5):
         assert isinstance(sentence, tf.Tensor), 'Input sentence not instance of tf.Tensor'
         
